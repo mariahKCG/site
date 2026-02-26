@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Commands — Mariah De Aurum</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 50%, #1a0d2e 100%);
+            color: #f5f0e8;
+            line-height: 1.8;
+            padding: 0;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(232, 213, 183, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .ankh-decoration {
+            position: fixed;
+            font-size: 60px;
+            color: rgba(212, 175, 55, 0.15);
+            pointer-events: none;
+            z-index: 0;
+            font-family: 'Playfair Display', serif;
+            animation: floatAnkh 20s ease-in-out infinite;
+        }
+        
+        .ankh-decoration:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .ankh-decoration:nth-child(2) {
+            top: 60%;
+            right: 8%;
+            animation-delay: 7s;
+            font-size: 80px;
+        }
+        
+        .ankh-decoration:nth-child(3) {
+            bottom: 15%;
+            left: 12%;
+            animation-delay: 14s;
+            font-size: 50px;
+        }
+        
+        .ankh-decoration:nth-child(4) {
+            top: 30%;
+            right: 15%;
+            animation-delay: 3s;
+            font-size: 70px;
+        }
+        
+        @keyframes floatAnkh {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.15;
+            }
+            25% {
+                transform: translate(20px, -30px) scale(1.1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translate(-15px, -20px) scale(0.95);
+                opacity: 0.18;
+            }
+            75% {
+                transform: translate(25px, 15px) scale(1.05);
+                opacity: 0.2;
+            }
+        }
+        
+        .header-ankh {
+            font-size: 2em;
+            color: #d4af37;
+            margin: 0 15px;
+            display: inline-block;
+            animation: pulseAnkh 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulseAnkh {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            color: #e8d5b7;
+            font-style: italic;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #d4af37;
+            margin: 50px 0 30px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        h2:first-of-type {
+            padding-top: 0;
+            border-top: none;
+            margin-top: 0;
+        }
+        
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #f5f0e8;
+        }
+        
+        strong {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        em {
+            color: #e8d5b7;
+            font-style: italic;
+        }
+        
+        .intro-box {
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .intro-box p {
+            margin-bottom: 15px;
+        }
+        
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .command {
+            margin-bottom: 40px;
+        }
+        
+        .command h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+        
+        .command .when {
+            font-size: 1.1em;
+            color: #e8d5b7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .command-text {
+            background: rgba(212, 175, 55, 0.08);
+            border-radius: 8px;
+            border-left: 3px solid rgba(212, 175, 55, 0.3);
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .command-text p {
+            margin-bottom: 16px;
+        }
+        
+        .command-text p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .closing {
+            font-size: 1.3em;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
+            color: #e8d5b7;
+            font-style: italic;
+        }
+        
+        .closing strong {
+            color: #d4af37;
+        }
+        
+        @media print {
+            body {
+                background: #1a0d2e;
+            }
+            .ankh-decoration {
+                opacity: 0.08;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            .command h3 {
+                font-size: 1.5em;
+            }
+            
+            p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ankh-decoration">☥</div>
+        <div class="ankh-decoration">☥</div>
+        <div class="ankh-decoration">☥</div>
+        <div class="ankh-decoration">☥</div>
+        
+        <div class="header">
+            <h1><span class="header-ankh">☥</span>Energy Commands<span class="header-ankh">☥</span></h1>
+            <div class="subtitle">Mariah De Aurum (@ MariahKCG)</div>
+        </div>
+        
+        <div class="intro-box">
+            <p>Spoken declarations to call back your energy, clear attachments, and protect your field. Speak them aloud, repeat after someone leading you, or read them slowly. Your voice carries power.</p>
+            <p><strong>How to use:</strong> Speak aloud. Slowly. Feel each phrase. Pause and breathe between sections. You can say each command 2–3 times if it feels right.</p>
+        </div>
+        
+        <div class="command">
+            <h3>Command 1: Call Back & Ground</h3>
+            <p class="when">When to use: When you feel scattered, drained, or pulled in too many directions.</p>
+            <div class="command-text">
+                <p>I call back all of my own energy across all time, space, dimensions, and realities, and anywhere else my own energy may be. It is called back into the center of my being now.</p>
+                <p>I declare my energy is grounded, transmuted, and provides more light than before.</p>
+                <p>I am supported. I am loved. I am living in harmony with my power.</p>
+                <p><strong>It is done.</strong></p>
+            </div>
+        </div>
+        
+        <div class="command">
+            <h3>Command 2: Clear Attachments & Agreements</h3>
+            <p class="when">When to use: To clear subconscious and unconscious agreements with networks of harm.</p>
+            <div class="command-text">
+                <p>I command, across all time, space, dimensions, realities, people, places, and things, seen and unseen, that any and all agreements—subconscious and unconscious—that are made with this network of harm in relation to Epstein, his handlers, and anybody else involved with the anti-human life movement that is being brought to the subconscious, all of these attachments and agreements, wherever they are in the field on my own or at the collective level—</p>
+                <p>Are now cleared, transmuted into Love, and harmonized for the spiritual benefit of all human life and all Life on planet Earth.</p>
+                <p>I am fully protected from further attachments that drain my energy. Anything that is in my field moves my life forward and therefore the collective life of planet Earth towards Harmony, Love, true Abundance and Freedom.</p>
+            </div>
+        </div>
+        
+        <div class="command">
+            <h3>Command 3: Call Back, Ground & Cast Out</h3>
+            <p class="when">When to use: The full practice. Recall your energy, ground it, then cast out what does not serve you.</p>
+            <div class="command-text">
+                <p>I now call back all of my own energy from across all time, space, dimensions, realities, people, places, and things, and anywhere else my own energy may be. It is called to the center of my body.</p>
+                <p><em>Now breathe in, releasing everything you don't need down your feet and out to planet Earth.</em></p>
+                <p>I now ground my energy into the core of planet Earth, where it is transmuted into strength, authority, harmony, and justice for the spiritual benefit of all beings.</p>
+                <p>I now cast out from my energy fields, my space, my home, and my presence anything that does not move me forward. I cast out anything that does not love me. I cast out anything, anyone, any being that is not in alignment with my truest, highest self.</p>
+                <p>I cast out any being, entity, or anything at all in my field that does not love me or move me forward. It is now completely pushed out, discarded, deleted, and dissolved, never to return to my energy field across all time, space, dimensions, and realities.</p>
+                <p><strong>It is done. It is done. It is done.</strong></p>
+            </div>
+        </div>
+        
+        <p class="closing">
+            <strong>Your voice carries power. Speak what is true.</strong>
+        </p>
+    </div>
+</body>
+</html>

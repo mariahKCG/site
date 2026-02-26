@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chakra System Guide - Free Resource</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 50%, #1a0d2e 100%);
+            color: #f5f0e8;
+            line-height: 1.8;
+            padding: 0;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(232, 213, 183, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .ankh-decoration {
+            position: fixed;
+            font-size: 60px;
+            color: rgba(212, 175, 55, 0.15);
+            pointer-events: none;
+            z-index: 0;
+            font-family: 'Playfair Display', serif;
+            animation: floatAnkh 20s ease-in-out infinite;
+        }
+        
+        .ankh-decoration:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .ankh-decoration:nth-child(2) {
+            top: 60%;
+            right: 8%;
+            animation-delay: 7s;
+            font-size: 80px;
+        }
+        
+        .ankh-decoration:nth-child(3) {
+            bottom: 15%;
+            left: 12%;
+            animation-delay: 14s;
+            font-size: 50px;
+        }
+        
+        .ankh-decoration:nth-child(4) {
+            top: 30%;
+            right: 15%;
+            animation-delay: 3s;
+            font-size: 70px;
+        }
+        
+        @keyframes floatAnkh {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.15;
+            }
+            25% {
+                transform: translate(20px, -30px) scale(1.1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translate(-15px, -20px) scale(0.95);
+                opacity: 0.18;
+            }
+            75% {
+                transform: translate(25px, 15px) scale(1.05);
+                opacity: 0.2;
+            }
+        }
+        
+        .ankh-accent {
+            display: inline-block;
+            color: #d4af37;
+            font-size: 0.8em;
+            margin: 0 8px;
+            animation: pulseAnkh 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulseAnkh {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+        }
+        
+        .header-ankh {
+            font-size: 2em;
+            color: #d4af37;
+            margin: 0 15px;
+            display: inline-block;
+            animation: pulseAnkh 3s ease-in-out infinite;
+        }
+        
+        h2::before {
+            content: '☥';
+            color: rgba(212, 175, 55, 0.3);
+            font-size: 0.6em;
+            margin-right: 15px;
+            display: inline-block;
+            animation: subtleFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes subtleFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            color: #e8d5b7;
+            font-style: italic;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #d4af37;
+            margin: 50px 0 30px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #e8d5b7;
+            margin: 30px 0 20px;
+        }
+        
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #f5f0e8;
+        }
+        
+        ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        li {
+            font-size: 1.2em;
+            line-height: 2;
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            color: #f5f0e8;
+        }
+        
+        li:before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 1.2em;
+        }
+        
+        .chakra-box {
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .chakra-box h3 {
+            margin-top: 0;
+            color: #d4af37;
+        }
+        
+        .chakra-details {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(212, 175, 55, 0.08);
+            border-radius: 8px;
+            border-left: 3px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .chakra-details h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            color: #e8d5b7;
+            margin-bottom: 15px;
+        }
+        
+        .chakra-details ul {
+            margin-top: 10px;
+        }
+        
+        .affirmations-box {
+            margin: 25px 0;
+            padding: 25px;
+            background: rgba(212, 175, 55, 0.12);
+            border-radius: 8px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .affirmations-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            color: #d4af37;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .affirmations-box p {
+            font-style: italic;
+            color: #e8d5b7;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .affirmations-box ul {
+            margin-top: 15px;
+        }
+        
+        .affirmations-box li {
+            font-size: 1.15em;
+            line-height: 2;
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            color: #f5f0e8;
+        }
+        
+        .affirmations-box li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 1.1em;
+        }
+        
+        .chakra-color {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .balanced, .imbalanced {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .balanced {
+            background: rgba(100, 200, 100, 0.2);
+            border-left: 4px solid #64c864;
+        }
+        
+        .imbalanced {
+            background: rgba(200, 100, 100, 0.2);
+            border-left: 4px solid #c86464;
+        }
+        
+        .balanced h4, .imbalanced h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        
+        .balanced h4 {
+            color: #64c864;
+        }
+        
+        .imbalanced h4 {
+            color: #c86464;
+        }
+        
+        .intro-box {
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .cta-box {
+            background: rgba(212, 175, 55, 0.2);
+            border: 3px solid #d4af37;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            color: #d4af37;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-box p {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        strong {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        a {
+            color: #d4af37;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: #e8d5b7;
+        }
+        
+        @media print {
+            .page-break {
+                page-break-after: always;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            h3 {
+                font-size: 1.5em;
+            }
+            
+            p, li {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ankh-decoration">☥</div>
+        <div class="ankh-decoration">☥</div>
+        <div class="ankh-decoration">☥</div>
+        <div class="ankh-decoration">☥</div>
+        
+        <div class="header">
+            <h1><span class="header-ankh">☥</span>The Chakra System<span class="header-ankh">☥</span></h1>
+            <div class="subtitle">Understanding Your Energy Centers</div>
+        </div>
+        
+        <div class="intro-box">
+            <p>Your chakras are spinning wheels of energy that run along your central channel. When I perform Reiki with clients, I focus on the chakra system because it's the key to understanding what's happening in your energy field.</p>
+            <p style="margin-top: 20px;"><strong>Each chakra should be:</strong></p>
+            <ul>
+                <li>Spinning actively</li>
+                <li>Open and clear</li>
+                <li>Its appropriate color</li>
+            </ul>
+            <p style="margin-top: 20px;">When chakras are imbalanced, I can see specific blockages—for example, a thread wrapped around a heart chakra might indicate a past relationship still constricting your ability to love.</p>
+        </div>
+        
+        <h2>Your Seven Main Chakras</h2>
+        
+        <!-- Page 1: Crown through Heart -->
+        
+        <div class="chakra-box">
+            <h3><span class="chakra-color" style="background: #9b59b6;"></span>Crown Chakra (Sahasrara)</h3>
+            <p><strong>Location:</strong> Top of your head, slightly above the crown</p>
+            <p><strong>Color:</strong> Purple, violet, or white</p>
+            <p><strong>Function:</strong> Your connection to divinity, universal consciousness, spiritual enlightenment, and your highest self</p>
+            
+            <div class="chakra-details">
+                <h4>Physical Associations</h4>
+                <ul>
+                    <li>Brain, nervous system, pineal gland</li>
+                    <li>Headaches, migraines, neurological disorders (when imbalanced)</li>
+                    <li>Feeling "spaced out" or disconnected from body</li>
+                </ul>
+            </div>
+            
+            <div class="chakra-details">
+                <h4>Emotional & Mental Aspects</h4>
+                <ul>
+                    <li>Sense of purpose and meaning in life</li>
+                    <li>Understanding of universal truths</li>
+                    <li>Ability to see the bigger picture</li>
+                    <li>Wisdom and spiritual insight</li>
+                    <li>Connection to your soul's purpose</li>
+                </ul>
+            </div>
+            
+            <div class="balanced">
+                <h4>When Balanced</h4>
+                <ul>
+                    <li>You feel connected to a higher power or universal consciousness</li>
+                    <li>You know you're not alone and feel supported by the universe</li>
+                    <li>You experience deep spiritual connection and inner peace</li>
+                    <li>You have a clear sense of purpose and meaning</li>
+                    <li>You feel aligned with your highest path</li>
+                    <li>You experience moments of transcendence and unity</li>
+                    <li>You trust in divine timing and the flow of life</li>
+                </ul>
+            </div>
+            
+            <div class="imbalanced">
+                <h4>When Imbalanced</h4>
+                <ul>
+                    <li>You feel like there is no higher power or meaning to life</li>
+                    <li>You feel alone in the universe, disconnected from everything</li>
+                    <li>You lack spiritual connection and feel spiritually empty</li>
+                    <li>You may be overly attached to material things or rigid beliefs</li>
+                    <li>You feel lost, without purpose or direction</li>
+                    <li>You may experience chronic headaches or feel "stuck in your head"</li>
+                    <li>You struggle to see beyond your immediate circumstances</li>
+                    <li>You may be closed off to spiritual experiences or growth</li>
+                </ul>
+            </div>
+            
+            <div class="affirmations-box">
+                <h4>Affirmations to Strengthen Your Crown Chakra</h4>
+                <p>Repeat these daily to open and balance your connection to the divine:</p>
+                <ul>
+                    <li>I am connected to the divine and universal consciousness</li>
+                    <li>I trust in a higher power that guides and supports me</li>
+                    <li>I am open to receiving spiritual wisdom and insight</li>
+                    <li>I am aligned with my soul's purpose and highest path</li>
+                    <li>I feel the presence of the divine in all things</li>
+                    <li>I am one with the universe and all that is</li>
+                    <li>I trust in divine timing and the flow of life</li>
+                    <li>I am open to spiritual experiences and growth</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chakra-box">
+            <h3><span class="chakra-color" style="background: #4a148c;"></span>Third Eye Chakra (Ajna)</h3>
+            <p><strong>Location:</strong> Center of the forehead, between the eyebrows (also called the brow chakra)</p>
+            <p><strong>Color:</strong> Deep blue, indigo, or dark purple</p>
+            <p><strong>Function:</strong> Your intuition, inner vision, foresight, imagination, and ability to see beyond the physical realm</p>
+            
+            <div class="chakra-details">
+                <h4>Physical Associations</h4>
+                <ul>
+                    <li>Eyes, brain, pituitary gland, pineal gland</li>
+                    <li>Vision problems, headaches, sinus issues (when imbalanced)</li>
+                    <li>Difficulty concentrating or "brain fog"</li>
+                </ul>
+            </div>
+            
+            <div class="chakra-details">
+                <h4>Emotional & Mental Aspects</h4>
+                <ul>
+                    <li>Intuition and psychic abilities</li>
+                    <li>Inner knowing and gut feelings</li>
+                    <li>Visualization and imagination</li>
+                    <li>Ability to see patterns and connections</li>
+                    <li>Dreams and dream recall</li>
+                    <li>Mental clarity and focus</li>
+                </ul>
+            </div>
+            
+            <div class="balanced">
+                <h4>When Balanced</h4>
+                <ul>
+                    <li>You hear and trust your intuition without second-guessing</li>
+                    <li>You have clear foresight and can sense what's coming</li>
+                    <li>You see beyond the physical and understand deeper truths</li>
+                    <li>You have vivid dreams and good dream recall</li>
+                    <li>You can visualize clearly and manifest through imagination</li>
+                    <li>You have strong mental clarity and focus</li>
+                    <li>You trust your inner guidance and follow it confidently</li>
+                    <li>You may experience psychic insights or intuitive downloads</li>
+                </ul>
+            </div>
+            
+            <div class="imbalanced">
+                <h4>When Imbalanced</h4>
+                <ul>
+                    <li>You do not hear your intuition or constantly doubt it</li>
+                    <li>You may have paranoid thoughts or irrational fears</li>
+                    <li>You feel disconnected from inner knowing and guidance</li>
+                    <li>You struggle with visualization or have a hard time "seeing" possibilities</li>
+                    <li>You may experience frequent headaches, especially in the forehead</li>
+                    <li>You have difficulty concentrating or experience "brain fog"</li>
+                    <li>You may be overly logical and dismiss intuitive insights</li>
+                    <li>You feel stuck in the physical realm, unable to see beyond what's right in front of you</li>
+                    <li>You may have trouble remembering dreams or feel disconnected from your inner world</li>
+                </ul>
+            </div>
+            
+            <div class="affirmations-box">
+                <h4>Affirmations to Strengthen Your Third Eye Chakra</h4>
+                <p>Repeat these daily to open your inner vision and trust your intuition:</p>
+                <ul>
+                    <li>I trust my intuition and inner knowing</li>
+                    <li>I see clearly beyond the physical realm</li>
+                    <li>My third eye is open and I receive clear guidance</li>
+                    <li>I trust my inner vision and follow my intuition</li>
+                    <li>I am connected to my psychic abilities and inner sight</li>
+                    <li>I visualize my desires clearly and manifest them with ease</li>
+                    <li>I trust the messages I receive from my dreams and inner world</li>
+                    <li>I have clear mental focus and can see the bigger picture</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chakra-box">
+            <h3><span class="chakra-color" style="background: #3498db;"></span>Throat Chakra (Vishuddha)</h3>
+            <p><strong>Location:</strong> Throat area, at the base of the neck</p>
+            <p><strong>Color:</strong> Blue (sky blue, turquoise, or bright blue)</p>
+            <p><strong>Function:</strong> Your speech, self-expression, communication, truth-telling, and creative expression through voice</p>
+            
+            <div class="chakra-details">
+                <h4>Physical Associations</h4>
+                <ul>
+                    <li>Throat, neck, vocal cords, thyroid, parathyroid glands</li>
+                    <li>Sore throats, voice issues, thyroid problems (when imbalanced)</li>
+                    <li>Tension in the neck and shoulders</li>
+                    <li>Jaw clenching or teeth grinding</li>
+                </ul>
+            </div>
+            
+            <div class="chakra-details">
+                <h4>Emotional & Mental Aspects</h4>
+                <ul>
+                    <li>Ability to speak your truth authentically</li>
+                    <li>Clear and honest communication</li>
+                    <li>Creative expression through voice (singing, speaking, writing)</li>
+                    <li>Active listening and receiving communication</li>
+                    <li>Setting boundaries through clear communication</li>
+                </ul>
+            </div>
+            
+            <div class="balanced">
+                <h4>When Balanced</h4>
+                <ul>
+                    <li>You express yourself effectively and authentically</li>
+                    <li>You speak your truth without fear or hesitation</li>
+                    <li>You communicate clearly and others understand you easily</li>
+                    <li>You have a strong, clear voice and enjoy speaking</li>
+                    <li>You are a good listener and can receive communication well</li>
+                    <li>You express yourself creatively through voice, writing, or art</li>
+                    <li>You can set boundaries clearly and say "no" when needed</li>
+                    <li>You feel confident sharing your ideas and opinions</li>
+                </ul>
+            </div>
+            
+            <div class="imbalanced">
+                <h4>When Imbalanced</h4>
+                <ul>
+                    <li>You feel tight in the throat area, like there's a "lump in your throat"</li>
+                    <li>You are not speaking your truth or holding back what you really want to say</li>
+                    <li>You feel it is not safe to express yourself or share your opinions</li>
+                    <li>You may have a weak voice, frequent sore throats, or voice problems</li>
+                    <li>You struggle to find the right words or communicate clearly</li>
+                    <li>You may talk too much (overactive) or too little (underactive)</li>
+                    <li>You have difficulty setting boundaries or saying "no"</li>
+                    <li>You may gossip, lie, or use words to manipulate (overactive imbalance)</li>
+                    <li>You feel like you can't express your creativity or authentic self</li>
+                    <li>You may experience thyroid issues or neck/shoulder tension</li>
+                </ul>
+            </div>
+            
+            <div class="affirmations-box">
+                <h4>Affirmations to Strengthen Your Throat Chakra</h4>
+                <p>Repeat these daily to open your voice and express your truth:</p>
+                <ul>
+                    <li>I speak my truth clearly and authentically</li>
+                    <li>My voice is strong and I express myself with confidence</li>
+                    <li>I communicate clearly and others understand me easily</li>
+                    <li>It is safe for me to express my thoughts and feelings</li>
+                    <li>I use my voice to create positive change in my life</li>
+                    <li>I express my creativity through my words and voice</li>
+                    <li>I set healthy boundaries through clear communication</li>
+                    <li>I listen actively and communicate with compassion</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chakra-box">
+            <h3><span class="chakra-color" style="background: #2ecc71;"></span>Heart Chakra (Anahata)</h3>
+            <p><strong>Location:</strong> Center of your chest, at the heart level</p>
+            <p><strong>Color:</strong> Green (may appear emerald, forest green, or pink - the heart chakra can also show pink when very open)</p>
+            <p><strong>Function:</strong> Love (giving and receiving), compassion, forgiveness, connection, self-love, and acting from your heart space</p>
+            
+            <div class="chakra-details">
+                <h4>Physical Associations</h4>
+                <ul>
+                    <li>Heart, lungs, circulatory system, thymus gland</li>
+                    <li>Heart problems, breathing issues, asthma (when imbalanced)</li>
+                    <li>Tightness or pain in the chest</li>
+                    <li>Immune system function</li>
+                </ul>
+            </div>
+            
+            <div class="chakra-details">
+                <h4>Emotional & Mental Aspects</h4>
+                <ul>
+                    <li>Ability to give and receive love freely</li>
+                    <li>Compassion for self and others</li>
+                    <li>Forgiveness and letting go of past hurts</li>
+                    <li>Self-love and self-acceptance</li>
+                    <li>Connection to others and feeling of unity</li>
+                    <li>Empathy and understanding</li>
+                </ul>
+            </div>
+            
+            <div class="balanced">
+                <h4>When Balanced</h4>
+                <ul>
+                    <li>You are open to love - both giving and receiving it freely</li>
+                    <li>You express yourself from the heart with authenticity and warmth</li>
+                    <li>You trust others appropriately while maintaining healthy boundaries</li>
+                    <li>You have compassion for yourself and others</li>
+                    <li>You can forgive past hurts and let go of resentment</li>
+                    <li>You feel connected to others and experience a sense of unity</li>
+                    <li>You practice self-love and self-acceptance</li>
+                    <li>You feel empathy and can understand others' perspectives</li>
+                    <li>You experience joy, gratitude, and appreciation for life</li>
+                </ul>
+            </div>
+            
+            <div class="imbalanced">
+                <h4>When Imbalanced</h4>
+                <ul>
+                    <li>You feel you cannot trust other people or are overly suspicious</li>
+                    <li>You may be living in a state of grief, sadness, or emotional pain</li>
+                    <li>You may feel jealous of other people or compare yourself to others</li>
+                    <li>Past relationship energy may be constricting the chakra (I often see threads, cords, or even hair wrapped around it during Reiki)</li>
+                    <li>You may have difficulty giving or receiving love</li>
+                    <li>You may be overly giving (codependency) or closed off and cold</li>
+                    <li>You struggle with self-love and may be overly critical of yourself</li>
+                    <li>You may experience heart palpitations, chest tightness, or breathing issues</li>
+                    <li>You hold onto grudges and find it difficult to forgive</li>
+                    <li>You may feel isolated or disconnected from others</li>
+                    <li>You struggle to feel empathy or connect emotionally with others</li>
+                </ul>
+            </div>
+            
+            <div class="affirmations-box">
+                <h4>Affirmations to Strengthen Your Heart Chakra</h4>
+                <p>Repeat these daily to open your heart and cultivate love:</p>
+                <ul>
+                    <li>I am open to giving and receiving love freely</li>
+                    <li>I love myself unconditionally and accept myself fully</li>
+                    <li>My heart is open and I trust in love</li>
+                    <li>I forgive myself and others, releasing all resentment</li>
+                    <li>I feel compassion for myself and all beings</li>
+                    <li>I am connected to others through the power of love</li>
+                    <li>I express love and kindness in all my interactions</li>
+                    <li>My heart chakra is open, balanced, and radiating love</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        
+        <!-- Page 2: Solar Plexus through Root -->
+        
+        <div class="chakra-box">
+            <h3><span class="chakra-color" style="background: #f1c40f;"></span>Solar Plexus Chakra (Manipura)</h3>
+            <p><strong>Location:</strong> Absolute middle of your body, middle of your torso, above the navel (stomach area)</p>
+            <p><strong>Color:</strong> Yellow (like an internal sun - bright, golden yellow)</p>
+            <p><strong>Function:</strong> Personal power, self-discipline, confidence, self-esteem, willpower, and knowing how to nourish your body appropriately</p>
+            
+            <div class="chakra-details">
+                <h4>Physical Associations</h4>
+                <ul>
+                    <li>Stomach, digestive system, liver, pancreas, adrenal glands</li>
+                    <li>Digestive issues, ulcers, diabetes (when imbalanced)</li>
+                    <li>Eating disorders or unhealthy relationship with food</li>
+                    <li>Metabolism and energy levels</li>
+                </ul>
+            </div>
+            
+            <div class="chakra-details">
+                <h4>Emotional & Mental Aspects</h4>
+                <ul>
+                    <li>Sense of personal power and autonomy</li>
+                    <li>Self-confidence and self-worth</li>
+                    <li>Ability to take action and make decisions</li>
+                    <li>Self-discipline and willpower</li>
+                    <li>Healthy boundaries and saying "no"</li>
+                    <li>Independence and self-reliance</li>
+                </ul>
+            </div>
+            
+            <div class="balanced">
+                <h4>When Balanced</h4>
+                <ul>
+                    <li>You are self-disciplined and can follow through on commitments</li>
+                    <li>You are confident in yourself and your abilities</li>
+                    <li>You know how to nourish your body appropriately with food, rest, and care</li>
+                    <li>You have a strong sense of personal power and autonomy</li>
+                    <li>You can take action and make decisions confidently</li>
+                    <li>You have healthy self-esteem and self-worth</li>
+                    <li>You can set boundaries and stand up for yourself</li>
+                    <li>You have good digestion and a healthy relationship with food</li>
+                    <li>You feel motivated and have good energy levels</li>
+                </ul>
+            </div>
+            
+            <div class="imbalanced">
+                <h4>When Imbalanced</h4>
+                <ul>
+                    <li>You may deal with disordered eating, binge eating, or restrictive eating</li>
+                    <li>You don't feel confident and may struggle with self-esteem</li>
+                    <li>You are probably feeling lazy, unmotivated, or lacking willpower</li>
+                    <li>You may have digestive issues, stomach problems, or ulcers</li>
+                    <li>You struggle to make decisions or take action</li>
+                    <li>You may be overly controlling (overactive) or feel powerless (underactive)</li>
+                    <li>You have difficulty setting boundaries and may be a people-pleaser</li>
+                    <li>You may feel like you have no control over your life</li>
+                    <li>You struggle with self-discipline and following through on goals</li>
+                    <li>You may have low energy or feel constantly drained</li>
+                    <li>You may be overly critical of yourself or others</li>
+                </ul>
+            </div>
+            
+            <div class="affirmations-box">
+                <h4>Affirmations to Strengthen Your Solar Plexus Chakra</h4>
+                <p>Repeat these daily to build your personal power and confidence:</p>
+                <ul>
+                    <li>I am confident in myself and my abilities</li>
+                    <li>I have the power to create the life I desire</li>
+                    <li>I am self-disciplined and follow through on my commitments</li>
+                    <li>I trust myself to make good decisions</li>
+                    <li>I set healthy boundaries and honor my needs</li>
+                    <li>I nourish my body with love and respect</li>
+                    <li>I am worthy of success and abundance</li>
+                    <li>My personal power is strong and balanced</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chakra-box">
+            <h3><span class="chakra-color" style="background: #e67e22;"></span>Sacral Chakra (Svadhisthana)</h3>
+            <p><strong>Location:</strong> For women, in your womb space. For men, a little bit below your belly button (lower abdomen)</p>
+            <p><strong>Color:</strong> Orange (beautiful, vibrant orange - like a sunset)</p>
+            <p><strong>Function:</strong> Your sexuality as a creative force, pleasure, sensuality, emotions, creativity, and ability to experience joy</p>
+            
+            <div class="chakra-details">
+                <h4>Physical Associations</h4>
+                <ul>
+                    <li>Reproductive organs, bladder, kidneys, lower back</li>
+                    <li>Reproductive issues, menstrual problems, fertility issues (when imbalanced)</li>
+                    <li>Lower back pain or hip issues</li>
+                    <li>Urinary tract problems</li>
+                </ul>
+            </div>
+            
+            <div class="chakra-details">
+                <h4>Emotional & Mental Aspects</h4>
+                <ul>
+                    <li>Healthy sexuality and sensuality</li>
+                    <li>Creative expression and artistic abilities</li>
+                    <li>Emotional flow and ability to feel and process emotions</li>
+                    <li>Pleasure and enjoyment of life</li>
+                    <li>Desire and passion</li>
+                    <li>Ability to adapt and go with the flow</li>
+                </ul>
+            </div>
+            
+            <div class="balanced">
+                <h4>When Balanced</h4>
+                <ul>
+                    <li>Your sexuality is a creative force that you embrace and enjoy</li>
+                    <li>You have a high, balanced libido and healthy sexual expression</li>
+                    <li>You create with ease - whether art, music, writing, or other creative pursuits</li>
+                    <li>You can feel and process your emotions healthily</li>
+                    <li>You experience pleasure and joy in life</li>
+                    <li>You have healthy relationships with your body and sensuality</li>
+                    <li>You can adapt to change and go with the flow</li>
+                    <li>You feel passionate about life and your interests</li>
+                    <li>You have healthy reproductive function</li>
+                </ul>
+            </div>
+            
+            <div class="imbalanced">
+                <h4>When Imbalanced</h4>
+                <ul>
+                    <li>You don't have libido or have an unhealthy relationship with sexuality</li>
+                    <li>You're probably not creating anything or feel creatively blocked</li>
+                    <li>You probably feel frustrated at life in general, stuck, or emotionally numb</li>
+                    <li>You may have reproductive issues, menstrual problems, or fertility challenges</li>
+                    <li>You struggle to feel or process emotions - either too emotional or emotionally shut down</li>
+                    <li>You may have lower back pain, hip issues, or pelvic discomfort</li>
+                    <li>You may be overly sexual (overactive) or completely disconnected from your sexuality (underactive)</li>
+                    <li>You feel guilty or ashamed about your sexuality or desires</li>
+                    <li>You struggle to experience pleasure or joy</li>
+                    <li>You feel rigid and unable to adapt to change</li>
+                    <li>You may have difficulty forming intimate connections</li>
+                </ul>
+            </div>
+            
+            <div class="affirmations-box">
+                <h4>Affirmations to Strengthen Your Sacral Chakra</h4>
+                <p>Repeat these daily to open your creativity and embrace your sensuality:</p>
+                <ul>
+                    <li>I embrace my creativity and express myself freely</li>
+                    <li>My sexuality is a sacred and creative force</li>
+                    <li>I allow myself to feel pleasure and experience joy</li>
+                    <li>I flow with life and adapt to change with ease</li>
+                    <li>I honor my emotions and allow them to flow through me</li>
+                    <li>I am a creative being and I create with passion</li>
+                    <li>I embrace my sensuality and feel comfortable in my body</li>
+                    <li>My sacral chakra is open, balanced, and flowing with creative energy</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="chakra-box">
+            <h3><span class="chakra-color" style="background: #e74c3c;"></span>Root Chakra (Muladhara)</h3>
+            <p><strong>Location:</strong> Your pelvic floor, base of the spine, perineum area</p>
+            <p><strong>Color:</strong> Red (beautiful, vibrant red - like the earth, like life force)</p>
+            <p><strong>Function:</strong> Your safety, grounding, survival, connection to this planet, to your body, to this reality, and your basic needs being met</p>
+            
+            <div class="chakra-details">
+                <h4>Physical Associations</h4>
+                <ul>
+                    <li>Spine, bones, teeth, legs, feet, colon, adrenal glands</li>
+                    <li>Lower back pain, sciatica, constipation (when imbalanced)</li>
+                    <li>Feeling ungrounded or "spaced out"</li>
+                    <li>Immune system and physical vitality</li>
+                </ul>
+            </div>
+            
+            <div class="chakra-details">
+                <h4>Emotional & Mental Aspects</h4>
+                <ul>
+                    <li>Feeling safe and secure in the world</li>
+                    <li>Sense of belonging and being supported</li>
+                    <li>Trust in life and the universe</li>
+                    <li>Feeling grounded and present in your body</li>
+                    <li>Ability to meet your basic needs (food, shelter, safety)</li>
+                    <li>Connection to family, tribe, and community</li>
+                </ul>
+            </div>
+            
+            <div class="balanced">
+                <h4>When Balanced</h4>
+                <ul>
+                    <li>You feel safe and secure in your body and in the world</li>
+                    <li>You feel grounded, present, and connected to your physical body</li>
+                    <li>You feel your needs are being met - basic survival needs are covered</li>
+                    <li>You feel connected to this planet, to your body, and to this reality</li>
+                    <li>You have a strong sense of belonging and feel supported by life</li>
+                    <li>You trust that you will be provided for and can meet your needs</li>
+                    <li>You feel physically strong and have good vitality</li>
+                    <li>You have healthy boundaries and can protect yourself</li>
+                    <li>You feel stable and secure in your life circumstances</li>
+                </ul>
+            </div>
+            
+            <div class="imbalanced">
+                <h4>When Imbalanced</h4>
+                <ul>
+                    <li>You probably feel unsafe, anxious, or constantly in survival mode</li>
+                    <li>You feel that your needs are not being met - financial, physical, or emotional</li>
+                    <li>You don't feel grounded - you may feel "spaced out," disconnected, or like you're floating</li>
+                    <li>You feel disconnected from your body and reality - like you're not fully here</li>
+                    <li>You may experience lower back pain, sciatica, or issues with your legs/feet</li>
+                    <li>You may have digestive issues, especially constipation</li>
+                    <li>You feel like you don't belong or aren't supported by life</li>
+                    <li>You may be overly materialistic (overactive) or feel completely disconnected from material needs (underactive)</li>
+                    <li>You struggle with fear, especially around survival and security</li>
+                    <li>You may feel restless, anxious, or unable to relax</li>
+                    <li>You have difficulty feeling present in your body or in the moment</li>
+                </ul>
+            </div>
+            
+            <div class="affirmations-box">
+                <h4>Affirmations to Strengthen Your Root Chakra</h4>
+                <p>Repeat these daily to ground yourself and feel safe:</p>
+                <ul>
+                    <li>I am safe and secure in my body and in the world</li>
+                    <li>I am grounded and connected to the earth</li>
+                    <li>All my basic needs are met and I trust I will be provided for</li>
+                    <li>I belong here and I am supported by life</li>
+                    <li>I am present in my body and fully here in this moment</li>
+                    <li>I feel stable and secure in my life</li>
+                    <li>I trust in the process of life and feel safe to be myself</li>
+                    <li>My root chakra is strong, balanced, and grounding me to earth</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="intro-box" style="margin-top: 40px;">
+            <h3>Understanding Chakra Imbalances</h3>
+            <p>When I perform Reiki on people, I can tell what imbalances are going on based on how the chakras look. I'm not necessarily digging around for personal information, but the energy shows itself.</p>
+            <p style="margin-top: 15px;">For example, if somebody's heart chakra is imbalanced, I often will see a thread wrapped around it, and it might even be hair of a certain color. This is because maybe they had a bad breakup, and this person's hair color is constricting how they interact with love moving forward and how they love people in their life moving forward.</p>
+            <p style="margin-top: 15px;">That's just one example. You want to have this whole system be those appropriate colors as well as spinning and open.</p>
+        </div>
+        
+        <div class="cta-box">
+            <h3>Need Personalized Chakra Work?</h3>
+            <p>If you don't know how to work on your chakra system, definitely <strong>book a Reiki session with me</strong>.</p>
+            <p>We can go into it, and I can actually get in there and see what's going on in your specific system.</p>
+            <p style="margin-top: 20px; font-size: 1.1em;">Visit my website to learn more and book a session: <a href="https://www.mariahkcg.com" target="_blank">www.mariahkcg.com</a></p>
+        </div>
+        
+        <div class="intro-box" style="margin-top: 40px; text-align: center;">
+            <p><strong>Note:</strong> You have more chakra points throughout your body, but these seven are the dominant ones—the ones you should be working with on a frequent basis.</p>
+        </div>
+    </div>
+</body>
+</html>
+
