@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nervous System Reset: Intro Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 50%, #1a0d2e 100%);
+            color: #f5f0e8;
+            line-height: 1.8;
+            padding: 0;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(232, 213, 183, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .ankh-decoration {
+            position: fixed;
+            font-size: 60px;
+            color: rgba(212, 175, 55, 0.15);
+            pointer-events: none;
+            z-index: 0;
+            font-family: 'Playfair Display', serif;
+            animation: floatAnkh 20s ease-in-out infinite;
+        }
+        
+        .ankh-decoration:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .ankh-decoration:nth-child(2) {
+            top: 60%;
+            right: 8%;
+            animation-delay: 7s;
+            font-size: 80px;
+        }
+        
+        .ankh-decoration:nth-child(3) {
+            bottom: 15%;
+            left: 12%;
+            animation-delay: 14s;
+            font-size: 50px;
+        }
+        
+        .ankh-decoration:nth-child(4) {
+            top: 30%;
+            right: 15%;
+            animation-delay: 3s;
+            font-size: 70px;
+        }
+        
+        @keyframes floatAnkh {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.15;
+            }
+            25% {
+                transform: translate(20px, -30px) scale(1.1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translate(-15px, -20px) scale(0.95);
+                opacity: 0.18;
+            }
+            75% {
+                transform: translate(25px, 15px) scale(1.05);
+                opacity: 0.2;
+            }
+        }
+        
+        .ankh-accent {
+            display: inline-block;
+            color: #d4af37;
+            font-size: 0.8em;
+            margin: 0 8px;
+            animation: pulseAnkh 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulseAnkh {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+        }
+        
+        .header-ankh {
+            font-size: 2em;
+            color: #d4af37;
+            margin: 0 15px;
+            display: inline-block;
+            animation: pulseAnkh 3s ease-in-out infinite;
+        }
+        
+        h2::before {
+            content: '☥';
+            color: rgba(212, 175, 55, 0.3);
+            font-size: 0.6em;
+            margin-right: 15px;
+            display: inline-block;
+            animation: subtleFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes subtleFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 40px 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            color: #e8d5b7;
+            font-style: italic;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #d4af37;
+            margin: 50px 0 30px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #e8d5b7;
+            margin: 30px 0 20px;
+        }
+        
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #f5f0e8;
+        }
+        
+        ul, ol {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        li {
+            font-size: 1.2em;
+            line-height: 2;
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            color: #f5f0e8;
+        }
+        
+        li:before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+            font-size: 1.2em;
+        }
+        
+        ol li {
+            counter-increment: item;
+        }
+        
+        ol {
+            counter-reset: item;
+        }
+        
+        ol li:before {
+            content: counter(item) ".";
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        .practice-box {
+            background: rgba(212, 175, 55, 0.15);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .practice-box h3 {
+            margin-top: 0;
+            color: #d4af37;
+        }
+        
+        .cta-box {
+            background: rgba(212, 175, 55, 0.2);
+            border: 3px solid #d4af37;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            color: #d4af37;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-box p {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        .cta-box strong {
+            color: #d4af37;
+            font-size: 1.2em;
+        }
+        
+        .cta-box a.cta-button {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a0d2e;
+            padding: 16px 36px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 20px 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-box a.cta-button:hover {
+            background: #e8d5b7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 16px 24px;
+            background: rgba(26, 13, 46, 0.95);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .site-nav a {
+            color: #e8d5b7;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        
+        .site-nav a:hover {
+            color: #d4af37;
+        }
+        
+        .highlight {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        .section-intro {
+            font-size: 1.3em;
+            color: #e8d5b7;
+            font-style: italic;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid #d4af37;
+            border-radius: 8px;
+        }
+        
+        .note-box {
+            background: rgba(232, 213, 183, 0.1);
+            border-left: 4px solid #e8d5b7;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .note-box p {
+            margin-bottom: 10px;
+        }
+        
+        strong {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 1.8em;
+            }
+            
+            h3 {
+                font-size: 1.5em;
+            }
+            
+            p, li {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html">Mariah KCG</a>
+        <a href="links.html">← Back to Links</a>
+    </nav>
+    <div class="container">
+        <div class="ankh-decoration">☥</div>
+        <div class="ankh-decoration">☥</div>
+        <div class="ankh-decoration">☥</div>
+        <div class="ankh-decoration">☥</div>
+        
+        <div class="header">
+            <h1><span class="header-ankh">☥</span>Nervous System Reset<span class="header-ankh">☥</span></h1>
+            <div class="subtitle">Intro Guide</div>
+        </div>
+        
+        <div class="section-intro">
+            Nervous system regulation starts with feeling safe in your body and your energy field. This guide provides foundational practices to help you establish safety, ground your body, and begin your journey toward nervous system regulation.
+        </div>
+        
+        <h2>Stage 1: Establishing Your Energy Field</h2>
+        
+        <div class="practice-box">
+            <h3>Understanding Your Energy Field</h3>
+            <p>Your energy field is your first line of defense and your primary tool for feeling safe. When your field is strong and clear, your nervous system can relax.</p>
+        </div>
+        
+        <h3>Stop Energetic Leaks</h3>
+        <p>Cut off energy to people, places, or things that make you feel:</p>
+        <ul>
+            <li>Ungrounded</li>
+            <li>Unsafe</li>
+            <li>Depleted after being with them</li>
+            <li>Just plain icky</li>
+        </ul>
+        
+        <div class="note-box">
+            <p><strong>How to tell if you have an energy leak:</strong> If you feel depleted after being with someone or doing something, that's an energy leak. Cut it off as much as physically possible.</p>
+            <p>Once you're solid and grounded, you may be able to reintroduce these people, but you probably won't want to if they're not doing the work on their end.</p>
+        </div>
+        
+        <h3>Get Out in Nature</h3>
+        <p>Nature stabilizes and grounds your nervous system. This is what she does. Get fresh air and the energy from nature as often as possible.</p>
+        
+        <h2>Stage 2: The Chakra System</h2>
+        
+        <div class="section-intro">
+            Your chakras are spinning wheels of energy that need to be active, open, and their appropriate colors. When balanced, they support your entire system.
+        </div>
+        
+        <div class="note-box">
+            <p><strong>For detailed chakra descriptions and guidance</strong>, see the <a href="chakra-system-guide.html" style="color: #d4af37; text-decoration: underline;">Chakra System Guide</a> (free resource on this site).</p>
+            <p><strong>For personalized chakra work</strong>, book a Reiki session where I can see what's going on in your system and clear specific blockages.</p>
+        </div>
+        
+        <p>Your seven main chakras:</p>
+        <ul>
+            <li><strong>Crown</strong> (purple) - Top of head - Connection to divinity</li>
+            <li><strong>Third Eye</strong> (deep blue/indigo) - Brow - Intuition and foresight</li>
+            <li><strong>Throat</strong> (blue/turquoise) - Throat - Speech and expression</li>
+            <li><strong>Heart</strong> (green/emerald) - Center of chest - Love and trust</li>
+            <li><strong>Solar Plexus</strong> (yellow) - Middle of torso - Confidence and discipline</li>
+            <li><strong>Sacral</strong> (orange) - Womb space/below belly button - Sexuality and creativity</li>
+            <li><strong>Root</strong> (red) - Pelvic floor - Safety and grounding</li>
+        </ul>
+        
+        <h2>Stage 3: Body Work</h2>
+        
+        <div class="section-intro">
+            Once your energy field is established, your body can be grounded through somatic healing practices.
+        </div>
+        
+        <div class="note-box">
+            <p><strong>Specific energetic methods</strong> are provided in the full <strong>Nervous System Sanctuary</strong> course.</p>
+        </div>
+        
+        <h3>Physical Foundation</h3>
+        <ul>
+            <li><strong>Drink lots of water</strong> - Most people live in low-grade panic because they're dehydrated. Have a full water bottle every hour if needed.</li>
+            <li><strong>Eat well</strong> - Nourish your body with real food</li>
+            <li><strong>Exercise</strong> - Walk in the park, do yoga at home, Pilates, treadmill, or any movement. This helps your brain chemicals and is only possible after you've made space and feel safe to do it.</li>
+        </ul>
+        
+        <h2>Stage 4: Affirmations & Programming</h2>
+        
+        <div class="section-intro">
+            Programming your output is how you get control of your reality. This is repeating an affirmation for 10 minutes straight at least once a day.
+        </div>
+        
+        <div class="practice-box">
+            <h3>How to Practice</h3>
+            <ol>
+                <li>Choose an affirmation that moves you forward</li>
+                <li>Repeat it for 10 minutes straight, at least once a day</li>
+                <li>Commit to this for 2 weeks</li>
+            </ol>
+            
+            <p><strong>Example affirmations:</strong></p>
+            <ul>
+                <li>"I am safe in my body"</li>
+                <li>"Everything always works out for me"</li>
+            </ul>
+        </div>
+        
+        <div class="note-box">
+            <p><strong>Mental discipline is required.</strong> Some people don't want to do this because they like their misery. If you don't like your misery and want to change it, commit 10 minutes a day for two weeks.</p>
+        </div>
+        
+        <h2>Stage 5: Working with the Divine</h2>
+        
+        <div class="section-intro">
+            Once you're grounded and safe in your body and energy field, you can work with devas (divine beings) for additional support.
+        </div>
+        
+        <div class="practice-box">
+            <h3>Start with Planet Earth</h3>
+            <p>When you work on your energy field and body and are really grounded and safe, you realize that Earth has been supporting you this whole time.</p>
+            <ul>
+                <li>She can provide an extra boost to your energy field</li>
+                <li>She guides and leads you with next steps</li>
+                <li>She shows you which deva to work with next</li>
+                <li>Everything comes from her frequency</li>
+            </ul>
+        </div>
+        
+        <div class="practice-box">
+            <h3>Working with Mantras</h3>
+            <p>You can work with mantras from Hindu cosmology to deepen your practice. I like to work with different devas at a time.</p>
+            <p><strong>Look for mantras that fit your situation.</strong> You can invoke devas in other ways with prayers, etc., but the first deva to work with is Planet Earth because when we work on our energy field and our bodies and really are grounded and safe in where we are and how we exist, then we can realize that earth has been supporting us this whole time.</p>
+            <p>She guides us and leads us with the next deva to work with because they are all a part of her frequency—everything comes from her.</p>
+        </div>
+        
+        <div class="note-box">
+            <p><strong>This is gnostic cosmology.</strong> If you're interested in learning more, I have the True Gnosticism Guide available as well.</p>
+        </div>
+        
+        <h2>Putting It All Together</h2>
+        
+        <div class="practice-box">
+            <h3>Daily Practice Sequence</h3>
+            <ol>
+                <li><strong>Morning:</strong> Energy field check, stop any leaks, get outside if possible</li>
+                <li><strong>Affirmation practice</strong> (10 minutes)</li>
+                <li><strong>Throughout the day:</strong> Stay hydrated, move your body, maintain boundaries</li>
+                <li><strong>Evening:</strong> Check in with your energy field, release what you don't need</li>
+            </ol>
+            <p style="margin-top: 20px;"><em>For specific breath work and visualization practices, see the full Nervous System Sanctuary course.</em></p>
+        </div>
+        
+        <div class="cta-box">
+            <h3>Ready to Go Deeper?</h3>
+            <p>This is just a quick intro to allow your nervous system to feel safe.</p>
+            <p><strong>For the full course — 8 modules on energy field literacy, grounding, the Goddess, energy commands, energy harvesting, and more — join on Patreon:</strong></p>
+            <p style="font-size: 1.5em; margin: 20px 0;"><strong class="highlight">Nervous System Sanctuary: Full Energy Transformation</strong></p>
+            <a href="https://www.patreon.com/collection/1975098?view=condensed" class="cta-button" target="_blank" rel="noopener">Get the Full Course on Patreon</a>
+            <p style="margin-top: 24px; font-size: 1em;">Or book a <strong>1:1 session</strong> with me for personalized support and deeper energetic clearing.</p>
+        </div>
+        
+        <div class="note-box" style="margin-top: 50px;">
+            <p><strong>Remember:</strong> These practices work best when done consistently. Start with what feels most accessible and build from there. Your nervous system will thank you.</p>
+        </div>
+    </div>
+</body>
+</html>
+
