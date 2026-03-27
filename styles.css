@@ -38,6 +38,18 @@ img {
   display: block;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -292,6 +304,32 @@ blockquote {
   color: var(--rose-deep);
 }
 
+/* Prominent Patreon / full-course CTA (e.g. NSS landing) */
+.button.patreon-cta-lg {
+  display: inline-block;
+  box-sizing: border-box;
+  width: min(100%, 22rem);
+  padding: 22px 36px;
+  font-size: 1.28rem;
+  font-weight: 600;
+  line-height: 1.25;
+  border-radius: 999px;
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .button.patreon-cta-lg {
+    width: auto;
+    min-width: 18rem;
+    padding: 26px 52px;
+    font-size: 1.35rem;
+  }
+}
+
+.cta .button.primary.patreon-cta-lg:hover {
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+}
+
 .cta .button.ghost {
   border-color: var(--gold-champagne);
   color: var(--gold-champagne);
@@ -394,6 +432,15 @@ blockquote {
 
 .book-promo-cta-line a:hover {
   color: var(--gold);
+}
+
+.landing-stack {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.landing-stack .mc-embed-wrap {
+  margin-top: 0;
 }
 
 @media (max-width: 720px) {
