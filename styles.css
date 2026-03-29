@@ -330,6 +330,22 @@ blockquote {
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
 }
 
+.cta .ritual-when {
+  font-size: 1.28rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 0 auto 26px;
+  max-width: 26rem;
+  opacity: 0.98;
+  color: var(--gold-champagne);
+}
+
+@media (min-width: 600px) {
+  .cta .ritual-when {
+    font-size: 1.48rem;
+  }
+}
+
 .cta .button.ghost {
   border-color: var(--gold-champagne);
   color: var(--gold-champagne);
