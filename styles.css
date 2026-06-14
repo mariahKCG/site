@@ -1062,3 +1062,69 @@ blockquote {
     opacity: 0.85;
   }
 }
+
+/* —— Nightly Guided Meditation download page — */
+.ngm-download-card {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: clamp(24px, 5vw, 36px);
+  text-align: center;
+  background: var(--surface);
+  border-radius: 22px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 16px 40px var(--shadow);
+}
+
+.ngm-download-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  background: linear-gradient(145deg, var(--rose-deep) 0%, #4f3844 100%);
+  color: var(--gold-champagne);
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+}
+
+.ngm-download-card h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.25rem, 3.5vw, 1.5rem);
+}
+
+.ngm-download-card > p {
+  margin: 0 0 22px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--rose-ink);
+  opacity: 0.88;
+}
+
+.ngm-audio-player {
+  display: block;
+  width: 100%;
+  margin: 0 0 20px;
+  border-radius: 999px;
+}
+
+.ngm-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.ngm-file-meta {
+  margin: 14px 0 0;
+  font-size: 0.82rem;
+  color: var(--rose-ink);
+  opacity: 0.65;
+}
