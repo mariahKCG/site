@@ -1689,6 +1689,67 @@ blockquote {
   opacity: 0.85;
 }
 
+.kw-bbl-section {
+  padding-top: 0;
+}
+
+.kw-bbl-card {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 36px);
+  text-align: center;
+  border-radius: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(20, 83, 116, 0.12) 0%,
+    rgba(126, 200, 217, 0.2) 100%
+  );
+  border: 1px solid rgba(42, 111, 143, 0.28);
+  box-shadow: 0 16px 40px rgba(12, 45, 72, 0.1);
+}
+
+.kw-bbl-eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kw-teal);
+}
+
+.kw-bbl-card h2 {
+  margin-bottom: 16px;
+}
+
+.kw-bbl-card p {
+  margin: 0 0 14px;
+  line-height: 1.7;
+  color: var(--kw-text);
+  font-size: 1.02rem;
+}
+
+.kw-bbl-card p a {
+  color: var(--kw-mid);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.kw-bbl-card p a:hover {
+  color: var(--kw-deep);
+}
+
+.kw-btn--bbl {
+  margin-top: 8px;
+  background: var(--kw-mid);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(12, 45, 72, 0.2);
+}
+
+.kw-btn--bbl:hover {
+  background: var(--kw-deep);
+}
+
 .kw-cta-section {
   text-align: center;
   padding-bottom: clamp(56px, 8vw, 80px);
