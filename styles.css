@@ -399,6 +399,192 @@ blockquote {
   margin: 0 auto;
 }
 
+.contact-booking-card {
+  margin-bottom: 20px;
+}
+
+/* 1:1 booking page */
+.booking-page {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.booking-offer {
+  padding: 24px 26px;
+  margin-bottom: 36px;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  background: linear-gradient(
+    165deg,
+    var(--gold-champagne) 0%,
+    var(--surface) 55%
+  );
+}
+
+.booking-price {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--rose-heading);
+  margin: 0 0 6px;
+  line-height: 1.15;
+}
+
+.booking-meta {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.booking-offer-title {
+  font-size: 1.25rem;
+  margin: 18px 0 10px;
+}
+
+.booking-offer > p {
+  margin: 0 0 12px;
+  max-width: 40rem;
+}
+
+.booking-includes {
+  margin: 0 0 14px;
+  padding-left: 1.2rem;
+  max-width: 40rem;
+}
+
+.booking-includes li {
+  margin-bottom: 6px;
+}
+
+.booking-disclaimer {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  background: rgba(253, 246, 249, 0.85);
+}
+
+.booking-disclaimer h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.booking-disclaimer p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: none;
+}
+
+.booking-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 32px;
+  counter-reset: none;
+}
+
+.booking-step h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 10px;
+  font-size: clamp(1.35rem, 2.4vw, 1.65rem);
+}
+
+.booking-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--rose-deep);
+  color: var(--gold-champagne);
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.booking-step > p {
+  margin: 0 0 18px;
+}
+
+.calendly-embed {
+  margin-top: 8px;
+}
+
+.calendly-embed .calendly-inline-widget {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+}
+
+.calendly-fallback h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.calendly-fallback p {
+  margin: 0 0 18px;
+}
+
+.booking-pay-btn {
+  display: inline-block;
+}
+
+.booking-biosite {
+  padding: 24px 26px;
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+}
+
+.booking-biosite h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.booking-biosite > p {
+  margin: 0 0 18px;
+}
+
+.booking-biosite > p a {
+  color: var(--rose-deep);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.booking-note {
+  margin: 16px 0 0;
+  font-size: 0.92rem;
+  opacity: 0.9;
+}
+
+.booking-note a {
+  color: var(--rose-deep);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.booking-help {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-soft);
+  font-size: 0.95rem;
+}
+
+.booking-help a {
+  color: var(--rose-deep);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /* Book promo (above Signature Themes) */
 .book-promo-grid {
   display: grid;
