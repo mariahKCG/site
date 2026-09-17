@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mariah’s Magic on Your Field — Offers</title>
+  <meta name="description" content="Allow Mariah De Aurum to walk with you through the gate into your best life. Academy, spells, a 90-minute consult, private seasons, and custom work." />
+  <link rel="canonical" href="https://mariahkcg.com/offers.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #faf6ee;
+      --paper: #fffdf9;
+      --ink: #2a2218;
+      --muted: #6d6154;
+      --gold: #b0893a;
+      --gold-deep: #8a6a2b;
+      --line: #e4d4ae;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Outfit, system-ui, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    a { color: var(--gold-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .bar {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(250, 246, 238, 0.94);
+      backdrop-filter: blur(12px);
+    }
+    .bar-inner {
+      width: min(980px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+      gap: 12px 18px;
+      padding: 14px 0;
+    }
+    .brand {
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+    .nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .nav a {
+      font-family: Cinzel, serif;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .nav a:hover { color: var(--gold-deep); }
+    .btn {
+      display: inline-block;
+      background: var(--gold); color: var(--paper) !important;
+      padding: 12px 20px;
+      font-family: Cinzel, serif;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid var(--gold-deep);
+      text-decoration: none !important;
+    }
+    .btn:hover { background: var(--gold-deep); }
+    .btn.ghost {
+      background: transparent; color: var(--gold-deep) !important;
+    }
+    .wrap { width: min(980px, calc(100% - 40px)); margin: 0 auto; }
+    .hero { padding: 56px 0 28px; text-align: center; }
+    .crest { width: 140px; height: auto; margin: 0 auto 8px; display: block; mix-blend-mode: multiply; }
+    .eyebrow {
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(34px, 7vw, 62px);
+      line-height: 0.94;
+      color: var(--gold-deep);
+      margin-bottom: 16px;
+    }
+    .letter {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 22px; font-style: italic;
+      color: var(--muted); max-width: 26em; margin: 0 auto 10px;
+    }
+    .divider { width: min(360px, 78%); height: auto; display: block; margin: 28px auto; mix-blend-mode: multiply; }
+    section { padding: 40px 0; border-top: 1px solid var(--line); }
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 32px; font-weight: 500; margin-bottom: 8px;
+    }
+    .sec-lead { color: var(--muted); margin-bottom: 22px; max-width: 38em; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line);
+      padding: 24px 22px 22px;
+    }
+    .card.gold { border-color: var(--gold); }
+    .card.span { grid-column: 1 / -1; }
+    .card h3 {
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 8px; font-weight: 500;
+    }
+    .amt {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 42px; line-height: 0.95; color: var(--gold-deep);
+      margin: 6px 0 12px;
+    }
+    .amt span {
+      display: block; font-size: 16px; font-style: italic;
+      color: var(--muted); margin-top: 6px;
+    }
+    .card p { color: var(--muted); font-size: 15px; margin-bottom: 10px; }
+    .after {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 12px 0 0;
+      line-height: 1.55;
+    }
+    .howto {
+      background: var(--paper);
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line);
+      padding: 24px 26px;
+    }
+    .howto ol {
+      padding-left: 1.2em;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .howto li { margin-bottom: 8px; }
+    .howto li:last-child { margin-bottom: 0; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .hours {
+      background: var(--paper);
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line);
+      padding: 24px 26px;
+    }
+    .hours p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic; font-size: 20px; color: var(--ink); margin: 0;
+    }
+    .social {
+      display: flex; flex-wrap: wrap; gap: 10px 12px; justify-content: center;
+    }
+    .social a {
+      font-family: Cinzel, serif;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid var(--line);
+      padding: 12px 16px;
+      color: var(--gold-deep);
+      text-decoration: none;
+      background: var(--paper);
+    }
+    .social a:hover { border-color: var(--gold); }
+    footer {
+      text-align: center; padding: 8px 24px 56px;
+      font-size: 12px; color: var(--muted);
+    }
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+      .amt { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-inner">
+      <div class="brand"><a href="index.html">Mariah De Aurum</a></div>
+      <nav class="nav">
+        <a href="#academy">Academy</a>
+        <a href="#consult">Consult</a>
+        <a href="#spells">Spells</a>
+        <a href="#private">Private</a>
+        <a href="#commands">Commands</a>
+        <a href="#custom">Custom</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="hero">
+      <img class="crest" src="art/ritual-crest.png" alt="" />
+      <p class="eyebrow">Mariah De Aurum · Energy Academy</p>
+      <h1>Mariah’s Magic on Your Field</h1>
+      <p class="letter">Allow me to walk with you through the gate into your best life. Find my offerings below. Custom work is available.</p>
+      <img class="divider" src="art/gold-divider.png" alt="" />
+    </div>
+
+    <section>
+      <p class="eyebrow">How to begin</p>
+      <h2>Choose what feels right. I’ll meet you there.</h2>
+      <div class="howto">
+        <ol>
+          <li>Choose the offering that fits.</li>
+          <li>Send the listed amount on PayPal (the button is already set to that price).</li>
+          <li>Once it’s sent, email <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it.</li>
+          <li>I’ll write you back with next steps — clearly, and kindly.</li>
+        </ol>
+      </div>
+      <p class="sec-lead" style="margin-top:22px;">Energy Academy membership is billed on Skool so your classroom stays with you. For custom work, email me first and we’ll find the shape together — please wait for my yes before sending payment. I rest on Sunday and Monday.</p>
+    </section>
+
+    <section id="academy">
+      <p class="eyebrow">Learn with me</p>
+      <h2>Energy Academy</h2>
+      <p class="sec-lead">A gentle place to begin, and a weekly home if you want to go further. You’re welcome to start free. Paid is where we meet live every Thursday — the path, the Command Library, and Witchcraft 101.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Energy Academy Starter</h3>
+          <div class="amt">Free<span>Command 1 · monthly reclaim live</span></div>
+          <p>Come call your energy back. Command 1, a grounding practice, and a brief monthly reclaim live near the end of the month (next: Tue 29 Sep, 8:00 PM EST).</p>
+          <p>Witchcraft 101 and Thursday live are in paid Academy, when you’re ready.</p>
+          <div class="links">
+            <a class="btn" href="https://www.skool.com/energy-academy-starter-5716" target="_blank" rel="noopener">Join Starter</a>
+          </div>
+        </article>
+        <article class="card gold">
+          <h3>Energy Academy</h3>
+          <div class="amt">$39<span>founding, first 33 · then $49 / month</span></div>
+          <p>The path, Command Library, Witchcraft 101, and Thursday live with me — 8:00 PM EST / 6:00 PM Chiapas. This is our weekly field.</p>
+          <p>Membership is billed on Skool, not PayPal, so your seat and Classroom stay connected.</p>
+          <div class="links">
+            <a class="btn" href="https://www.skool.com/energy-academy-7581/plans" target="_blank" rel="noopener">Join paid · Skool</a>
+            <a class="btn ghost" href="energy-academy.html">About the Academy</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="consult">
+      <p class="eyebrow">Live with me</p>
+      <h2>90-minute consult</h2>
+      <p class="sec-lead">If you’d like me beside you in real time — not a course, not a spell I cast on my own — this is our sitting.</p>
+      <div class="grid">
+        <article class="card gold span">
+          <h3>90-minute live consult</h3>
+          <div class="amt">$1,200<span>USD · 90 minutes · live</span></div>
+          <p>We work your field together on the call. I bring Reiki, cards, and whatever your field asks for that day. I’ll choose the tools with care — you don’t need to arrive with a menu.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/1200USD" target="_blank" rel="noopener">Pay $1,200 · PayPal</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%2090-minute%20consult">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="spells">
+      <p class="eyebrow">I cast for you</p>
+      <h2>Spells</h2>
+      <p class="sec-lead">Road Opener is the lightest; Protect is the deepest. Price includes supplies. Casting and release take 1–2 weeks, with aftercare sent as a report to your email. I will keep you updated when the spell is cast, then released. If a working isn’t in alignment for me, I’ll refund you with care. Once I accept, the work is underway. I don’t take hex-for-hire, protection is always for your field.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Road Opener</h3>
+          <div class="amt">$444<span>USD · lightest working · supplies included</span></div>
+          <p>When the path has felt stuck. I open the way — a clearer road, a door that can actually move. The gentlest spell I offer.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/444USD" target="_blank" rel="noopener">Pay $444 · PayPal</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20Road%20Opener%20%24444">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+        <article class="card">
+          <h3>Power &amp; beauty (Glamour)</h3>
+          <div class="amt">$1,111<span>USD · supplies included</span></div>
+          <p>A glow from within that introduces you before you speak. People will be asking what you did!</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/1111USD" target="_blank" rel="noopener">Pay $1,111 · PayPal</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20glamour%20%241%2C111">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+        <article class="card">
+          <h3>Wealth &amp; influence</h3>
+          <div class="amt">$1,888<span>USD · deeper working · supplies included</span></div>
+          <p>Money, voice, and the weight of your name. Influence that moves doors without asking you to drain yourself holding them open.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/1888USD" target="_blank" rel="noopener">Pay $1,888 · PayPal</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20wealth%20%241%2C888">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+        <article class="card gold">
+          <h3>Protect / Banish / Curse removal</h3>
+          <div class="amt">$2,888<span>USD · heaviest working · supplies included</span></div>
+          <p>When something has been sitting on you. I clear your field, shut the door, and give you back to yourself. This is work on <em>your</em> field — I won’t take a working aimed at another person as a weapon.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/2888USD" target="_blank" rel="noopener">Pay $2,888 · PayPal</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20protect%20%242%2C888">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="private">
+      <p class="eyebrow">A season with me</p>
+      <h2>When you’d like me closer</h2>
+      <p class="sec-lead">A four-week intensive, an eight-week container, or a three-month High Ritual season. Pay the amount that fits. Email proof. I’ll send what happens next, and we’ll walk it together.</p>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="field-reclaim-intensive.html">Field Reclaim Intensive</a></h3>
+          <div class="amt">$3,333<span>USD · 4 weeks · 4 sessions · cap 4 / month</span></div>
+          <p>I sit with your field: map the leaks, clear what’s been feeding, and write a practice for your actual life. Four private sessions, with me between them.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/3333USD" target="_blank" rel="noopener">Pay $3,333 · PayPal</a>
+            <a class="btn ghost" href="field-reclaim-intensive.html">Read about the sessions</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20Intensive%20%243%2C333">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+        <article class="card">
+          <h3>Dream Life Command Container</h3>
+          <div class="amt">$6,000<span>USD · 8 weeks · 8 sessions</span></div>
+          <p>The longer private arc. Same care as the Intensive, held twice as long — more clearing, more command, more of me walking with you.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/6000USD" target="_blank" rel="noopener">Pay $6,000 · PayPal</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20Container%20%246%2C000">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+        <article class="card gold">
+          <h3><a href="high-ritual.html">High Ritual · pay in full</a></h3>
+          <div class="amt">$5,555<span>USD · three months · four seats</span></div>
+          <p>I read you and work your energy live. Then I cast for you in private. Then we meet again. Energy Academy is included for the season. We talk on Telegram. I rest Sunday and Monday.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/5555USD" target="_blank" rel="noopener">Pay $5,555 · PayPal</a>
+            <a class="btn ghost" href="high-ritual.html">Read about the sessions</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20High%20Ritual%20%245%2C555">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+        <article class="card">
+          <h3><a href="high-ritual.html">High Ritual · three payments</a></h3>
+          <div class="amt">$1,997<span>USD per month · $5,991 total</span></div>
+          <p>Same seat. Same three months. Paying in full saves a little. This is month one — I’ll send the dates for months two and three after I confirm.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/1997USD" target="_blank" rel="noopener">Pay $1,997 · PayPal</a>
+            <a class="btn ghost" href="high-ritual.html">Read about the sessions</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20High%20Ritual%20%241%2C997">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="commands">
+      <p class="eyebrow">Keep them</p>
+      <h2>Energy Commands</h2>
+      <p class="sec-lead">Spoken commands as instant PDFs — yours to keep. Academy has the full library plus live time with me. These are here if you want the scripts in your hands today.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Vol. 1 — Foundation</h3>
+          <div class="amt">$25<span>USD · Commands 1–14 · PDF</span></div>
+          <p>The fourteen spoken commands that call energy home, clear drain, and command wealth, protection, and forward motion.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/25USD" target="_blank" rel="noopener">Pay $25 · PayPal</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20Commands%20Vol.%201%20%2425">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+        <article class="card">
+          <h3>Vol. 2 — Advanced</h3>
+          <div class="amt">$9<span>USD · Commands 15–20 · PDF</span></div>
+          <p>Health, debt reclaim, family protection, established success, and the Simple Call Back Method. Best after Vol. 1.</p>
+          <div class="links">
+            <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/9USD" target="_blank" rel="noopener">Pay $9 · PayPal</a>
+            <a class="btn ghost" href="mailto:mariah@mariahkcg.com?subject=Payment%20proof%20%E2%80%94%20Commands%20Vol.%202%20%249">Email proof</a>
+          </div>
+          <p class="after">Once the amount is sent, please email me at <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send you the next steps based on your order.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="custom">
+      <p class="eyebrow">If none of these is quite it</p>
+      <h2>Custom work</h2>
+      <div class="hours">
+        <p>Write me. Tell me what you need — a custom spell, Academy plus a working, a private container that isn’t on this page. I’ll say yes, suggest a shape, or name a price. Please wait for my yes before sending payment. I’m glad you’re here.</p>
+        <p style="margin-top:14px;">You can also begin with my book, <a href="https://bio.site/guidebook" target="_blank" rel="noopener">Guidebook to the Goddess</a>.</p>
+      </div>
+      <div class="links" style="margin-top:22px; justify-content:center;">
+        <a class="btn" href="mailto:mariah@mariahkcg.com?subject=Custom%20package">Email mariah@mariahkcg.com</a>
+        <a class="btn ghost" href="https://bio.site/guidebook" target="_blank" rel="noopener">Guidebook to the Goddess</a>
+      </div>
+    </section>
+
+    <section id="connect">
+      <p class="eyebrow" style="text-align:center;">Find me</p>
+      <h2 style="text-align:center;">Socials</h2>
+      <p class="sec-lead" style="text-align:center; margin-left:auto; margin-right:auto;">Instagram and TikTok are where most people find me. This page is where we begin. Email is for proof of payment, custom work, and any questions.</p>
+      <div class="social">
+        <a href="https://www.instagram.com/mariahkcg/" target="_blank" rel="noopener">Instagram @mariahkcg</a>
+        <a href="https://www.tiktok.com/@uraeusdeaurum" target="_blank" rel="noopener">TikTok @uraeusdeaurum</a>
+        <a href="https://www.youtube.com/@MariahKCG44" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://substack.com/@mariahdeaurum" target="_blank" rel="noopener">Substack</a>
+        <a href="https://www.patreon.com/cw/UraeusDeAurum" target="_blank" rel="noopener">Patreon</a>
+        <a href="https://bio.site/mariahkcg" target="_blank" rel="noopener">bio.site</a>
+        <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a>
+        <a href="https://www.paypal.com/paypalme/mariahkcg" target="_blank" rel="noopener">PayPal.me/mariahkcg</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap" style="padding: 12px 0 40px; text-align:center;">
+    <img class="divider" src="art/gold-divider.png" alt="" />
+  </div>
+
+  <footer>
+    Mariah De Aurum · Energy Academy · Take your energy back. Command your dream life.<br />
+    Spiritual and educational work. Not medical, legal, or financial advice. Results vary. No guaranteed outcomes.<br /><br />
+    <a href="index.html">Home</a>
+    · <a href="energy-academy.html">Energy Academy</a>
+    · <a href="spells.html">Spells</a>
+    · <a href="field-reclaim-intensive.html">Field Reclaim Intensive</a>
+    · <a href="high-ritual.html">High Ritual</a>
+    · <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a>
+  </footer>
+</body>
+</html>

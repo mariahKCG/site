@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Field Reclaim Intensive — Mariah De Aurum</title>
+  <meta name="description" content="Four private sessions in four weeks. I sit with your field: map the leaks, clear what’s been feeding, and write a practice for your actual life. $3,333." />
+  <link rel="canonical" href="https://mariahkcg.com/field-reclaim-intensive.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #faf6ee;
+      --paper: #fffdf9;
+      --ink: #2a2218;
+      --muted: #6d6154;
+      --gold: #b0893a;
+      --gold-deep: #8a6a2b;
+      --line: #e4d4ae;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Outfit, system-ui, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+    a { color: var(--gold-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .bar {
+      position: sticky; top: 0; z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(250, 246, 238, 0.94);
+      backdrop-filter: blur(12px);
+    }
+    .bar-inner {
+      width: min(860px, calc(100% - 48px));
+      margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 0;
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+    .btn {
+      display: inline-block;
+      background: var(--gold); color: var(--paper);
+      padding: 14px 26px;
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      border: 1px solid var(--gold-deep);
+      text-decoration: none !important;
+      box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--line);
+    }
+    .btn:hover { background: var(--gold-deep); }
+    .page { width: min(680px, calc(100% - 48px)); margin: 0 auto; }
+    .hero { padding: 64px 0 40px; text-align: center; position: relative; overflow: hidden; }
+    .hero:before {
+      content: "";
+      position: absolute; left: 50%; top: 4%;
+      width: 380px; height: 380px;
+      transform: translateX(-50%);
+      background: url("art/glyph-ankh.png") no-repeat center / contain;
+      opacity: 0.08;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+    }
+    .glyphs {
+      display: flex; justify-content: center; align-items: flex-end; gap: 36px;
+      margin: 28px auto 8px; position: relative; z-index: 1;
+    }
+    .glyphs figure { margin: 0; text-align: center; }
+    .glyphs img {
+      height: 58px; width: auto;
+      mix-blend-mode: multiply; display: block; margin: 0 auto 8px;
+    }
+    .glyphs figcaption {
+      font-family: Cinzel, serif;
+      font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .field-line {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic; font-size: 18px; color: var(--gold-deep);
+      margin-top: 8px; position: relative; z-index: 1;
+    }
+    .crest { width: 176px; height: auto; margin: 0 auto 6px; display: block; mix-blend-mode: multiply; }
+    .divider { width: min(360px, 78%); height: auto; display: block; margin: 32px auto; mix-blend-mode: multiply; }
+    .eyebrow {
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(42px, 8vw, 72px);
+      line-height: 0.92;
+      margin-bottom: 22px;
+      color: var(--gold-deep);
+    }
+    .letter {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 24px; font-style: italic;
+      color: var(--muted); max-width: 22em; margin: 0 auto;
+    }
+    section { padding: 48px 0; }
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 32px; font-weight: 500;
+      margin-bottom: 18px;
+    }
+    p { color: var(--muted); margin-bottom: 16px; font-size: 16px; }
+    p.lead { color: var(--ink); font-size: 18px; }
+    .hours {
+      background: var(--paper);
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line);
+      padding: 28px 32px;
+      margin: 28px 0;
+    }
+    .hours p {
+      color: var(--ink); font-size: 20px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic; margin: 0;
+    }
+    ol.flow { list-style: none; counter-reset: step; }
+    ol.flow li {
+      counter-increment: step;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    ol.flow li:before {
+      content: counter(step, decimal-leading-zero);
+      display: block;
+      font-family: Cinzel, serif;
+      color: var(--gold);
+      font-size: 11px; letter-spacing: 0.22em;
+      margin-bottom: 8px;
+    }
+    ol.flow strong {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 26px; font-weight: 500;
+      color: var(--ink); margin-bottom: 6px;
+    }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 24px;
+      box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line);
+    }
+    .two h3 {
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px; font-weight: 500;
+    }
+    .tier {
+      background: var(--paper);
+      border: 1px solid var(--gold);
+      box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line);
+      padding: 40px 24px 36px;
+      text-align: center;
+    }
+    .amt {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 72px; line-height: 0.9; color: var(--gold-deep);
+    }
+    .amt span {
+      display: block; font-size: 20px; font-style: italic;
+      color: var(--muted); margin-top: 8px;
+    }
+    .tier .btn { margin-top: 16px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 16px; }
+    details { border-bottom: 1px solid var(--line); padding: 16px 0; }
+    summary {
+      cursor: pointer; list-style: none;
+      font-size: 16px; color: var(--ink);
+    }
+    summary::-webkit-details-marker { display: none; }
+    details p { margin-top: 10px; margin-bottom: 0; font-size: 15px; }
+    .end { text-align: center; padding: 24px 0 88px; }
+    footer {
+      text-align: center; padding: 0 24px 56px;
+      font-size: 12px; color: var(--muted);
+    }
+    @media (max-width: 700px) {
+      .two { grid-template-columns: 1fr; }
+      .crest { width: 136px; }
+      .amt { font-size: 56px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="bar-inner">
+      <span><a href="index.html">Mariah De Aurum</a></span>
+      <a class="btn" href="#begin">Begin the intensive</a>
+    </div>
+  </header>
+
+  <div class="page">
+    <div class="hero">
+      <img class="crest" src="art/ritual-crest.png" alt="" />
+      <p class="eyebrow">Four weeks · Four sessions · Cap four / month</p>
+      <h1>Field Reclaim Intensive</h1>
+      <p class="letter">I sit with your field: map the leaks, clear what’s been feeding, and write a practice for your actual life.</p>
+      <div class="glyphs">
+        <figure>
+          <img src="art/glyph-venus.png" alt="Venus" />
+          <figcaption>Venus</figcaption>
+        </figure>
+        <figure>
+          <img src="art/glyph-ankh.png" alt="Ankh" />
+          <figcaption>Life</figcaption>
+        </figure>
+        <figure>
+          <img src="art/glyph-sun.png" alt="Gold, success" />
+          <figcaption>Gold</figcaption>
+        </figure>
+      </div>
+      <p class="field-line">Breathe. Your energy is already answering.</p>
+      <img class="divider" src="art/gold-divider.png" alt="" />
+    </div>
+
+    <section>
+      <h2>Energy Academy is the weekly field. This is me working yours.</h2>
+      <p class="lead">Four private sessions in four weeks, with me between them. This is not the classroom path repeated 1:1. It is diagnosis, clearing, and a protocol written for your life.</p>
+      <p>I take four Intensives a month so the field stays held. Energy Academy is included while we’re in it.</p>
+    </section>
+
+    <section>
+      <h2>Each week</h2>
+      <ol class="flow">
+        <li>
+          <strong>Week 1 — Reclaim. 60 minutes.</strong>
+          We map where your energy has been leaking. Call it home. Ground. You leave with a personal reclaim protocol — your map, not a generic lesson.
+        </li>
+        <li>
+          <strong>Week 2 — Clear. 60 minutes.</strong>
+          Clear the attachments and drain specific to you. Protection and a cast-out tailored to what we found. The field gets quieter.
+        </li>
+        <li>
+          <strong>Week 3 — Command. 60 minutes.</strong>
+          Build your command stack — freedom, money, boundaries, dream life — as needed for you. Spoken, written, and practiced until it sits in the body.
+        </li>
+        <li>
+          <strong>Week 4 — Embody. 60 minutes.</strong>
+          Daily practice locked. Real-world moves chosen. You leave able to run this without me.
+        </li>
+      </ol>
+      <p style="margin-top: 24px;">Between sessions you have async access to me — voice notes, within business hours. I rest Sunday and Monday.</p>
+    </section>
+
+    <section>
+      <h2>How you reach me</h2>
+      <div class="hours">
+        <p>Between calls, write me. I typically reply within 24 hours, except Sunday and Monday — I am off, fully. Messages are not a fifth session. If it needs live time, it waits for the call.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="two">
+        <div class="card">
+          <h3>This intensive is for you if</h3>
+          <p>You’ve felt the work and you want my eyes on your field, not another curriculum.</p>
+          <p>You’re ready to practice between sessions, and to let me hold the map with you.</p>
+          <p>You can respect Sunday and Monday as closed.</p>
+        </div>
+        <div class="card">
+          <h3>Stay in Energy Academy — or choose High Ritual — if</h3>
+          <p>You want the weekly live and the path, not four private weeks. That home is Energy Academy.</p>
+          <p>You want me to cast for you in a three-month season, live then private then follow-up. That is <a href="high-ritual.html">High Ritual</a>.</p>
+          <p>You want a single sitting. That is the 90-minute consult on the <a href="offers.html#consult">offers page</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="begin">
+      <p class="eyebrow" style="text-align:center;">Four weeks · four seats a month</p>
+      <div class="tier">
+        <div class="amt">$3,333<span>USD · four weeks · four private sessions</span></div>
+        <p>I sit with your field. Map. Clear. Command. Embody. Energy Academy included for the month.</p>
+        <div class="links">
+          <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/3333USD" target="_blank" rel="noopener">Pay $3,333 · PayPal</a>
+        </div>
+        <p style="margin-top: 22px; font-size: 14px;">Once the amount is sent, email <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a> with your name and proof of payment so I can match it. I’ll send next steps with care.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Plain terms</h2>
+      <details>
+        <summary>What’s included?</summary>
+        <p>Four 60-minute private sessions. Async support between them (business hours). Your written personal protocol. Energy Academy for the duration. Cap of four Intensives a month.</p>
+      </details>
+      <details>
+        <summary>What is not included?</summary>
+        <p>Unlimited same-day DMs. A fifth live session. Hex-for-hire. Sunday or Monday replies. Doing the work for you forever — you leave able to run the practice.</p>
+      </details>
+      <details>
+        <summary>Refunds?</summary>
+        <p>Once session one has begun, no. If you have paid and no session has been held, write me within three days.</p>
+      </details>
+      <details>
+        <summary>Want longer?</summary>
+        <p>The Dream Life Command Container is eight weeks, eight sessions, $6,000 — on the <a href="offers.html#private">offers page</a>. High Ritual is the three-month private season.</p>
+      </details>
+    </section>
+  </div>
+
+  <div class="end">
+    <div class="page">
+      <img class="divider" src="art/gold-divider.png" alt="" />
+      <p class="eyebrow">Four weeks</p>
+      <h2>Your field. My eyes on it.</h2>
+      <p style="max-width: 34em; margin: 0 auto 28px;">When you’re ready for the leaks to close and a practice that is actually yours, we begin.</p>
+      <a class="btn" href="https://www.paypal.com/paypalme/mariahkcg/3333USD" target="_blank" rel="noopener">Pay $3,333 · PayPal</a>
+    </div>
+  </div>
+
+  <footer>
+    Mariah De Aurum · Energy Academy · Take your energy back. Command your dream life.<br />
+    Spiritual and educational work. Not medical, legal, or financial advice. Results vary. No guaranteed outcomes.<br /><br />
+    <a href="offers.html">All offers</a>
+    · <a href="high-ritual.html">High Ritual</a>
+    · <a href="https://www.skool.com/energy-academy-7581/about">Energy Academy</a>
+    · <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a>
+  </footer>
+</body>
+</html>
