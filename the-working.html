@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Working — Mariah De Aurum | Mariah KCG</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Eight seats. One moon. I run this month’s working for you, live. Then we take hot seats. Founding $333." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #fbf6ec;
+      --paper: #fffdf8;
+      --ink: #2c2419;
+      --muted: #6f6253;
+      --gold: #b0893a;
+      --gold-deep: #8a6a2b;
+      --line: #e6d7b4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Outfit, system-ui, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a { color: var(--gold-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(720px, calc(100% - 48px)); margin: 0 auto; }
+    .wide { width: min(980px, calc(100% - 48px)); margin: 0 auto; }
+
+    .top {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(251, 246, 236, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .top-inner {
+      width: min(980px, calc(100% - 48px));
+      margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0; gap: 16px;
+    }
+    .brand {
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+    .btn {
+      display: inline-block;
+      background: var(--gold); color: #fffdf8;
+      font-family: Cinzel, serif;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 13px 24px;
+      border: 1px solid var(--gold-deep);
+      text-decoration: none !important;
+      box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--line);
+    }
+    .btn:hover { background: var(--gold-deep); }
+
+    .hero { padding: 56px 0 40px; text-align: center; position: relative; overflow: hidden; }
+    .hero:before {
+      content: "";
+      position: absolute; left: 50%; top: 8%;
+      width: 420px; height: 420px;
+      transform: translateX(-50%);
+      background: url("glyph-ankh.png") no-repeat center / contain;
+      opacity: 0.08;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+    }
+    .glyphs {
+      display: flex; justify-content: center; align-items: flex-end; gap: 36px;
+      margin: 28px auto 8px; position: relative; z-index: 1;
+    }
+    .glyphs figure { margin: 0; text-align: center; }
+    .glyphs img {
+      height: 58px; width: auto;
+      mix-blend-mode: multiply; display: block; margin: 0 auto 8px;
+    }
+    .glyphs figcaption {
+      font-family: Cinzel, serif;
+      font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .field-line {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic; font-size: 18px; color: var(--gold-deep);
+      margin-top: 10px; position: relative; z-index: 1;
+    }
+    .crest { width: 168px; height: auto; margin: 0 auto 8px; display: block; mix-blend-mode: multiply; }
+    .divider { width: min(380px, 80%); height: auto; display: block; margin: 28px auto; mix-blend-mode: multiply; }
+    .eyebrow {
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(44px, 8vw, 76px);
+      font-weight: 600; line-height: 0.95;
+      color: var(--gold-deep);
+    }
+    .lede {
+      margin: 20px auto 0; max-width: 34em;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 23px; font-style: italic; color: var(--muted);
+    }
+    .meta-row {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 22px;
+      margin-top: 22px; font-size: 11px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--gold-deep);
+      font-family: Cinzel, serif;
+    }
+
+    section { padding: 56px 0; }
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 34px; font-weight: 600; margin-bottom: 16px;
+      color: var(--ink);
+    }
+    h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 24px; font-weight: 600; margin-bottom: 8px;
+    }
+    p { color: var(--muted); margin-bottom: 14px; }
+    p.ink { color: var(--ink); }
+
+    .panel, .step, .price-box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line);
+    }
+    .panel { padding: 28px 30px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
+    .step { padding: 26px 22px; }
+    .n {
+      font-family: Cinzel, serif;
+      color: var(--gold); font-size: 10px; letter-spacing: 0.22em;
+      text-transform: uppercase; display: block; margin-bottom: 8px;
+    }
+    ul.clean { list-style: none; }
+    ul.clean li {
+      padding: 12px 0 12px 22px; position: relative;
+      color: var(--muted); border-bottom: 1px solid var(--line);
+    }
+    ul.clean li:before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); position: absolute; left: 0; top: 20px;
+    }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    .price-box { text-align: center; padding: 44px 28px; }
+    .price {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 64px; line-height: 1; color: var(--gold-deep);
+    }
+    .price small {
+      display: block; font-size: 18px; color: var(--muted);
+      font-style: italic; margin-top: 6px;
+    }
+    .seats {
+      margin-top: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      font-size: 11px; color: var(--gold); font-family: Cinzel, serif;
+    }
+
+    details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+    summary {
+      cursor: pointer; font-weight: 500; list-style: none;
+      display: flex; justify-content: space-between; gap: 12px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary:after { content: "+"; color: var(--gold); }
+    details[open] summary:after { content: "–"; }
+    details p { margin: 10px 0 4px; font-size: 15px; }
+
+    .cta-band { text-align: center; padding: 40px 0 72px; }
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 48px;
+      font-size: 12px; color: var(--muted); text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .grid-3, .split { grid-template-columns: 1fr; }
+      .crest { width: 130px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand"><a href="index.html">Mariah De Aurum</a> · <a href="energy-academy.html">Energy Academy</a></div>
+      <a class="btn" href="#enter">Enter the circle · $333</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="wrap">
+      <img class="crest" src="working-crest.png" alt="" />
+      <p class="eyebrow">Eight seats · New moon · Live</p>
+      <h1>The Working</h1>
+      <p class="lede">I run this moon’s working for you. You show up. You watch it land. You take a hot seat if it is your turn.</p>
+      <div class="glyphs">
+        <figure>
+          <img src="glyph-venus.png" alt="Venus" />
+          <figcaption>Venus</figcaption>
+        </figure>
+        <figure>
+          <img src="glyph-ankh.png" alt="Ankh" />
+          <figcaption>Life</figcaption>
+        </figure>
+        <figure>
+          <img src="glyph-sun.png" alt="Gold, success" />
+          <figcaption>Gold</figcaption>
+        </figure>
+      </div>
+      <p class="field-line">Breathe. Your energy is already answering.</p>
+      <div class="meta-row">
+        <span>Founding $333</span>
+        <span>Then $397 / month</span>
+        <span>Cap 8</span>
+      </div>
+      <img class="divider" src="gold-divider.png" alt="" />
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>Energy Academy teaches you to do the work. The Working is when I do it for you.</h2>
+      <p class="ink">You already know how to speak a command. This is the next seat: a closed circle, one altar, your name in the vessel, and me on the call casting the moon’s working while you are in the field.</p>
+      <p>This is not a $400 classroom. It is not a private reading. It is a live working you belong to, once a month, with eight people maximum.</p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="wide">
+      <div class="grid-3">
+        <article class="step">
+          <span class="n">01 · Before</span>
+          <h3>One line</h3>
+          <p>Five days out I name the moon’s theme. You send one sentence. That is the whole petition. Late means your name still goes in on highest aligned reclaim.</p>
+        </article>
+        <article class="step">
+          <span class="n">02 · Live</span>
+          <h3>I cast. You witness.</h3>
+          <p>75–90 minutes on Zoom. I buy the supplies for the altar based on the input. I speak each line once. Two or three hot seats after, while the field is open. Recorded for the circle.</p>
+        </article>
+        <article class="step">
+          <span class="n">03 · After</span>
+          <h3>The vault</h3>
+          <p>Replay and the altar photo live in a private classroom inside Energy Academy. You keep Thursday lives, the Command Library, and courses.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What you are buying</h2>
+      <ul class="clean">
+        <li>One New Moon group working, live with me, 75–90 minutes</li>
+        <li>Your one-line petition spoken in the room</li>
+        <li>Two or three hot seats (not a private session, not a full reading)</li>
+        <li>Replay + Energy Academy membership included</li>
+        <li>Eight founding seats at $333. Then $397 a month. Cap 8–10.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wide split">
+      <div class="panel">
+        <h3>This is for you if</h3>
+        <p>You want me to work this moon, not another saved video.</p>
+        <p>You can send one clear line and show up live (or watch the replay).</p>
+        <p>You want the circle, not a private 90 minutes.</p>
+        <p>You are ready to pay for the working, not for unlimited chat.</p>
+      </div>
+      <div class="panel">
+        <h3>The door is behind you if</h3>
+        <p>You want a full card reading. That is High Ritual.</p>
+        <p>You want a weekly private call, or me in your DMs all month.</p>
+        <p>You want work done on a named third party, hex-for-hire, or guaranteed money and love.</p>
+        <p>You only want more lessons. Stay in Energy Academy at $49.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <img class="divider" src="gold-divider.png" alt="" />
+      <h2>How I know this works</h2>
+      <p class="ink">June 2025, Hekate made deep contact with me. That fall I ran many rituals. I became the <a href="https://youtu.be/fTpiapp685M">K State Witch</a>. Since January 2026 I went from just over 1,000 followers across TikTok and Instagram to over 46,000 and growing fast (over 50,000 total if you count X and YouTube). I have been featured in media. I quantum leaped into a life where my time is my own. I am supported in my life in ways fit for a diva. I spend my time doing what I love: being with Ruben and my loved ones, and being on my own in meditation, teaching, making videos, and in ritual with life. I have seen unspeakable magic take place. You can see it too, and it will be unique to you.</p>
+      <p>This work speeds the landing of a dream life. Be honest: could your nervous system hold your dream life tomorrow? Don’t you want to know it arrived in a Divine way, better than you expected? That is where magic comes in.</p>
+      <p class="ink">I am a Friend of the Unseen, and we are moving the whole world forward.</p>
+    </div>
+  </section>
+
+  <section id="enter">
+    <div class="wrap">
+      <div class="price-box">
+        <p class="eyebrow">Founding circle</p>
+        <div class="price">$333<small>first 8 seats · then $397 / month</small></div>
+        <p class="seats">Eight seats. When they fill, the door waits.</p>
+        <p style="max-width: 36em; margin: 18px auto 24px;">Email me your name and that you’re in for this month’s working. I will reply with the payment link. Once payment is received you’ll fill out the form for the spell and receive the Zoom link with date and time. You are in for this moon once the seat is paid.</p>
+        <a class="btn" href="mailto:mariah@mariahkcg.com?subject=The%20Working%20%E2%80%94%20I%27m%20in">I’m in · email Mariah</a>
+      </div>
+      <p style="text-align:center; margin-top: 22px; font-size: 14px;">
+        Want the private reading and a working cast for you alone?
+        <a href="high-ritual.html">High Ritual</a>
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Asked, answered</h2>
+      <details>
+        <summary>Is this Energy Academy?</summary>
+        <p>Academy is included. Academy is where you learn. The Working is the live moon I run for the circle. You do not cancel $49 and lose the path. You are in both.</p>
+      </details>
+      <details>
+        <summary>Do I need to be on the live call?</summary>
+        <p>Be there if you can. The working is recorded. Timezones are fine. Hot seats go to people in the room.</p>
+      </details>
+      <details>
+        <summary>Can I send a long story instead of one line?</summary>
+        <p>No. One line, fitted to that moon’s theme. The working is spoken. Novels stay in your journal.</p>
+      </details>
+      <details>
+        <summary>Is there a refund?</summary>
+        <p>Once the moon’s working has begun, no. If you have paid and nothing has been delivered yet, write me within three days.</p>
+      </details>
+      <details>
+        <summary>What if I want you to read me and cast in private?</summary>
+        <p>That is <a href="high-ritual.html">High Ritual</a>: I read you live, I cast alone, then we meet again. Three months. Four seats.</p>
+      </details>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <img class="divider" src="gold-divider.png" alt="" />
+      <p class="eyebrow">The next moon does not wait</p>
+      <h2>Eight names. One altar.</h2>
+      <p style="margin: 12px auto 24px; max-width: 28em;">If you felt the pull, that is enough information. Close this if you did not.</p>
+      <a class="btn" href="mailto:mariah@mariahkcg.com?subject=The%20Working%20%E2%80%94%20I%27m%20in">Enter the circle</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      Mariah De Aurum · Energy Academy · Take your energy back. Command your dream life.<br />
+      Spiritual and educational work. Not medical, legal, or financial advice. Results vary. No guaranteed outcomes.<br />
+      <a href="index.html">mariahkcg.com</a>
+      · <a href="energy-academy.html">Energy Academy</a>
+      · <a href="spells.html">Spells</a>
+      · <a href="high-ritual.html">High Ritual</a>
+      · <a href="mailto:mariah@mariahkcg.com">mariah@mariahkcg.com</a>
+    </div>
+  </footer>
+</body>
+</html>
