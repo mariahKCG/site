@@ -66,7 +66,7 @@
       position: absolute; left: 50%; top: 4%;
       width: 380px; height: 380px;
       transform: translateX(-50%);
-      background: url("glyph-ankh.png") no-repeat center / contain;
+      background: url("art/glyph-ankh.png") no-repeat center / contain;
       opacity: 0.08;
       pointer-events: none;
       mix-blend-mode: multiply;
@@ -91,6 +91,14 @@
       margin-top: 8px; position: relative; z-index: 1;
     }
     .crest { width: 176px; height: auto; margin: 0 auto 6px; display: block; mix-blend-mode: multiply; }
+    .hero-art {
+      width: min(640px, 100%);
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      margin: 28px auto 8px;
+      border: 1px solid var(--line);
+    }
     .divider { width: min(360px, 78%); height: auto; display: block; margin: 32px auto; mix-blend-mode: multiply; }
     .eyebrow {
       font-family: Cinzel, serif;
@@ -238,6 +246,7 @@
       <p class="eyebrow">Four seats · Three months · Private</p>
       <h1>High Ritual</h1>
       <p class="letter">I read you and work your energy live. Then I cast for you in private. Then we meet again.</p>
+      <img class="hero-art" src="offer-ritual.jpg" alt="High Ritual table with roses, Ra, and Immortality" />
       <div class="glyphs">
         <figure>
           <img src="glyph-venus.png" alt="Venus" />
