@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Your Call | Mariah De Aurum</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Meta Pixel: paste the base code here. Do NOT add the Schedule event here; this page fires it when a booking is made. -->
+  <style>
+    :root { --ivory: #faf6ee; --paper: #fffdf9; --ink: #2a2218; --muted: #6d6154; --gold: #b0893a; --gold-deep: #8a6a2b; --line: #e4d4ae; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Outfit, system-ui, sans-serif; background: var(--ivory); color: var(--ink); font-weight: 300; line-height: 1.7; }
+    a { color: var(--gold-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(980px, calc(100% - 40px)); margin: 0 auto; }
+    .narrow { width: min(820px, 100%); margin: 0 auto; }
+    .hero { padding: 56px 0 20px; text-align: center; }
+    .crest { width: 120px; height: auto; margin: 0 auto 8px; display: block; mix-blend-mode: multiply; }
+    .eyebrow { font-family: Cinzel, serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(34px, 7vw, 56px); line-height: 0.98; color: var(--gold-deep); margin-bottom: 16px; }
+    h2 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 30px; font-weight: 500; margin-bottom: 12px; }
+    .letter { font-family: "Cormorant Garamond", Georgia, serif; font-size: 22px; font-style: italic; color: var(--muted); max-width: 28em; margin: 0 auto; }
+    .cal-box { background: var(--paper); border: 1px solid var(--gold); box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line); padding: 10px; margin: 28px 0 40px; min-height: 640px; }
+    #cal-inline { width: 100%; height: 100%; overflow: auto; }
+    .video { position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--paper); border: 1px solid var(--gold); box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line); margin: 28px 0 40px; }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .box { background: var(--paper); border: 1px solid var(--line); box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line); padding: 24px 26px; margin-bottom: 36px; }
+    .box ol { padding-left: 1.2em; color: var(--muted); font-size: 15px; }
+    .box li { margin-bottom: 10px; }
+    .box li:last-child { margin-bottom: 0; }
+    .btn { display: inline-block; background: var(--gold); color: var(--paper) !important; padding: 12px 20px; font-family: Cinzel, serif; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--gold-deep); text-decoration: none !important; margin: 4px; }
+    .btn:hover { background: var(--gold-deep); }
+    .btn.ghost { background: transparent; color: var(--gold-deep) !important; }
+    .center { text-align: center; }
+    .small { font-size: 13px; color: var(--muted); text-align: center; margin-top: -24px; margin-bottom: 36px; }
+    [hidden] { display: none !important; }
+    footer { text-align: center; padding: 8px 24px 56px; font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Step 1: choose a time -->
+    <div id="book-view">
+      <div class="hero">
+        <img class="crest" src="ritual-crest.png" alt="" />
+        <p class="eyebrow">Application received</p>
+        <h1>Choose a time with Rubén</h1>
+        <p class="letter">You’re a fit for a discovery call. Pick the time that works for you, and your answers will come with you, so Rubén is ready for you.</p>
+      </div>
+      <div class="cal-box"><div id="cal-inline"></div></div>
+      <p class="small">Times show in your local time zone. It’s a free 45-minute video call.</p>
+    </div>
+
+    <!-- Step 2: booked (shown automatically after booking) -->
+    <div id="booked-view" class="narrow" hidden>
+      <div class="hero">
+        <img class="crest" src="ritual-crest.png" alt="" />
+        <p class="eyebrow">You’re booked</p>
+        <h1>I’m so glad you’re here</h1>
+        <p class="letter">Your discovery call with Rubén is confirmed. You’ll get a calendar invite and reminders by email. Please watch this short message from me before your call.</p>
+      </div>
+
+      <div class="video">
+        <!-- Replace YOUR_VIDEO_ID with the YouTube video ID of Mariah's welcome video -->
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="A message from Mariah" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <h2>Before your call</h2>
+      <div class="box">
+        <ol>
+          <li><strong>Watch the message above.</strong> It’s a few minutes, and it’ll help you get the most from your call.</li>
+          <li><strong>Choose the one thing you most want to change.</strong> Money, love, your energy, your whole chapter. Come ready to talk about it.</li>
+          <li><strong>Find a quiet place.</strong> Somewhere you can speak freely for 45 minutes, on video.</li>
+          <li><strong>Watch for a message from Rubén.</strong> He’ll reach out before your call to say hello.</li>
+        </ol>
+      </div>
+
+      <div class="center">
+        <p class="eyebrow">While you wait</p>
+        <a class="btn" href="https://youtu.be/fTpiapp685M" target="_blank" rel="noopener">Watch my story</a>
+        <a class="btn ghost" href="https://www.instagram.com/mariahkcg/" target="_blank" rel="noopener">Follow on Instagram</a>
+        <a class="btn ghost" href="https://www.skool.com/energy-academy-starter-5716" target="_blank" rel="noopener">Join Starter free</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Mariah De Aurum · Energy Academy · Take your energy back. Command your dream life.</p>
+    <p>Need to reschedule? Use the link in your confirmation email.</p>
+  </footer>
+
+  <script>
+    // Rubén's Cal.com username + event slug (the part after cal.com/)
+    var CAL_LINK = "ruben-ruiz-de-gyves-t3rqy3/discovery-call-with-ruben";
+
+    // Answers passed from the Tally redirect; keys must match the Cal.com booking question identifiers.
+    var FIELDS = ["name", "email", "whatsapp", "change", "investment", "workstyle"];
+
+    var params = new URLSearchParams(window.location.search);
+
+    // Not ready yet (under $1,000 or just exploring) → Academy / self-serve page instead of Rubén's calendar
+    var investment = (params.get("investment") || "").toLowerCase();
+    var start = (params.get("start") || "").toLowerCase();
+    if (investment.indexOf("under") === 0 || start.indexOf("just exploring") !== -1) {
+      window.location.replace("discovery-next.html");
+    }
+
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    var config = { layout: "month_view", theme: "light" };
+    FIELDS.forEach(function (key) {
+      var value = params.get(key);
+      if (value) config[key] = value;
+    });
+
+    Cal("init", "discovery", { origin: "https://cal.com" });
+    Cal.ns.discovery("inline", { elementOrSelector: "#cal-inline", calLink: CAL_LINK, config: config });
+    Cal.ns.discovery("ui", {
+      theme: "light",
+      layout: "month_view",
+      hideEventTypeDetails: false,
+      cssVarsPerTheme: { light: { "cal-brand": "#b0893a" } }
+    });
+
+    var booked = false;
+    function showBooked() {
+      if (booked) return;
+      booked = true;
+      if (window.fbq) fbq("track", "Schedule");
+      document.getElementById("book-view").hidden = true;
+      document.getElementById("booked-view").hidden = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    Cal.ns.discovery("on", { action: "bookingSuccessful", callback: showBooked });
+    Cal.ns.discovery("on", { action: "bookingSuccessfulV2", callback: showBooked });
+  </script>
+</body>
+</html>
