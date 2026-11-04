@@ -67,6 +67,17 @@
       font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
       color: var(--gold); text-align: center; margin-top: 8px;
     }
+    .lang {
+      display: flex; justify-content: center; gap: 16px;
+      margin: 12px 0 0;
+    }
+    .lang button {
+      background: none; border: none; cursor: pointer;
+      font-family: Cinzel, serif;
+      font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted); padding: 4px 0;
+    }
+    .lang button.on { color: var(--gold-deep); }
     .divider {
       width: min(280px, 72%);
       height: auto;
@@ -214,12 +225,16 @@
     <img class="mark" src="glyph-ankh.png" alt="" />
     <p class="brand">Mariah De Aurum</p>
     <p class="beta">Beta</p>
+    <div class="lang">
+      <button type="button" id="lang-en" class="on">EN</button>
+      <button type="button" id="lang-es">ES</button>
+    </div>
     <img class="divider" src="gold-divider.png" alt="" />
 
     <section id="view-gate">
-      <p class="eyebrow">Energy Academy trial</p>
-      <h1>Energy Commands</h1>
-      <p class="letter">Take your energy back. Command your dream life.</p>
+      <p class="eyebrow" data-i18n="gateEye">Energy Academy trial</p>
+      <h1 data-i18n="appName">Energy Commands</h1>
+      <p class="letter" data-i18n="tagline">Take your energy back. Command your dream life.</p>
       <div class="field" aria-hidden="true">
         <span class="ring"></span>
         <span class="ring r2"></span>
@@ -227,18 +242,18 @@
         <span class="core"></span>
       </div>
       <div class="card gold">
-        <label for="gate-word">The word from live</label>
+        <label for="gate-word" data-i18n="gateWord">The word from live</label>
         <input id="gate-word" type="password" autocomplete="off" />
         <p class="gate-error" id="gate-error"></p>
-        <button class="btn" type="button" id="gate-go">Enter</button>
-        <p class="note">For Energy Academy and Show Thyself. Add this page to your home screen after you enter.</p>
+        <button class="btn" type="button" id="gate-go" data-i18n="enter">Enter</button>
+        <p class="note" data-i18n="gateNote">For Energy Academy and Show Thyself. Add this page to your home screen after you enter.</p>
       </div>
     </section>
 
     <section id="view-home" class="hidden">
-      <p class="eyebrow">Call it back</p>
-      <h1>Energy Commands</h1>
-      <p class="letter">Come in as many times a day as you need. Repeat inside if you like. Speak out loud if you want it in the room.</p>
+      <p class="eyebrow" data-i18n="homeEye">Call it back</p>
+      <h1 data-i18n="appName">Energy Commands</h1>
+      <p class="letter" data-i18n="homeLetter">Come in as many times a day as you need. Repeat inside if you like. Speak out loud if you want it in the room.</p>
       <div class="field" aria-hidden="true">
         <span class="ring"></span>
         <span class="ring r2"></span>
@@ -246,91 +261,91 @@
         <span class="core"></span>
       </div>
       <div class="doors">
-        <button class="btn" type="button" data-go="questions">Answer 3 questions</button>
-        <button class="btn ghost" type="button" data-go="type">Type what’s happening</button>
-        <button class="btn ghost" type="button" data-go="goddess">Let the Goddess choose for me</button>
+        <button class="btn" type="button" data-go="questions" data-i18n="doorQ">Answer 3 questions</button>
+        <button class="btn ghost" type="button" data-go="type" data-i18n="doorType">Type what’s happening</button>
+        <button class="btn ghost" type="button" data-go="goddess" data-i18n="doorGoddess">Let the Goddess choose for me</button>
       </div>
-      <p class="note">Written in Mariah’s command format, from her library and her language. This is a beta. Tell her what you notice.</p>
+      <p class="note" data-i18n="homeNote">Written in Mariah’s command format, from her library and her language. This is a beta. Tell her what you notice.</p>
       <img class="sun" src="glyph-sun.png" alt="" />
     </section>
 
     <section id="view-questions" class="hidden">
-      <p class="eyebrow">This moment</p>
-      <h1>Three questions</h1>
-      <p class="letter">Tap what is true. You can choose more than one on the first two.</p>
+      <p class="eyebrow" data-i18n="moment">This moment</p>
+      <h1 data-i18n="qTitle">Three questions</h1>
+      <p class="letter" data-i18n="qLetter">Tap what is true. You can choose more than one on the first two.</p>
       <img class="divider" src="gold-divider.png" alt="" />
 
       <div class="card">
-        <p class="q-label">How are you feeling right now</p>
+        <p class="q-label" data-i18n="qFeel">How are you feeling right now</p>
         <div class="choices" data-q="feel" data-multi="1">
-          <button class="chip" type="button" data-val="scattered">Scattered</button>
-          <button class="chip" type="button" data-val="drained">Drained</button>
-          <button class="chip" type="button" data-val="heavy">Heavy</button>
-          <button class="chip" type="button" data-val="anxious">Anxious</button>
-          <button class="chip" type="button" data-val="foggy">Foggy</button>
-          <button class="chip" type="button" data-val="pulled">Pulled</button>
-          <button class="chip" type="button" data-val="tired">Tired</button>
-          <button class="chip" type="button" data-val="stuck">Stuck</button>
-          <button class="chip" type="button" data-val="unsafe">Unsafe</button>
-          <button class="chip" type="button" data-val="empty">Empty</button>
-          <button class="chip" type="button" data-val="panicked">Panicked</button>
-          <button class="chip" type="button" data-val="">I just want to command</button>
+          <button class="chip" type="button" data-val="scattered" data-i18n="fScattered">Scattered</button>
+          <button class="chip" type="button" data-val="drained" data-i18n="fDrained">Drained</button>
+          <button class="chip" type="button" data-val="heavy" data-i18n="fHeavy">Heavy</button>
+          <button class="chip" type="button" data-val="anxious" data-i18n="fAnxious">Anxious</button>
+          <button class="chip" type="button" data-val="foggy" data-i18n="fFoggy">Foggy</button>
+          <button class="chip" type="button" data-val="pulled" data-i18n="fPulled">Pulled</button>
+          <button class="chip" type="button" data-val="tired" data-i18n="fTired">Tired</button>
+          <button class="chip" type="button" data-val="stuck" data-i18n="fStuck">Stuck</button>
+          <button class="chip" type="button" data-val="unsafe" data-i18n="fUnsafe">Unsafe</button>
+          <button class="chip" type="button" data-val="empty" data-i18n="fEmpty">Empty</button>
+          <button class="chip" type="button" data-val="panicked" data-i18n="fPanicked">Panicked</button>
+          <button class="chip" type="button" data-val="" data-i18n="fJust">I just want to command</button>
         </div>
       </div>
 
       <div class="card">
-        <p class="q-label">What do you want to feel right now</p>
+        <p class="q-label" data-i18n="qWant">What do you want to feel right now</p>
         <div class="choices" data-q="want" data-multi="1">
-          <button class="chip" type="button" data-val="clear">Clear</button>
-          <button class="chip" type="button" data-val="at home">Home in my body</button>
-          <button class="chip" type="button" data-val="protected">Protected</button>
-          <button class="chip" type="button" data-val="full of light">Full of light</button>
-          <button class="chip" type="button" data-val="powerful">Powerful</button>
-          <button class="chip" type="button" data-val="calm">Calm</button>
-          <button class="chip" type="button" data-val="free">Free</button>
-          <button class="chip" type="button" data-val="nourished">Nourished</button>
-          <button class="chip" type="button" data-val="successful">Successful</button>
-          <button class="chip" type="button" data-val="wealthy">Wealthy</button>
-          <button class="chip" type="button" data-val="loved">Loved</button>
-          <button class="chip" type="button" data-val="at rest">At rest</button>
+          <button class="chip" type="button" data-val="clear" data-i18n="wClear">Clear</button>
+          <button class="chip" type="button" data-val="at home" data-i18n="wHome">Home in my body</button>
+          <button class="chip" type="button" data-val="protected" data-i18n="wProtected">Protected</button>
+          <button class="chip" type="button" data-val="full of light" data-i18n="wLight">Full of light</button>
+          <button class="chip" type="button" data-val="powerful" data-i18n="wPowerful">Powerful</button>
+          <button class="chip" type="button" data-val="calm" data-i18n="wCalm">Calm</button>
+          <button class="chip" type="button" data-val="free" data-i18n="wFree">Free</button>
+          <button class="chip" type="button" data-val="nourished" data-i18n="wNourished">Nourished</button>
+          <button class="chip" type="button" data-val="successful" data-i18n="wSuccessful">Successful</button>
+          <button class="chip" type="button" data-val="wealthy" data-i18n="wWealthy">Wealthy</button>
+          <button class="chip" type="button" data-val="loved" data-i18n="wLoved">Loved</button>
+          <button class="chip" type="button" data-val="at rest" data-i18n="wRest">At rest</button>
         </div>
       </div>
 
       <div class="card">
-        <p class="q-label">Anything to keep out of the command</p>
-        <p class="q-hint">It will not be named. It gets no seat in your field.</p>
+        <p class="q-label" data-i18n="qOut">Anything to keep out of the command</p>
+        <p class="q-hint" data-i18n="qOutHint">It will not be named. It gets no seat in your field.</p>
         <div class="choices" data-q="out" data-multi="0">
-          <button class="chip on" type="button" data-val="">Nothing</button>
-          <button class="chip" type="button" data-val="yes">A person</button>
-          <button class="chip" type="button" data-val="yes">A situation</button>
-          <button class="chip" type="button" data-val="yes">An old story</button>
-          <button class="chip" type="button" data-val="yes">Work</button>
-          <button class="chip" type="button" data-val="yes">Family</button>
-          <button class="chip" type="button" data-val="yes">A place</button>
+          <button class="chip on" type="button" data-val="" data-i18n="oNothing">Nothing</button>
+          <button class="chip" type="button" data-val="yes" data-i18n="oPerson">A person</button>
+          <button class="chip" type="button" data-val="yes" data-i18n="oSit">A situation</button>
+          <button class="chip" type="button" data-val="yes" data-i18n="oStory">An old story</button>
+          <button class="chip" type="button" data-val="yes" data-i18n="oWork">Work</button>
+          <button class="chip" type="button" data-val="yes" data-i18n="oFamily">Family</button>
+          <button class="chip" type="button" data-val="yes" data-i18n="oPlace">A place</button>
         </div>
       </div>
 
       <p class="q-error" id="q-error"></p>
-      <button class="btn" type="button" id="q-go">Generate my command</button>
-      <button class="btn ghost" type="button" data-go="home">Back</button>
+      <button class="btn" type="button" id="q-go" data-i18n="generate">Generate my command</button>
+      <button class="btn ghost" type="button" data-go="home" data-i18n="back">Back</button>
     </section>
 
     <section id="view-type" class="hidden">
-      <p class="eyebrow">This moment</p>
-      <h1>What’s happening</h1>
-      <p class="letter">One or two sentences is enough.</p>
+      <p class="eyebrow" data-i18n="moment">This moment</p>
+      <h1 data-i18n="sitTitle">What’s happening</h1>
+      <p class="letter" data-i18n="sitLetter">One or two sentences is enough.</p>
       <img class="divider" src="gold-divider.png" alt="" />
       <div class="card">
-        <label for="sit">Type your situation</label>
+        <label for="sit" data-i18n="sitLabel">Type your situation</label>
         <textarea id="sit" maxlength="400"></textarea>
       </div>
       <div class="card">
-        <label for="sit-out">Anything to keep out of the command</label>
-        <p class="q-hint">Optional. A name or a word. It will not appear in the command.</p>
+        <label for="sit-out" data-i18n="qOut">Anything to keep out of the command</label>
+        <p class="q-hint" data-i18n="sitOutHint">Optional. A name or a word. It will not appear in the command.</p>
         <input id="sit-out" maxlength="200" />
       </div>
-      <button class="btn" type="button" id="sit-go">Generate my command</button>
-      <button class="btn ghost" type="button" data-go="home">Back</button>
+      <button class="btn" type="button" id="sit-go" data-i18n="generate">Generate my command</button>
+      <button class="btn ghost" type="button" data-go="home" data-i18n="back">Back</button>
     </section>
 
     <section id="view-play" class="hidden">
@@ -344,57 +359,149 @@
       <h1 id="play-h">Run it</h1>
       <img class="divider" src="gold-divider.png" alt="" />
       <div class="card gold" id="play-card"></div>
-      <button class="btn ghost" type="button" id="play-again">Another command</button>
-      <button class="btn ghost" type="button" data-go="home">Home</button>
-      <p class="note">Read it. Repeat inside if you like. Speak out loud if you want it in the room. Drink water after.</p>
+      <button class="btn ghost" type="button" id="play-again" data-i18n="again">Another command</button>
+      <button class="btn ghost" type="button" data-go="home" data-i18n="homeBtn">Home</button>
+      <p class="note" data-i18n="playNote">Read it. Repeat inside if you like. Speak out loud if you want it in the room. Drink water after.</p>
       <img class="sun" src="glyph-sun.png" alt="" />
     </section>
   </div>
   <footer>
     Mariah De Aurum · Energy Academy<br />
-    Spiritual and educational work. Not medical, legal, or financial advice. Results vary.
+    <span data-i18n="footer">Spiritual and educational work. Not medical, legal, or financial advice. Results vary.</span>
   </footer>
 
   <script>
     const PASS = "morelight";
+    let lang = localStorage.getItem("ea-commands-lang") === "es" ? "es" : "en";
+
+    const COPY = {
+      en: {
+        appName: "Energy Commands",
+        tagline: "Take your energy back. Command your dream life.",
+        gateEye: "Energy Academy trial",
+        gateWord: "The word from live",
+        enter: "Enter",
+        gateNote: "For Energy Academy and Show Thyself. Add this page to your home screen after you enter.",
+        gateErr: "That’s not the word. Listen on live, or ask in Energy Academy.",
+        homeEye: "Call it back",
+        homeLetter: "Come in as many times a day as you need. Repeat inside if you like. Speak out loud if you want it in the room.",
+        doorQ: "Answer 3 questions",
+        doorType: "Type what’s happening",
+        doorGoddess: "Let the Goddess choose for me",
+        homeNote: "Written in Mariah’s command format, from her library and her language. This is a beta. Tell her what you notice.",
+        moment: "This moment",
+        qTitle: "Three questions",
+        qLetter: "Tap what is true. You can choose more than one on the first two.",
+        qFeel: "How are you feeling right now",
+        qWant: "What do you want to feel right now",
+        qOut: "Anything to keep out of the command",
+        qOutHint: "It will not be named. It gets no seat in your field.",
+        qErr: "Choose how you feel, or what you want to feel.",
+        generate: "Generate my command",
+        back: "Back",
+        sitTitle: "What’s happening",
+        sitLetter: "One or two sentences is enough.",
+        sitLabel: "Type your situation",
+        sitOutHint: "Optional. A name or a word. It will not appear in the command.",
+        again: "Another command",
+        homeBtn: "Home",
+        playNote: "Read it. Repeat inside if you like. Speak out loud if you want it in the room. Drink water after.",
+        footer: "Spiritual and educational work. Not medical, legal, or financial advice. Results vary.",
+        written: "Written for you",
+        goddess: "The Goddess chose",
+        momentTitle: "A command for this moment",
+        fScattered: "Scattered", fDrained: "Drained", fHeavy: "Heavy", fAnxious: "Anxious", fFoggy: "Foggy", fPulled: "Pulled", fTired: "Tired", fStuck: "Stuck", fUnsafe: "Unsafe", fEmpty: "Empty", fPanicked: "Panicked", fJust: "I just want to command",
+        wClear: "Clear", wHome: "Home in my body", wProtected: "Protected", wLight: "Full of light", wPowerful: "Powerful", wCalm: "Calm", wFree: "Free", wNourished: "Nourished", wSuccessful: "Successful", wWealthy: "Wealthy", wLoved: "Loved", wRest: "At rest",
+        oNothing: "Nothing", oPerson: "A person", oSit: "A situation", oStory: "An old story", oWork: "Work", oFamily: "Family", oPlace: "A place"
+      },
+      es: {
+        appName: "Comandos de Energía",
+        tagline: "Recupera tu energía. Comanda tu vida soñada.",
+        gateEye: "Prueba de Energy Academy",
+        gateWord: "La palabra del live",
+        enter: "Entrar",
+        gateNote: "Para Energy Academy y Show Thyself. Agrega esta página a tu pantalla de inicio después de entrar.",
+        gateErr: "Esa no es la palabra. Escúchala en el live, o pregunta en Energy Academy.",
+        homeEye: "Llámalo de vuelta",
+        homeLetter: "Entra las veces que necesites al día. Repite por dentro si quieres. Di en voz alta si lo quieres en el cuarto.",
+        doorQ: "Responde 3 preguntas",
+        doorType: "Escribe lo que está pasando",
+        doorGoddess: "Que la Diosa elija por mí",
+        homeNote: "Escrito en el formato de comando de Mariah, de su biblioteca y su lenguaje. Esto es beta. Cuéntale lo que notes.",
+        moment: "Este momento",
+        qTitle: "Tres preguntas",
+        qLetter: "Toca lo que es verdad. En las primeras dos puedes elegir más de una.",
+        qFeel: "Cómo te sientes ahora",
+        qWant: "Qué quieres sentir ahora",
+        qOut: "Algo que quede fuera del comando",
+        qOutHint: "No será nombrado. No tiene asiento en tu campo.",
+        qErr: "Elige cómo te sientes, o qué quieres sentir.",
+        generate: "Generar mi comando",
+        back: "Atrás",
+        sitTitle: "Qué está pasando",
+        sitLetter: "Una o dos frases son suficientes.",
+        sitLabel: "Escribe tu situación",
+        sitOutHint: "Opcional. Un nombre o una palabra. No aparece en el comando.",
+        again: "Otro comando",
+        homeBtn: "Inicio",
+        playNote: "Léelo. Repite por dentro si quieres. Di en voz alta si lo quieres en el cuarto. Toma agua después.",
+        footer: "Trabajo espiritual y educativo. No es consejo médico, legal ni financiero. Los resultados varían.",
+        written: "Escrito para ti",
+        goddess: "La Diosa eligió",
+        momentTitle: "Un comando para este momento",
+        fScattered: "Dispersa", fDrained: "Drenada", fHeavy: "Pesada", fAnxious: "Ansiosa", fFoggy: "Nublada", fPulled: "Jalada", fTired: "Cansada", fStuck: "Atorada", fUnsafe: "Insegura", fEmpty: "Vacía", fPanicked: "En pánico", fJust: "Solo quiero comandar",
+        wClear: "Clara", wHome: "En casa en mi cuerpo", wProtected: "Protegida", wLight: "Llena de luz", wPowerful: "Poderosa", wCalm: "Calmada", wFree: "Libre", wNourished: "Nutrida", wSuccessful: "Exitosa", wWealthy: "Próspera", wLoved: "Amada", wRest: "En descanso",
+        oNothing: "Nada", oPerson: "Una persona", oSit: "Una situación", oStory: "Una historia vieja", oWork: "El trabajo", oFamily: "La familia", oPlace: "Un lugar"
+      }
+    };
+
     const OPENING = {
-      call: "I call back all of my own energy from across all time, space, dimensions, realities, people, places and things, and anywhere else my own energy may be, into the centre of my body NOW.",
-      breath: "Breathe in and visualise this energy entering the body through the sacral chakra, enlivening the body and circulating throughout your energy field. Then exhale and release everything you don’t need out of your feet, into the core of Planet Earth.",
-      ground: "I now ground my energy completely into the core of Planet Earth, where my energy is cleansed, protected, healed, blessed and directed, by my loving Planet Earth, my loving Ancestors and my Loving Guides.",
-      close: "It is done, it is done, it is done."
+      en: {
+        call: "I call back all of my own energy from across all time, space, dimensions, realities, people, places and things, and anywhere else my own energy may be, into the centre of my body NOW.",
+        breath: "Breathe in and visualise this energy entering the body through the sacral chakra, enlivening the body and circulating throughout your energy field. Then exhale and release everything you don’t need out of your feet, into the core of Planet Earth.",
+        ground: "I now ground my energy completely into the core of Planet Earth, where my energy is cleansed, protected, healed, blessed and directed, by my loving Planet Earth, my loving Ancestors and my Loving Guides.",
+        close: "It is done, it is done, it is done."
+      },
+      es: {
+        call: "Llamo de vuelta toda mi propia energía de todo tiempo, espacio, dimensiones, realidades, personas, lugares y cosas, y de cualquier otro lugar donde mi propia energía pueda estar, al centro de mi cuerpo AHORA.",
+        breath: "Inhala y visualiza esta energía entrando al cuerpo por el chakra sacro, avivando el cuerpo y circulando por todo tu campo energético. Luego exhala y suelta por los pies todo lo que no necesitas, hacia el núcleo del Planeta Tierra.",
+        ground: "Ahora aterrizo mi energía por completo en el núcleo del Planeta Tierra, donde mi energía es limpiada, protegida, sanada, bendecida y dirigida, por mi amoroso Planeta Tierra, mis amorosos Ancestros y mis amorosos Guías.",
+        close: "Está hecho, está hecho, está hecho."
+      }
     };
 
     const LIBRARY = [
-      { id: 1, title: "Call Back & Ground", tags: "scattered drained pulled tired empty foggy", unique: "I declare my energy is grounded, transmuted, and provides more light than before. I am supported. I am loved. I am living in harmony with my power." },
-      { id: 3, title: "Call Back, Ground & Cast Out", tags: "heavy drained people sleep hard day stuck", unique: "I now cast out from my energy fields, my space, my home, and my presence anything that does not move me forward. I cast out anything that does not love me. I cast out anything, anyone, any being that is not in alignment with my truest, highest self. I cast out any being, entity, or anything at all in my field that does not love me or move me forward. It is now completely pushed out, discarded, deleted, and dissolved, never to return to my energy field across all time, space, dimensions, and realities." },
-      { id: 20, title: "The Simple Call Back Method", tags: "fast quick scattered anytime", unique: "I now declare and command that all my energy is my own and all is well. I am successful, I am undeniable and I am beautiful. My Unseen Support is obvious and I am always leaving more light than before!" },
-      { id: 4, title: "Alchemy", tags: "attention envy judgment comments seen eyes", unique: "I now declare that any and all energy sent towards me, thought about me, and has anything to do with me at all, is now transmuted into beauty, power, true wealth and harmony, that all move my life forward. I command that my boundaries are strong, my expression is full, and I am always leaving more light than before." },
-      { id: 5, title: "Kali for Justice & Protection", tags: "unsafe protection justice fear", unique: "I now invoke and invite the Warrior Goddess Kali, the Triple Magic of Hekate, and the Wisdom of Earth to provide protection, clear insight and actionable steps that I can personally make to move life forward for myself and for the whole world. I am loved by the Great Goddess and sweetly doth she order all things! Jai Ma." },
-      { id: 8, title: "Karmic Loops & Lineage Clearing", tags: "lineage family pattern stuck loop bloodline", unique: "I command that any and all karmic loops, subconscious or conscious agreements and anchors within my field and lineage that are holding back my life and ideal self expression are now completely CLEARED, DISSOLVED and DELETED from my reality in all ways. In their place, I invite the wisdom of my loving ancestors, loving guides and planet Earth to guide me and sweetly order all things for my benefit and for the benefit of all life. I am experiencing incredible blessings and my life increases in beauty every single day in wonderful ways. Everything always turns out better than expected and I know for sure I am supported by my loving ancestors, loving guides and Planet Earth!" },
-      { id: 18, title: "Protection for Family, Loved Ones & Pets", tags: "family loved pets children home", unique: "I now command, declare and invoke amazing health, happiness, swift protection and all things good for my family, my loved ones and my pets. They are all surrounded in their energy fields, spaces and homes in the White Healing Light of the Great Goddess. They are also surrounded by the Golden Light of Protection and Harmony. All is well." },
-      { id: 10, title: "When Panicked, Tense, or Unsure", tags: "panic tense anxious unsure scared scattered nervous panicked", unique: "I now declare and command that my energy is now fully in the central channel of my body and it is cycling fabulously throughout my energy field. I am powerful, I am calm and I know for sure that I am supported by the Goddess and my powerful Unseen Support. I am confident and I always know what to do, my intuition is loud and clear. I can trust myself fully, reality bends to me because I know I am co-dreaming my reality with the Goddess. My body is relaxed, my mind is powerful, and I am taking meaningful steps today in aligning with my highest potential." },
-      { id: 12, title: "Nourishment for Self & Souls", tags: "empty hungry tired depleted give nourished", unique: "I now declare, command, and invoke that I am receiving the full nourishment, supply and abundance of the Goddess on all levels of my being. I receive and live in the White Light of Harmony. As I am fully nourished, my cup overflows. My supply is endless and I am infinitely replenished by the Goddess. I am blessed, I am the best, and I am loved by the Goddess!" },
-      { id: 9, title: "Support of the Winds", tags: "stuck change path lost", unique: "I now call upon and invoke the power of the FOUR DIRECTIONS and FOUR WINDS to activate the Winds of Change in my life. I declare that I am lovingly led down a clear path to my highest good with the Goddess as my Guide and the Winds as my Friends. I am well nourished, well protected and well cared for by my Unseen, Loving Support. I am shining like the sun." },
-      { id: 6, title: "Goddess Wealth & Forward Progress", tags: "money poor stuck progress burden wealthy", unique: "I cast out, delete and dissolve any and all burdens and anchors that are holding me back in life, in perpetuity. I now declare that I am shown in meaningful ways just how wonderful life is with the Goddess here as Planet Earth. I am making meaningful progress and improvement every single day in wonderful ways. I always know what to do and when. I am wealthy, I am blessed, I am loved by the Goddess!" },
-      { id: 11, title: "For Freedom", tags: "trapped stuck free chain job", unique: "I now declare that I am completely FREE and in alignment with my complete Goddess-given sovereignty. I am fully unchained, unburdened, uncrossed and unrestrained in experiencing the full bounty of the Great Goddess here as Planet Earth. I live in a state of JOY and trust that everything always turns out better than expected. Sweetly doth she order all things!" },
-      { id: 13, title: "Money Command", tags: "money broke bills pay wealth wealthy", unique: "I now declare that all of my money is now with me, circulating freely in my life and in the world at large. It is safe for me to be financially successful. I am powerful, I am magnetic, I receive large sums of money and my personal economy is booming." },
-      { id: 16, title: "Call Energy Back from Debt", tags: "debt bills money stress poverty", unique: "I call back all of my own energy from debt, from financial stress, from fear and anxiety related to money, from poverty binds, and from anywhere my life force has been tied up in lack, into the centre of my body NOW. I command and declare that any and all financial stress is now DISSOLVED, DELETED AND CANCELLED from my energy field. Money loves me, and I love money. Large sums of money come to me easily. It is normal, safe and good for me to have a lot of money." },
-      { id: 19, title: "Established Success", tags: "success business love family win successful", unique: "I now command, declare and invoke my Success is already established in all ways. I am undeniably successful. Success is easy for me, success is safe for me and it’s actually a really good thing that someone like me is successful. I am always leaving more light than before." },
-      { id: 14, title: "Divine Support Team", tags: "alone unseen guides support loved", unique: "I now declare and command that my energy field is expansive and flowing. I can feel my divine support team guiding me now and uncrossing all paths to my success. I know for sure I am receiving their unseen support. I experience their power and increase my own." },
-      { id: 7, title: "Dream Protection & Insight", tags: "sleep night dreams nightmare rest", unique: "I now program my energy field and subconscious mind to be open to dream insight and wisdom that moves my life forward. I cast out any entities, beings and presences that may be feeding on my energy in any capacity and especially while I sleep. You are not welcome and you are removed from my field. I am completely enveloped in the loving light of the Goddess, I am safe, and I am at peace, I am at rest, and I am loved by the Goddess." },
-      { id: 15, title: "Excellent Health & Life Force", tags: "sick body pain health tired life force", unique: "I call back, command, invoke and declare my full, complete and excellent health NOW. I release all burdens, anchors, drains, leaks and anything else that may be hindering my energy and health in any way NOW. I am replenished by the Great Goddess who nourishes. Every cell in my body is happy. All is well. I am a frequency match to harmony, ease and peace." },
-      { id: 17, title: "Golden Timeline", tags: "drain invisible timeline power powerful", unique: "All of my energy is my own and is cycling with full health and life force throughout my entire energy field and reality experience, Seen and Unseen. I am loved by the Great Goddess. I am successful, I am a winner, I am healthy, I am undeniably blessed and amazing miracles happen to me often. Sweetly may she order all things, the light has already won." },
-      { id: 21, title: "Cast Out Parasites", tags: "parasites heavy drained sick unsafe body field", unique: "I now cast out any parasites that are in my energy field, physical body or life experience, from rituals, egregores, and organizations. Now go back to from whence you came. Go back to from whence you came. Go back to from whence you came, in perpetuity. My energy field is a beautiful bubble of white sparkly light and is protected by the beautiful golden light of the Great Goddess. I am healthy. I am wealthy. I am experiencing so much love and all things good, and I am loved by the Great Goddess." },
-      { id: 22, title: "Call Back from Data Centers & Bot Farms", tags: "data bot farms internet digital drain tech pulled scattered", unique: "I now clear, delete, and dissolve any energies, entities, or attachments that have been put into my energy field on all levels from data centers and bot farms NOW. I now declare that all of my energy is now my own, cycling with full health, wonderful self-expression, vibrant life force, and all things good through my energy field. I now command that I am powerful. I am full of life force energy. All of my soul, spirit, and self is with me now. I am confident. I am healthy. I am the best. I am blessed, and I am loved by the Great Goddess. The light has already won." },
-      { id: 23, title: "Cast Out Dark Forces", tags: "dark forces entities drain harvest stuck unsafe heavy", unique: "I now cast out, delete, and dissolve any dark forces, entities, energies, and anything at all that does not want me to move forward, including from rituals, egregores, and energy harvesting, NOW. I now command and declare that my energy field is circulating with healthy, vivacious, and wonderful energy. I am healthy. I am experiencing so much forward momentum. Everything is improving every single day in wonderful ways. And I am living my very best life. The light has already won." },
-      { id: 24, title: "Clear What Is Holding You Back", tags: "stuck holding back expression dream life free trapped", unique: "I now clear, delete, and dissolve anything that is holding me back from my fullest self-expression NOW. I now command and declare that I am experiencing so much forward motion in the best way possible. I am living my dream life where everything always turns out better than expected. I am blessed and I am loved by the Great Goddess. The light has already won." },
-      { id: 25, title: "Turn Up Inner Guidance", tags: "intuition guidance doubt unsure foggy wisdom hunches anxious", unique: "I now clear, delete, and dissolve any self-doubt or anything in my energy at all that stops me from hearing my internal guidance NOW. I now turn the volume up on my inner guidance system. I invite my loving ancestors and guides, my loving Planet Earth, the Great Goddess, my past and future selves to provide me with the intuition, the hunches, and the wisdom. My intuition is clear. My inner guidance is true. My inner wisdom always knows what to do. The light has already won." },
-      { id: 26, title: "Call Confidence Back", tags: "confidence knocked down people seen empty drained powerful", unique: "I now declare that all of my confidence is back home with me and I turn it all the way up so that I may live as who I truly came here to be and so that I may live to my fullest potential. I always keep my foot up on their necks because I am the best." }
+      { id: 1, title: "Call Back & Ground", titleEs: "Llamar de vuelta y aterrizar", tags: "scattered drained pulled tired empty foggy", unique: "I declare my energy is grounded, transmuted, and provides more light than before. I am supported. I am loved. I am living in harmony with my power.", uniqueEs: "Declaro que mi energía está aterrizada, transmutada, y da más luz que antes. Estoy sostenida. Soy amada. Vivo en armonía con mi poder." },
+      { id: 3, title: "Call Back, Ground & Cast Out", titleEs: "Llamar, aterrizar y expulsar", tags: "heavy drained people sleep hard day stuck", unique: "I now cast out from my energy fields, my space, my home, and my presence anything that does not move me forward. I cast out anything that does not love me. I cast out anything, anyone, any being that is not in alignment with my truest, highest self. I cast out any being, entity, or anything at all in my field that does not love me or move me forward. It is now completely pushed out, discarded, deleted, and dissolved, never to return to my energy field across all time, space, dimensions, and realities.", uniqueEs: "Ahora expulso de mis campos energéticos, mi espacio, mi hogar y mi presencia todo lo que no me mueve hacia adelante. Expulso todo lo que no me ama. Expulso cualquier cosa, cualquier persona, cualquier ser que no esté en alineación con mi yo más verdadero y más alto. Expulso cualquier ser, entidad o cualquier cosa en mi campo que no me ame o no me mueva hacia adelante. Ahora está completamente empujado fuera, descartado, eliminado y disuelto, para nunca volver a mi campo energético a través de todo tiempo, espacio, dimensiones y realidades." },
+      { id: 20, title: "The Simple Call Back Method", titleEs: "El método simple de llamar de vuelta", tags: "fast quick scattered anytime", unique: "I now declare and command that all my energy is my own and all is well. I am successful, I am undeniable and I am beautiful. My Unseen Support is obvious and I am always leaving more light than before!", uniqueEs: "Ahora declaro y comando que toda mi energía es mía y que todo está bien. Soy exitosa, soy innegable y soy hermosa. Mi Soporte Unseen es obvio y siempre dejo más luz que antes." },
+      { id: 4, title: "Alchemy", titleEs: "Alquimia", tags: "attention envy judgment comments seen eyes", unique: "I now declare that any and all energy sent towards me, thought about me, and has anything to do with me at all, is now transmuted into beauty, power, true wealth and harmony, that all move my life forward. I command that my boundaries are strong, my expression is full, and I am always leaving more light than before.", uniqueEs: "Ahora declaro que toda energía enviada hacia mí, pensada sobre mí, y que tenga que ver conmigo, ahora es transmutada en belleza, poder, verdadera riqueza y armonía, que mueven mi vida hacia adelante. Comando que mis límites son fuertes, mi expresión es plena, y siempre dejo más luz que antes." },
+      { id: 5, title: "Kali for Justice & Protection", titleEs: "Kali para justicia y protección", tags: "unsafe protection justice fear", unique: "I now invoke and invite the Warrior Goddess Kali, the Triple Magic of Hekate, and the Wisdom of Earth to provide protection, clear insight and actionable steps that I can personally make to move life forward for myself and for the whole world. I am loved by the Great Goddess and sweetly doth she order all things! Jai Ma.", uniqueEs: "Ahora invoco e invito a la Diosa Guerrera Kali, a la Magia Triple de Hekate, y a la Sabiduría de la Tierra a darme protección, claridad y pasos que yo misma pueda tomar para mover la vida hacia adelante para mí y para el mundo entero. Soy amada por la Gran Diosa y dulcemente ella ordena todas las cosas. Jai Ma." },
+      { id: 8, title: "Karmic Loops & Lineage Clearing", titleEs: "Bucles kármicos y linaje", tags: "lineage family pattern stuck loop bloodline", unique: "I command that any and all karmic loops, subconscious or conscious agreements and anchors within my field and lineage that are holding back my life and ideal self expression are now completely CLEARED, DISSOLVED and DELETED from my reality in all ways. In their place, I invite the wisdom of my loving ancestors, loving guides and planet Earth to guide me and sweetly order all things for my benefit and for the benefit of all life. I am experiencing incredible blessings and my life increases in beauty every single day in wonderful ways. Everything always turns out better than expected and I know for sure I am supported by my loving ancestors, loving guides and Planet Earth!", uniqueEs: "Comando que todos los bucles kármicos, acuerdos subconscientes o conscientes y anclas en mi campo y linaje que detienen mi vida y mi expresión ideal ahora están completamente LIMPIADOS, DISUELTOS y ELIMINADOS de mi realidad en todas las formas. En su lugar, invito la sabiduría de mis amorosos ancestros, amorosos guías y el Planeta Tierra a guiarme y dulcemente ordenar todas las cosas para mi beneficio y para el beneficio de toda la vida. Estoy viviendo bendiciones increíbles y mi vida aumenta en belleza cada día de formas maravillosas. Todo siempre sale mejor de lo esperado y sé con certeza que estoy sostenida por mis amorosos ancestros, amorosos guías y el Planeta Tierra." },
+      { id: 18, title: "Protection for Family, Loved Ones & Pets", titleEs: "Protección para familia, seres queridos y mascotas", tags: "family loved pets children home", unique: "I now command, declare and invoke amazing health, happiness, swift protection and all things good for my family, my loved ones and my pets. They are all surrounded in their energy fields, spaces and homes in the White Healing Light of the Great Goddess. They are also surrounded by the Golden Light of Protection and Harmony. All is well.", uniqueEs: "Ahora comando, declaro e invoco salud asombrosa, felicidad, protección rápida y todas las cosas buenas para mi familia, mis seres queridos y mis mascotas. Están rodeados en sus campos, espacios y hogares por la Luz Blanca Sanadora de la Gran Diosa. También están rodeados por la Luz Dorada de Protección y Armonía. Todo está bien." },
+      { id: 10, title: "When Panicked, Tense, or Unsure", titleEs: "Cuando hay pánico, tensión o duda", tags: "panic tense anxious unsure scared scattered nervous panicked", unique: "I now declare and command that my energy is now fully in the central channel of my body and it is cycling fabulously throughout my energy field. I am powerful, I am calm and I know for sure that I am supported by the Goddess and my powerful Unseen Support. I am confident and I always know what to do, my intuition is loud and clear. I can trust myself fully, reality bends to me because I know I am co-dreaming my reality with the Goddess. My body is relaxed, my mind is powerful, and I am taking meaningful steps today in aligning with my highest potential.", uniqueEs: "Ahora declaro y comando que mi energía está por completo en el canal central de mi cuerpo y circula de forma fabulosa por todo mi campo energético. Soy poderosa, estoy en calma y sé con certeza que estoy sostenida por la Diosa y mi poderoso Soporte Unseen. Tengo confianza y siempre sé qué hacer, mi intuición es fuerte y clara. Puedo confiar en mí por completo, la realidad se dobla hacia mí porque sé que co-sueño mi realidad con la Diosa. Mi cuerpo está relajado, mi mente es poderosa, y hoy tomo pasos reales alineada con mi potencial más alto." },
+      { id: 12, title: "Nourishment for Self & Souls", titleEs: "Nutrición para mí y las almas", tags: "empty hungry tired depleted give nourished", unique: "I now declare, command, and invoke that I am receiving the full nourishment, supply and abundance of the Goddess on all levels of my being. I receive and live in the White Light of Harmony. As I am fully nourished, my cup overflows. My supply is endless and I am infinitely replenished by the Goddess. I am blessed, I am the best, and I am loved by the Goddess!", uniqueEs: "Ahora declaro, comando e invoco que estoy recibiendo la nutrición, el suministro y la abundancia completa de la Diosa en todos los niveles de mi ser. Recibo y vivo en la Luz Blanca de la Armonía. Al estar nutrida por completo, mi copa se desborda. Mi suministro no tiene fin y soy infinitamente reabastecida por la Diosa. Soy bendecida, soy la mejor, y soy amada por la Diosa." },
+      { id: 9, title: "Support of the Winds", titleEs: "Soporte de los Vientos", tags: "stuck change path lost", unique: "I now call upon and invoke the power of the FOUR DIRECTIONS and FOUR WINDS to activate the Winds of Change in my life. I declare that I am lovingly led down a clear path to my highest good with the Goddess as my Guide and the Winds as my Friends. I am well nourished, well protected and well cared for by my Unseen, Loving Support. I am shining like the sun.", uniqueEs: "Ahora llamo e invoco el poder de las CUATRO DIRECCIONES y los CUATRO VIENTOS para activar los Vientos de Cambio en mi vida. Declaro que soy guiada con amor por un camino claro hacia mi mayor bien, con la Diosa como mi Guía y los Vientos como mis Amigos. Estoy bien nutrida, bien protegida y bien cuidada por mi Soporte Unseen y amoroso. Brillo como el sol." },
+      { id: 6, title: "Goddess Wealth & Forward Progress", titleEs: "Riqueza de la Diosa y avance", tags: "money poor stuck progress burden wealthy", unique: "I cast out, delete and dissolve any and all burdens and anchors that are holding me back in life, in perpetuity. I now declare that I am shown in meaningful ways just how wonderful life is with the Goddess here as Planet Earth. I am making meaningful progress and improvement every single day in wonderful ways. I always know what to do and when. I am wealthy, I am blessed, I am loved by the Goddess!", uniqueEs: "Expulso, elimino y disuelvo todas las cargas y anclas que me detienen en la vida, a perpetuidad. Ahora declaro que se me muestra de formas reales lo maravillosa que es la vida con la Diosa aquí como Planeta Tierra. Cada día avanzo y mejoro de formas maravillosas. Siempre sé qué hacer y cuándo. Soy próspera, soy bendecida, soy amada por la Diosa." },
+      { id: 11, title: "For Freedom", titleEs: "Para la libertad", tags: "trapped stuck free chain job", unique: "I now declare that I am completely FREE and in alignment with my complete Goddess-given sovereignty. I am fully unchained, unburdened, uncrossed and unrestrained in experiencing the full bounty of the Great Goddess here as Planet Earth. I live in a state of JOY and trust that everything always turns out better than expected. Sweetly doth she order all things!", uniqueEs: "Ahora declaro que soy completamente LIBRE y estoy alineada con mi soberanía completa dada por la Diosa. Estoy sin cadenas, sin cargas, sin cruces y sin freno para vivir la plenitud de la Gran Diosa aquí como Planeta Tierra. Vivo en GOZO y confío en que todo siempre sale mejor de lo esperado. Dulcemente ella ordena todas las cosas." },
+      { id: 13, title: "Money Command", titleEs: "Comando de dinero", tags: "money broke bills pay wealth wealthy", unique: "I now declare that all of my money is now with me, circulating freely in my life and in the world at large. It is safe for me to be financially successful. I am powerful, I am magnetic, I receive large sums of money and my personal economy is booming.", uniqueEs: "Ahora declaro que todo mi dinero está conmigo, circulando libremente en mi vida y en el mundo. Es seguro para mí ser exitosa financieramente. Soy poderosa, soy magnética, recibo grandes sumas de dinero y mi economía personal está floreciendo." },
+      { id: 16, title: "Call Energy Back from Debt", titleEs: "Llamar energía de vuelta de la deuda", tags: "debt bills money stress poverty", unique: "I call back all of my own energy from debt, from financial stress, from fear and anxiety related to money, from poverty binds, and from anywhere my life force has been tied up in lack, into the centre of my body NOW. I command and declare that any and all financial stress is now DISSOLVED, DELETED AND CANCELLED from my energy field. Money loves me, and I love money. Large sums of money come to me easily. It is normal, safe and good for me to have a lot of money.", uniqueEs: "Llamo de vuelta toda mi propia energía de la deuda, del estrés financiero, del miedo y la ansiedad con el dinero, de los ataderos de pobreza, y de cualquier lugar donde mi fuerza vital haya estado atada a la carencia, al centro de mi cuerpo AHORA. Comando y declaro que todo estrés financiero ahora está DISUELTO, ELIMINADO Y CANCELADO de mi campo energético. El dinero me ama, y yo amo al dinero. Grandes sumas de dinero llegan a mí con facilidad. Es normal, seguro y bueno para mí tener mucho dinero." },
+      { id: 19, title: "Established Success", titleEs: "Éxito ya establecido", tags: "success business love family win successful", unique: "I now command, declare and invoke my Success is already established in all ways. I am undeniably successful. Success is easy for me, success is safe for me and it’s actually a really good thing that someone like me is successful. I am always leaving more light than before.", uniqueEs: "Ahora comando, declaro e invoco que mi Éxito ya está establecido en todas las formas. Soy innegablemente exitosa. El éxito es fácil para mí, el éxito es seguro para mí y es realmente bueno que alguien como yo sea exitosa. Siempre dejo más luz que antes." },
+      { id: 14, title: "Divine Support Team", titleEs: "Equipo de soporte divino", tags: "alone unseen guides support loved", unique: "I now declare and command that my energy field is expansive and flowing. I can feel my divine support team guiding me now and uncrossing all paths to my success. I know for sure I am receiving their unseen support. I experience their power and increase my own.", uniqueEs: "Ahora declaro y comando que mi campo energético es expansivo y fluye. Siento a mi equipo de soporte divino guiándome ahora y descruzando todos los caminos hacia mi éxito. Sé con certeza que recibo su soporte Unseen. Experimento su poder y aumento el mío." },
+      { id: 7, title: "Dream Protection & Insight", titleEs: "Protección e insight en sueños", tags: "sleep night dreams nightmare rest", unique: "I now program my energy field and subconscious mind to be open to dream insight and wisdom that moves my life forward. I cast out any entities, beings and presences that may be feeding on my energy in any capacity and especially while I sleep. You are not welcome and you are removed from my field. I am completely enveloped in the loving light of the Goddess, I am safe, and I am at peace, I am at rest, and I am loved by the Goddess.", uniqueEs: "Ahora programo mi campo energético y mi mente subconsciente para estar abiertos al insight y la sabiduría de los sueños que mueven mi vida hacia adelante. Expulso cualquier entidad, ser y presencia que se alimente de mi energía en cualquier forma y especialmente mientras duermo. No son bienvenidos y son removidos de mi campo. Estoy envuelta por completo en la luz amorosa de la Diosa, estoy segura, estoy en paz, estoy en descanso, y soy amada por la Diosa." },
+      { id: 15, title: "Excellent Health & Life Force", titleEs: "Salud excelente y fuerza vital", tags: "sick body pain health tired life force", unique: "I call back, command, invoke and declare my full, complete and excellent health NOW. I release all burdens, anchors, drains, leaks and anything else that may be hindering my energy and health in any way NOW. I am replenished by the Great Goddess who nourishes. Every cell in my body is happy. All is well. I am a frequency match to harmony, ease and peace.", uniqueEs: "Llamo de vuelta, comando, invoco y declaro mi salud plena, completa y excelente AHORA. Suelto todas las cargas, anclas, drenajes, fugas y cualquier otra cosa que esté impidiendo mi energía y mi salud de cualquier forma AHORA. Soy reabastecida por la Gran Diosa que nutre. Cada célula de mi cuerpo está feliz. Todo está bien. Soy coincidencia de frecuencia con armonía, facilidad y paz." },
+      { id: 17, title: "Golden Timeline", titleEs: "Línea de tiempo dorada", tags: "drain invisible timeline power powerful", unique: "All of my energy is my own and is cycling with full health and life force throughout my entire energy field and reality experience, Seen and Unseen. I am loved by the Great Goddess. I am successful, I am a winner, I am healthy, I am undeniably blessed and amazing miracles happen to me often. Sweetly may she order all things, the light has already won.", uniqueEs: "Toda mi energía es mía y circula con salud plena y fuerza vital por todo mi campo energético y mi experiencia de realidad, Seen y Unseen. Soy amada por la Gran Diosa. Soy exitosa, soy ganadora, soy saludable, soy innegablemente bendecida y milagros asombrosos me ocurren seguido. Dulcemente ella ordene todas las cosas, la luz ya ganó." },
+      { id: 21, title: "Cast Out Parasites", titleEs: "Expulsar parásitos", tags: "parasites heavy drained sick unsafe body field", unique: "I now cast out any parasites that are in my energy field, physical body or life experience, from rituals, egregores, and organizations. Now go back to from whence you came. Go back to from whence you came. Go back to from whence you came, in perpetuity. My energy field is a beautiful bubble of white sparkly light and is protected by the beautiful golden light of the Great Goddess. I am healthy. I am wealthy. I am experiencing so much love and all things good, and I am loved by the Great Goddess.", uniqueEs: "Ahora expulso cualquier parásito que esté en mi campo energético, cuerpo físico o experiencia de vida, de rituales, egrégoras y organizaciones. Ahora vuelvan de donde vinieron. Vuelvan de donde vinieron. Vuelvan de donde vinieron, a perpetuidad. Mi campo energético es una burbuja hermosa de luz blanca brillante y está protegido por la hermosa luz dorada de la Gran Diosa. Soy saludable. Soy próspera. Estoy viviendo tanto amor y todas las cosas buenas, y soy amada por la Gran Diosa." },
+      { id: 22, title: "Call Back from Data Centers & Bot Farms", titleEs: "Llamar de vuelta de centros de datos y granjas de bots", tags: "data bot farms internet digital drain tech pulled scattered", unique: "I now clear, delete, and dissolve any energies, entities, or attachments that have been put into my energy field on all levels from data centers and bot farms NOW. I now declare that all of my energy is now my own, cycling with full health, wonderful self-expression, vibrant life force, and all things good through my energy field. I now command that I am powerful. I am full of life force energy. All of my soul, spirit, and self is with me now. I am confident. I am healthy. I am the best. I am blessed, and I am loved by the Great Goddess. The light has already won.", uniqueEs: "Ahora limpio, elimino y disuelvo cualquier energía, entidad o apego puesto en mi campo energético en todos los niveles desde centros de datos y granjas de bots AHORA. Ahora declaro que toda mi energía es mía, circulando con salud plena, hermosa autoexpresión, fuerza vital vibrante y todas las cosas buenas por mi campo. Ahora comando que soy poderosa. Estoy llena de fuerza vital. Todo mi alma, espíritu y yo está conmigo ahora. Tengo confianza. Soy saludable. Soy la mejor. Soy bendecida, y soy amada por la Gran Diosa. La luz ya ganó." },
+      { id: 23, title: "Cast Out Dark Forces", titleEs: "Expulsar fuerzas oscuras", tags: "dark forces entities drain harvest stuck unsafe heavy", unique: "I now cast out, delete, and dissolve any dark forces, entities, energies, and anything at all that does not want me to move forward, including from rituals, egregores, and energy harvesting, NOW. I now command and declare that my energy field is circulating with healthy, vivacious, and wonderful energy. I am healthy. I am experiencing so much forward momentum. Everything is improving every single day in wonderful ways. And I am living my very best life. The light has already won.", uniqueEs: "Ahora expulso, elimino y disuelvo cualquier fuerza oscura, entidad, energía y cualquier cosa que no quiera que yo avance, incluyendo de rituales, egrégoras y cosecha de energía, AHORA. Ahora comando y declaro que mi campo energético circula con energía saludable, viva y maravillosa. Soy saludable. Estoy viviendo tanto impulso hacia adelante. Todo mejora cada día de formas maravillosas. Y estoy viviendo mi mejor vida. La luz ya ganó." },
+      { id: 24, title: "Clear What Is Holding You Back", titleEs: "Limpiar lo que te detiene", tags: "stuck holding back expression dream life free trapped", unique: "I now clear, delete, and dissolve anything that is holding me back from my fullest self-expression NOW. I now command and declare that I am experiencing so much forward motion in the best way possible. I am living my dream life where everything always turns out better than expected. I am blessed and I am loved by the Great Goddess. The light has already won.", uniqueEs: "Ahora limpio, elimino y disuelvo cualquier cosa que me detenga de mi autoexpresión más plena AHORA. Ahora comando y declaro que estoy viviendo tanto movimiento hacia adelante de la mejor forma posible. Estoy viviendo mi vida soñada, donde todo siempre sale mejor de lo esperado. Soy bendecida y soy amada por la Gran Diosa. La luz ya ganó." },
+      { id: 25, title: "Turn Up Inner Guidance", titleEs: "Subir el volumen de la guía interna", tags: "intuition guidance doubt unsure foggy wisdom hunches anxious", unique: "I now clear, delete, and dissolve any self-doubt or anything in my energy at all that stops me from hearing my internal guidance NOW. I now turn the volume up on my inner guidance system. I invite my loving ancestors and guides, my loving Planet Earth, the Great Goddess, my past and future selves to provide me with the intuition, the hunches, and the wisdom. My intuition is clear. My inner guidance is true. My inner wisdom always knows what to do. The light has already won.", uniqueEs: "Ahora limpio, elimino y disuelvo cualquier duda de mí misma o cualquier cosa en mi energía que me impida oír mi guía interna AHORA. Ahora subo el volumen de mi sistema de guía interna. Invito a mis amorosos ancestros y guías, a mi amoroso Planeta Tierra, a la Gran Diosa, a mis yos del pasado y del futuro a darme la intuición, las corazonadas y la sabiduría. Mi intuición es clara. Mi guía interna es verdadera. Mi sabiduría interna siempre sabe qué hacer. La luz ya ganó." },
+      { id: 26, title: "Call Confidence Back", titleEs: "Llamar de vuelta la confianza", tags: "confidence knocked down people seen empty drained powerful", unique: "I now declare that all of my confidence is back home with me and I turn it all the way up so that I may live as who I truly came here to be and so that I may live to my fullest potential. I always keep my foot up on their necks because I am the best.", uniqueEs: "Ahora declaro que toda mi confianza está de vuelta en casa conmigo y la subo al máximo para vivir como quien verdaderamente vine a ser y para vivir a mi potencial más pleno. Siempre mantengo el pie sobre sus cuellos porque soy la mejor." }
     ];
 
     const $ = (id) => document.getElementById(id);
     const views = ["gate", "home", "questions", "type", "play"];
     let lastMode = "home";
+    let lastCmd = null;
 
     function show(name) {
       views.forEach((v) => $("view-" + v).classList.toggle("hidden", v !== name));
@@ -434,8 +541,39 @@
       return top[Math.floor(Math.random() * top.length)].e;
     }
 
+    function uniqueOf(entry) {
+      return lang === "es" ? (entry.uniqueEs || entry.unique) : entry.unique;
+    }
+
+    function titleOf(entry) {
+      return lang === "es" ? (entry.titleEs || entry.title) : entry.title;
+    }
+
+    function opening() {
+      return OPENING[lang] || OPENING.en;
+    }
+
     function asDeclareCommand(unique) {
       const body = clean(unique);
+      if (lang === "es") {
+        if (/^Ahora declaro y comando\b/i.test(body)) return body;
+        let rest = body
+          .replace(/^Ahora declaro, comando e invoco que\s+/i, "")
+          .replace(/^Ahora comando, declaro e invoco\s+/i, "")
+          .replace(/^Llamo de vuelta, comando, invoco y declaro\s+/i, "")
+          .replace(/^Ahora declaro que\s+/i, "")
+          .replace(/^Ahora comando que\s+/i, "")
+          .replace(/^Comando que\s+/i, "")
+          .replace(/^Declaro que\s+/i, "")
+          .replace(/^Declaro\s+/i, "");
+        if (rest !== body) {
+          return "Ahora declaro y comando que " + rest.charAt(0).toLowerCase() + rest.slice(1);
+        }
+        if (/^Ahora\s+/i.test(body)) {
+          return "Ahora declaro y comando que " + body.replace(/^Ahora\s+/i, "");
+        }
+        return "Ahora declaro y comando que " + body.charAt(0).toLowerCase() + body.slice(1);
+      }
       if (/^I now declare and command\b/i.test(body)) return body;
       let rest = body
         .replace(/^I now declare, command, and invoke that\s+/i, "")
@@ -460,46 +598,57 @@
 
     function keepOutLine(keepOut) {
       if (!clean(keepOut)) return "";
+      if (lang === "es") {
+        return "Lo que dejo fuera de este comando no tiene nombre aquí, no tiene asiento en mi campo, y no tiene comida. No puede quedarse. Solo permanece lo que me ama y me mueve hacia adelante.";
+      }
       return "What I keep out of this command has no name here, no seat in my field, and no food. It cannot stay. Only what loves me and moves me forward may remain.";
     }
 
     function buildGenerated(opts) {
       const blob = [opts.feeling, opts.want, opts.situation].map(clean).join(" ");
       const match = pickLibrary(blob || "scattered", [1, 20]);
-      const unique = [asDeclareCommand(match.unique), keepOutLine(opts.keepOut)].filter(Boolean).join(" ");
+      const unique = [asDeclareCommand(uniqueOf(match)), keepOutLine(opts.keepOut)].filter(Boolean).join(" ");
       const filtered = keepOutFilter(unique, opts.keepOut);
+      const o = opening();
       return {
-        title: "A command for this moment",
-        eye: "Written for you",
+        title: COPY[lang].momentTitle,
+        eye: COPY[lang].written,
         again: opts.again || "questions",
+        id: match.id,
+        genOpts: opts,
         lines: [
-          { kind: "speak", text: OPENING.call },
-          { kind: "breath", text: OPENING.breath },
-          { kind: "speak", text: OPENING.ground },
+          { kind: "speak", text: o.call },
+          { kind: "breath", text: o.breath },
+          { kind: "speak", text: o.ground },
           { kind: "speak", text: filtered },
-          { kind: "speak", text: OPENING.close }
+          { kind: "speak", text: o.close }
         ]
       };
     }
 
-    function buildGoddess() {
-      const e = LIBRARY[Math.floor(Math.random() * LIBRARY.length)];
+    function buildGoddess(id) {
+      const e = id
+        ? LIBRARY.find((x) => x.id === id) || LIBRARY[0]
+        : LIBRARY[Math.floor(Math.random() * LIBRARY.length)];
+      const o = opening();
       return {
-        title: e.title,
-        eye: "The Goddess chose",
+        title: titleOf(e),
+        eye: COPY[lang].goddess,
         again: "goddess",
+        id: e.id,
         lines: [
-          { kind: "speak", text: OPENING.call },
-          { kind: "breath", text: OPENING.breath },
-          { kind: "speak", text: OPENING.ground },
-          { kind: "speak", text: asDeclareCommand(e.unique) },
-          { kind: "speak", text: OPENING.close }
+          { kind: "speak", text: o.call },
+          { kind: "breath", text: o.breath },
+          { kind: "speak", text: o.ground },
+          { kind: "speak", text: asDeclareCommand(uniqueOf(e)) },
+          { kind: "speak", text: o.close }
         ]
       };
     }
 
     function renderPlay(cmd) {
       lastMode = cmd.again;
+      lastCmd = cmd;
       $("play-eye").textContent = cmd.eye;
       $("play-h").textContent = cmd.title;
       const card = $("play-card");
@@ -548,10 +697,37 @@
       });
     });
 
+    function applyLang() {
+      const pack = COPY[lang];
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (pack[key]) el.textContent = pack[key];
+      });
+      $("lang-en").classList.toggle("on", lang === "en");
+      $("lang-es").classList.toggle("on", lang === "es");
+      if ($("gate-error").textContent) $("gate-error").textContent = pack.gateErr;
+      if ($("q-error").textContent) $("q-error").textContent = pack.qErr;
+      const playOpen = !$("view-play").classList.contains("hidden");
+      if (playOpen && lastCmd) {
+        if (lastCmd.again === "goddess") renderPlay(buildGoddess(lastCmd.id));
+        else if (lastCmd.genOpts) renderPlay(buildGenerated(lastCmd.genOpts));
+      }
+    }
+
+    function setLang(next) {
+      lang = next;
+      localStorage.setItem("ea-commands-lang", lang);
+      applyLang();
+    }
+
+    $("lang-en").onclick = () => setLang("en");
+    $("lang-es").onclick = () => setLang("es");
+
     $("gate-go").onclick = () => {
       const w = $("gate-word").value.trim().toLowerCase().replace(/\s+/g, "");
       if (w === PASS) unlock();
-      else $("gate-error").textContent = "That’s not the word. Listen on live, or ask in Energy Academy.";
+      else $("gate-error").textContent = COPY[lang].gateErr;
     };
     $("gate-word").addEventListener("keydown", (e) => {
       if (e.key === "Enter") $("gate-go").click();
@@ -570,7 +746,7 @@
       const want = selected("want").join(", ");
       const keep = selected("out")[0] || "";
       if (!feeling && !want) {
-        $("q-error").textContent = "Choose how you feel, or what you want to feel.";
+        $("q-error").textContent = COPY[lang].qErr;
         return;
       }
       $("q-error").textContent = "";
@@ -596,6 +772,7 @@
       else show(lastMode);
     };
 
+    applyLang();
     if (sessionStorage.getItem("ea-commands") === "1") show("home");
   </script>
 </body>
