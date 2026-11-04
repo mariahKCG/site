@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Energy Commands Beta | Mariah De Aurum</title>
+  <meta name="description" content="Call your energy back. Commands in Mariah De Aurum’s words, for this moment." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Commands" />
+  <link rel="canonical" href="https://mariahkcg.com/commands.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ivory: #faf6ee;
+      --paper: #fffdf9;
+      --ink: #2a2218;
+      --muted: #6d6154;
+      --gold: #b0893a;
+      --gold-deep: #8a6a2b;
+      --line: #e4d4ae;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { min-height: 100%; }
+    body {
+      font-family: Outfit, system-ui, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    a { color: var(--gold-deep); }
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(46px);
+      background: radial-gradient(circle, rgba(176, 137, 58, 0.42) 0%, rgba(176, 137, 58, 0) 70%);
+      animation: float 18s ease-in-out infinite;
+    }
+    .orb.a { width: 280px; height: 280px; top: -40px; left: -60px; }
+    .orb.b { width: 240px; height: 240px; bottom: 4%; right: -50px; animation-delay: -9s; background: radial-gradient(circle, rgba(232, 213, 170, 0.7) 0%, rgba(232, 213, 170, 0) 70%); }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(22px, -20px) scale(1.08); }
+    }
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: min(560px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 40px 0 80px;
+    }
+    .mark { width: 52px; height: auto; display: block; margin: 0 auto 18px; }
+    .sun { width: 72px; height: auto; display: block; margin: 36px auto 0; }
+    .brand {
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold-deep); text-align: center;
+    }
+    .beta {
+      font-family: Cinzel, serif;
+      font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); text-align: center; margin-top: 8px;
+    }
+    .divider {
+      width: min(280px, 72%);
+      height: auto;
+      display: block;
+      margin: 22px auto 32px;
+      mix-blend-mode: multiply;
+    }
+    .eyebrow {
+      font-family: Cinzel, serif;
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); text-align: center; margin: 8px 0 16px;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500; font-size: clamp(34px, 8vw, 48px);
+      line-height: 0.98; color: var(--gold-deep);
+      text-align: center; margin-bottom: 16px;
+    }
+    .letter {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 21px; font-style: italic; color: var(--muted);
+      text-align: center; margin: 0 auto 8px;
+      max-width: 22em;
+    }
+    .field {
+      position: relative;
+      width: 148px;
+      height: 148px;
+      margin: 8px auto 28px;
+    }
+    .field .ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      border: 2px solid rgba(138, 106, 43, 0.75);
+      animation: aura 7s ease-in-out infinite;
+    }
+    .field .r2 { inset: 22px; animation-delay: -2.2s; }
+    .field .r3 { inset: 42px; animation-delay: -4.4s; border-color: #b0893a; }
+    .field .core {
+      position: absolute; inset: 58px; border-radius: 50%;
+      background: radial-gradient(circle, #fff6df 0%, #b0893a 68%, #8a6a2b 100%);
+      box-shadow: 0 0 22px rgba(176, 137, 58, 0.6);
+      animation: glow 7s ease-in-out infinite;
+    }
+    @keyframes aura {
+      0%, 100% { transform: scale(0.86); opacity: 0.4; }
+      50% { transform: scale(1.06); opacity: 1; }
+    }
+    @keyframes glow {
+      0%, 100% { transform: scale(0.9); opacity: 0.7; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 0 0 8px var(--paper), 0 0 0 9px var(--line);
+      padding: 28px 24px;
+      margin-bottom: 28px;
+    }
+    .card.gold { border-color: var(--gold); }
+    label, .q-label {
+      display: block;
+      font-family: Cinzel, serif;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); margin: 0 0 14px;
+    }
+    .q-hint {
+      font-size: 13px; color: var(--muted);
+      margin: -8px 0 16px;
+    }
+    input, textarea {
+      width: 100%;
+      font: inherit;
+      color: var(--ink);
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      padding: 14px 14px;
+      margin-bottom: 8px;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .choices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .chip {
+      appearance: none;
+      background: transparent;
+      color: var(--gold-deep);
+      border: 1px solid var(--line);
+      padding: 11px 14px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      line-height: 1.2;
+    }
+    .chip.on {
+      background: var(--gold);
+      color: var(--paper);
+      border-color: var(--gold-deep);
+    }
+    .btn {
+      display: block; width: 100%; text-align: center;
+      background: var(--gold); color: var(--paper);
+      padding: 16px 18px; margin-top: 18px;
+      font-family: Cinzel, serif;
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      border: 1px solid var(--gold-deep); cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover { background: var(--gold-deep); }
+    .btn.ghost {
+      background: transparent; color: var(--gold-deep);
+    }
+    .doors { margin-top: 8px; }
+    .doors .btn { margin-top: 14px; }
+    .note { color: var(--muted); font-size: 14px; margin-top: 28px; text-align: center; line-height: 1.6; }
+    .hidden { display: none !important; }
+    .cmd-title {
+      font-family: Cinzel, serif;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 18px;
+    }
+    .line { margin-bottom: 22px; }
+    .line.speak {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 21px; color: var(--ink); line-height: 1.45;
+    }
+    .line.breath {
+      font-style: italic; color: var(--muted); font-size: 16px; line-height: 1.55;
+    }
+    .gate-error { color: #8a3b2b; font-size: 14px; margin: 8px 0 4px; min-height: 1.2em; }
+    .q-error { color: #8a3b2b; font-size: 14px; margin-top: 8px; min-height: 1.2em; text-align: center; }
+    footer {
+      position: relative; z-index: 1;
+      text-align: center; padding: 8px 16px 40px;
+      font-size: 12px; color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="orb a"></div>
+  <div class="orb b"></div>
+  <div class="wrap">
+    <img class="mark" src="glyph-ankh.png" alt="" />
+    <p class="brand">Mariah De Aurum</p>
+    <p class="beta">Beta</p>
+    <img class="divider" src="gold-divider.png" alt="" />
+
+    <section id="view-gate">
+      <p class="eyebrow">Energy Academy trial</p>
+      <h1>Energy Commands</h1>
+      <p class="letter">Take your energy back. Command your dream life.</p>
+      <div class="field" aria-hidden="true">
+        <span class="ring"></span>
+        <span class="ring r2"></span>
+        <span class="ring r3"></span>
+        <span class="core"></span>
+      </div>
+      <div class="card gold">
+        <label for="gate-word">The word from live</label>
+        <input id="gate-word" type="password" autocomplete="off" />
+        <p class="gate-error" id="gate-error"></p>
+        <button class="btn" type="button" id="gate-go">Enter</button>
+        <p class="note">For Energy Academy and Show Thyself. Add this page to your home screen after you enter.</p>
+      </div>
+    </section>
+
+    <section id="view-home" class="hidden">
+      <p class="eyebrow">Call it back</p>
+      <h1>Energy Commands</h1>
+      <p class="letter">Come in as many times a day as you need. Repeat inside if you like. Speak out loud if you want it in the room.</p>
+      <div class="field" aria-hidden="true">
+        <span class="ring"></span>
+        <span class="ring r2"></span>
+        <span class="ring r3"></span>
+        <span class="core"></span>
+      </div>
+      <div class="doors">
+        <button class="btn" type="button" data-go="questions">Answer 3 questions</button>
+        <button class="btn ghost" type="button" data-go="type">Type what’s happening</button>
+        <button class="btn ghost" type="button" data-go="goddess">Let the Goddess choose for me</button>
+      </div>
+      <p class="note">Written in Mariah’s command format, from her library and her language. This is a beta. Tell her what you notice.</p>
+      <img class="sun" src="glyph-sun.png" alt="" />
+    </section>
+
+    <section id="view-questions" class="hidden">
+      <p class="eyebrow">This moment</p>
+      <h1>Three questions</h1>
+      <p class="letter">Tap what is true. You can choose more than one on the first two.</p>
+      <img class="divider" src="gold-divider.png" alt="" />
+
+      <div class="card">
+        <p class="q-label">How are you feeling right now</p>
+        <div class="choices" data-q="feel" data-multi="1">
+          <button class="chip" type="button" data-val="scattered">Scattered</button>
+          <button class="chip" type="button" data-val="drained">Drained</button>
+          <button class="chip" type="button" data-val="heavy">Heavy</button>
+          <button class="chip" type="button" data-val="anxious">Anxious</button>
+          <button class="chip" type="button" data-val="foggy">Foggy</button>
+          <button class="chip" type="button" data-val="pulled">Pulled</button>
+          <button class="chip" type="button" data-val="tired">Tired</button>
+          <button class="chip" type="button" data-val="stuck">Stuck</button>
+          <button class="chip" type="button" data-val="unsafe">Unsafe</button>
+          <button class="chip" type="button" data-val="empty">Empty</button>
+          <button class="chip" type="button" data-val="panicked">Panicked</button>
+          <button class="chip" type="button" data-val="">I just want to command</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="q-label">What do you want to feel right now</p>
+        <div class="choices" data-q="want" data-multi="1">
+          <button class="chip" type="button" data-val="clear">Clear</button>
+          <button class="chip" type="button" data-val="at home">Home in my body</button>
+          <button class="chip" type="button" data-val="protected">Protected</button>
+          <button class="chip" type="button" data-val="full of light">Full of light</button>
+          <button class="chip" type="button" data-val="powerful">Powerful</button>
+          <button class="chip" type="button" data-val="calm">Calm</button>
+          <button class="chip" type="button" data-val="free">Free</button>
+          <button class="chip" type="button" data-val="nourished">Nourished</button>
+          <button class="chip" type="button" data-val="successful">Successful</button>
+          <button class="chip" type="button" data-val="wealthy">Wealthy</button>
+          <button class="chip" type="button" data-val="loved">Loved</button>
+          <button class="chip" type="button" data-val="at rest">At rest</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="q-label">Anything to keep out of the command</p>
+        <p class="q-hint">It will not be named. It gets no seat in your field.</p>
+        <div class="choices" data-q="out" data-multi="0">
+          <button class="chip on" type="button" data-val="">Nothing</button>
+          <button class="chip" type="button" data-val="yes">A person</button>
+          <button class="chip" type="button" data-val="yes">A situation</button>
+          <button class="chip" type="button" data-val="yes">An old story</button>
+          <button class="chip" type="button" data-val="yes">Work</button>
+          <button class="chip" type="button" data-val="yes">Family</button>
+          <button class="chip" type="button" data-val="yes">A place</button>
+        </div>
+      </div>
+
+      <p class="q-error" id="q-error"></p>
+      <button class="btn" type="button" id="q-go">Generate my command</button>
+      <button class="btn ghost" type="button" data-go="home">Back</button>
+    </section>
+
+    <section id="view-type" class="hidden">
+      <p class="eyebrow">This moment</p>
+      <h1>What’s happening</h1>
+      <p class="letter">One or two sentences is enough.</p>
+      <img class="divider" src="gold-divider.png" alt="" />
+      <div class="card">
+        <label for="sit">Type your situation</label>
+        <textarea id="sit" maxlength="400"></textarea>
+      </div>
+      <div class="card">
+        <label for="sit-out">Anything to keep out of the command</label>
+        <p class="q-hint">Optional. A name or a word. It will not appear in the command.</p>
+        <input id="sit-out" maxlength="200" />
+      </div>
+      <button class="btn" type="button" id="sit-go">Generate my command</button>
+      <button class="btn ghost" type="button" data-go="home">Back</button>
+    </section>
+
+    <section id="view-play" class="hidden">
+      <div class="field" aria-hidden="true">
+        <span class="ring"></span>
+        <span class="ring r2"></span>
+        <span class="ring r3"></span>
+        <span class="core"></span>
+      </div>
+      <p class="eyebrow" id="play-eye">Your command</p>
+      <h1 id="play-h">Run it</h1>
+      <img class="divider" src="gold-divider.png" alt="" />
+      <div class="card gold" id="play-card"></div>
+      <button class="btn ghost" type="button" id="play-again">Another command</button>
+      <button class="btn ghost" type="button" data-go="home">Home</button>
+      <p class="note">Read it. Repeat inside if you like. Speak out loud if you want it in the room. Drink water after.</p>
+      <img class="sun" src="glyph-sun.png" alt="" />
+    </section>
+  </div>
+  <footer>
+    Mariah De Aurum · Energy Academy<br />
+    Spiritual and educational work. Not medical, legal, or financial advice. Results vary.
+  </footer>
+
+  <script>
+    const PASS = "morelight";
+    const OPENING = {
+      call: "I call back all of my own energy from across all time, space, dimensions, realities, people, places and things, and anywhere else my own energy may be, into the centre of my body NOW.",
+      breath: "Breathe in and visualise this energy entering the body through the sacral chakra, enlivening the body and circulating throughout your energy field. Then exhale and release everything you don’t need out of your feet, into the core of Planet Earth.",
+      ground: "I now ground my energy completely into the core of Planet Earth, where my energy is cleansed, protected, healed, blessed and directed, by my loving Planet Earth, my loving Ancestors and my Loving Guides.",
+      close: "It is done, it is done, it is done."
+    };
+
+    const LIBRARY = [
+      { id: 1, title: "Call Back & Ground", tags: "scattered drained pulled tired empty foggy", unique: "I declare my energy is grounded, transmuted, and provides more light than before. I am supported. I am loved. I am living in harmony with my power." },
+      { id: 3, title: "Call Back, Ground & Cast Out", tags: "heavy drained people sleep hard day stuck", unique: "I now cast out from my energy fields, my space, my home, and my presence anything that does not move me forward. I cast out anything that does not love me. I cast out anything, anyone, any being that is not in alignment with my truest, highest self. I cast out any being, entity, or anything at all in my field that does not love me or move me forward. It is now completely pushed out, discarded, deleted, and dissolved, never to return to my energy field across all time, space, dimensions, and realities." },
+      { id: 20, title: "The Simple Call Back Method", tags: "fast quick scattered anytime", unique: "I now declare and command that all my energy is my own and all is well. I am successful, I am undeniable and I am beautiful. My Unseen Support is obvious and I am always leaving more light than before!" },
+      { id: 4, title: "Alchemy", tags: "attention envy judgment comments seen eyes", unique: "I now declare that any and all energy sent towards me, thought about me, and has anything to do with me at all, is now transmuted into beauty, power, true wealth and harmony, that all move my life forward. I command that my boundaries are strong, my expression is full, and I am always leaving more light than before." },
+      { id: 5, title: "Kali for Justice & Protection", tags: "unsafe protection justice fear", unique: "I now invoke and invite the Warrior Goddess Kali, the Triple Magic of Hekate, and the Wisdom of Earth to provide protection, clear insight and actionable steps that I can personally make to move life forward for myself and for the whole world. I am loved by the Great Goddess and sweetly doth she order all things! Jai Ma." },
+      { id: 8, title: "Karmic Loops & Lineage Clearing", tags: "lineage family pattern stuck loop bloodline", unique: "I command that any and all karmic loops, subconscious or conscious agreements and anchors within my field and lineage that are holding back my life and ideal self expression are now completely CLEARED, DISSOLVED and DELETED from my reality in all ways. In their place, I invite the wisdom of my loving ancestors, loving guides and planet Earth to guide me and sweetly order all things for my benefit and for the benefit of all life. I am experiencing incredible blessings and my life increases in beauty every single day in wonderful ways. Everything always turns out better than expected and I know for sure I am supported by my loving ancestors, loving guides and Planet Earth!" },
+      { id: 18, title: "Protection for Family, Loved Ones & Pets", tags: "family loved pets children home", unique: "I now command, declare and invoke amazing health, happiness, swift protection and all things good for my family, my loved ones and my pets. They are all surrounded in their energy fields, spaces and homes in the White Healing Light of the Great Goddess. They are also surrounded by the Golden Light of Protection and Harmony. All is well." },
+      { id: 10, title: "When Panicked, Tense, or Unsure", tags: "panic tense anxious unsure scared scattered nervous panicked", unique: "I now declare and command that my energy is now fully in the central channel of my body and it is cycling fabulously throughout my energy field. I am powerful, I am calm and I know for sure that I am supported by the Goddess and my powerful Unseen Support. I am confident and I always know what to do, my intuition is loud and clear. I can trust myself fully, reality bends to me because I know I am co-dreaming my reality with the Goddess. My body is relaxed, my mind is powerful, and I am taking meaningful steps today in aligning with my highest potential." },
+      { id: 12, title: "Nourishment for Self & Souls", tags: "empty hungry tired depleted give nourished", unique: "I now declare, command, and invoke that I am receiving the full nourishment, supply and abundance of the Goddess on all levels of my being. I receive and live in the White Light of Harmony. As I am fully nourished, my cup overflows. My supply is endless and I am infinitely replenished by the Goddess. I am blessed, I am the best, and I am loved by the Goddess!" },
+      { id: 9, title: "Support of the Winds", tags: "stuck change path lost", unique: "I now call upon and invoke the power of the FOUR DIRECTIONS and FOUR WINDS to activate the Winds of Change in my life. I declare that I am lovingly led down a clear path to my highest good with the Goddess as my Guide and the Winds as my Friends. I am well nourished, well protected and well cared for by my Unseen, Loving Support. I am shining like the sun." },
+      { id: 6, title: "Goddess Wealth & Forward Progress", tags: "money poor stuck progress burden wealthy", unique: "I cast out, delete and dissolve any and all burdens and anchors that are holding me back in life, in perpetuity. I now declare that I am shown in meaningful ways just how wonderful life is with the Goddess here as Planet Earth. I am making meaningful progress and improvement every single day in wonderful ways. I always know what to do and when. I am wealthy, I am blessed, I am loved by the Goddess!" },
+      { id: 11, title: "For Freedom", tags: "trapped stuck free chain job", unique: "I now declare that I am completely FREE and in alignment with my complete Goddess-given sovereignty. I am fully unchained, unburdened, uncrossed and unrestrained in experiencing the full bounty of the Great Goddess here as Planet Earth. I live in a state of JOY and trust that everything always turns out better than expected. Sweetly doth she order all things!" },
+      { id: 13, title: "Money Command", tags: "money broke bills pay wealth wealthy", unique: "I now declare that all of my money is now with me, circulating freely in my life and in the world at large. It is safe for me to be financially successful. I am powerful, I am magnetic, I receive large sums of money and my personal economy is booming." },
+      { id: 16, title: "Call Energy Back from Debt", tags: "debt bills money stress poverty", unique: "I call back all of my own energy from debt, from financial stress, from fear and anxiety related to money, from poverty binds, and from anywhere my life force has been tied up in lack, into the centre of my body NOW. I command and declare that any and all financial stress is now DISSOLVED, DELETED AND CANCELLED from my energy field. Money loves me, and I love money. Large sums of money come to me easily. It is normal, safe and good for me to have a lot of money." },
+      { id: 19, title: "Established Success", tags: "success business love family win successful", unique: "I now command, declare and invoke my Success is already established in all ways. I am undeniably successful. Success is easy for me, success is safe for me and it’s actually a really good thing that someone like me is successful. I am always leaving more light than before." },
+      { id: 14, title: "Divine Support Team", tags: "alone unseen guides support loved", unique: "I now declare and command that my energy field is expansive and flowing. I can feel my divine support team guiding me now and uncrossing all paths to my success. I know for sure I am receiving their unseen support. I experience their power and increase my own." },
+      { id: 7, title: "Dream Protection & Insight", tags: "sleep night dreams nightmare rest", unique: "I now program my energy field and subconscious mind to be open to dream insight and wisdom that moves my life forward. I cast out any entities, beings and presences that may be feeding on my energy in any capacity and especially while I sleep. You are not welcome and you are removed from my field. I am completely enveloped in the loving light of the Goddess, I am safe, and I am at peace, I am at rest, and I am loved by the Goddess." },
+      { id: 15, title: "Excellent Health & Life Force", tags: "sick body pain health tired life force", unique: "I call back, command, invoke and declare my full, complete and excellent health NOW. I release all burdens, anchors, drains, leaks and anything else that may be hindering my energy and health in any way NOW. I am replenished by the Great Goddess who nourishes. Every cell in my body is happy. All is well. I am a frequency match to harmony, ease and peace." },
+      { id: 17, title: "Golden Timeline", tags: "drain invisible timeline power powerful", unique: "All of my energy is my own and is cycling with full health and life force throughout my entire energy field and reality experience, Seen and Unseen. I am loved by the Great Goddess. I am successful, I am a winner, I am healthy, I am undeniably blessed and amazing miracles happen to me often. Sweetly may she order all things, the light has already won." },
+      { id: 21, title: "Cast Out Parasites", tags: "parasites heavy drained sick unsafe body field", unique: "I now cast out any parasites that are in my energy field, physical body or life experience, from rituals, egregores, and organizations. Now go back to from whence you came. Go back to from whence you came. Go back to from whence you came, in perpetuity. My energy field is a beautiful bubble of white sparkly light and is protected by the beautiful golden light of the Great Goddess. I am healthy. I am wealthy. I am experiencing so much love and all things good, and I am loved by the Great Goddess." },
+      { id: 22, title: "Call Back from Data Centers & Bot Farms", tags: "data bot farms internet digital drain tech pulled scattered", unique: "I now clear, delete, and dissolve any energies, entities, or attachments that have been put into my energy field on all levels from data centers and bot farms NOW. I now declare that all of my energy is now my own, cycling with full health, wonderful self-expression, vibrant life force, and all things good through my energy field. I now command that I am powerful. I am full of life force energy. All of my soul, spirit, and self is with me now. I am confident. I am healthy. I am the best. I am blessed, and I am loved by the Great Goddess. The light has already won." },
+      { id: 23, title: "Cast Out Dark Forces", tags: "dark forces entities drain harvest stuck unsafe heavy", unique: "I now cast out, delete, and dissolve any dark forces, entities, energies, and anything at all that does not want me to move forward, including from rituals, egregores, and energy harvesting, NOW. I now command and declare that my energy field is circulating with healthy, vivacious, and wonderful energy. I am healthy. I am experiencing so much forward momentum. Everything is improving every single day in wonderful ways. And I am living my very best life. The light has already won." },
+      { id: 24, title: "Clear What Is Holding You Back", tags: "stuck holding back expression dream life free trapped", unique: "I now clear, delete, and dissolve anything that is holding me back from my fullest self-expression NOW. I now command and declare that I am experiencing so much forward motion in the best way possible. I am living my dream life where everything always turns out better than expected. I am blessed and I am loved by the Great Goddess. The light has already won." },
+      { id: 25, title: "Turn Up Inner Guidance", tags: "intuition guidance doubt unsure foggy wisdom hunches anxious", unique: "I now clear, delete, and dissolve any self-doubt or anything in my energy at all that stops me from hearing my internal guidance NOW. I now turn the volume up on my inner guidance system. I invite my loving ancestors and guides, my loving Planet Earth, the Great Goddess, my past and future selves to provide me with the intuition, the hunches, and the wisdom. My intuition is clear. My inner guidance is true. My inner wisdom always knows what to do. The light has already won." },
+      { id: 26, title: "Call Confidence Back", tags: "confidence knocked down people seen empty drained powerful", unique: "I now declare that all of my confidence is back home with me and I turn it all the way up so that I may live as who I truly came here to be and so that I may live to my fullest potential. I always keep my foot up on their necks because I am the best." }
+    ];
+
+    const $ = (id) => document.getElementById(id);
+    const views = ["gate", "home", "questions", "type", "play"];
+    let lastMode = "home";
+
+    function show(name) {
+      views.forEach((v) => $("view-" + v).classList.toggle("hidden", v !== name));
+      window.scrollTo(0, 0);
+    }
+
+    function clean(s) {
+      return String(s || "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+    }
+
+    function keepOutFilter(text, keepOut) {
+      const raw = clean(keepOut);
+      if (!raw || raw === "yes") return text;
+      const parts = raw.split(/[,;/]+/).map((p) => p.trim()).filter((p) => p.length > 1);
+      let out = text;
+      parts.forEach((p) => {
+        const re = new RegExp(p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
+        out = out.replace(re, "");
+      });
+      return out.replace(/\s{2,}/g, " ").replace(/\s+([,.!])/g, "$1").trim();
+    }
+
+    function score(entry, blob) {
+      const words = blob.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+      const tags = entry.tags.split(" ");
+      let n = 0;
+      words.forEach((w) => { if (tags.includes(w) || entry.unique.toLowerCase().includes(w)) n += 1; });
+      tags.forEach((t) => { if (blob.toLowerCase().includes(t)) n += 2; });
+      return n;
+    }
+
+    function pickLibrary(blob, skipIds) {
+      const pool = LIBRARY.filter((e) => !(skipIds || []).includes(e.id));
+      const ranked = pool.map((e) => ({ e, n: score(e, blob) })).sort((a, b) => b.n - a.n);
+      if (ranked[0].n === 0) return pool[Math.floor(Math.random() * pool.length)];
+      const top = ranked.filter((x) => x.n === ranked[0].n);
+      return top[Math.floor(Math.random() * top.length)].e;
+    }
+
+    function asDeclareCommand(unique) {
+      const body = clean(unique);
+      if (/^I now declare and command\b/i.test(body)) return body;
+      let rest = body
+        .replace(/^I now declare, command, and invoke that\s+/i, "")
+        .replace(/^I now command, declare and invoke\s+/i, "")
+        .replace(/^I call back, command, invoke and declare\s+/i, "")
+        .replace(/^I now declare that\s+/i, "")
+        .replace(/^I now command that\s+/i, "")
+        .replace(/^I command that\s+/i, "")
+        .replace(/^I declare that\s+/i, "")
+        .replace(/^I declare\s+/i, "");
+      if (rest !== body) {
+        return "I now declare and command that " + rest.charAt(0).toLowerCase() + rest.slice(1);
+      }
+      if (/^I now\s+/i.test(body)) {
+        return "I now declare and command that I " + body.replace(/^I now\s+/i, "");
+      }
+      if (/^I\s+/i.test(body)) {
+        return "I now declare and command that " + body;
+      }
+      return "I now declare and command that " + body.charAt(0).toLowerCase() + body.slice(1);
+    }
+
+    function keepOutLine(keepOut) {
+      if (!clean(keepOut)) return "";
+      return "What I keep out of this command has no name here, no seat in my field, and no food. It cannot stay. Only what loves me and moves me forward may remain.";
+    }
+
+    function buildGenerated(opts) {
+      const blob = [opts.feeling, opts.want, opts.situation].map(clean).join(" ");
+      const match = pickLibrary(blob || "scattered", [1, 20]);
+      const unique = [asDeclareCommand(match.unique), keepOutLine(opts.keepOut)].filter(Boolean).join(" ");
+      const filtered = keepOutFilter(unique, opts.keepOut);
+      return {
+        title: "A command for this moment",
+        eye: "Written for you",
+        again: opts.again || "questions",
+        lines: [
+          { kind: "speak", text: OPENING.call },
+          { kind: "breath", text: OPENING.breath },
+          { kind: "speak", text: OPENING.ground },
+          { kind: "speak", text: filtered },
+          { kind: "speak", text: OPENING.close }
+        ]
+      };
+    }
+
+    function buildGoddess() {
+      const e = LIBRARY[Math.floor(Math.random() * LIBRARY.length)];
+      return {
+        title: e.title,
+        eye: "The Goddess chose",
+        again: "goddess",
+        lines: [
+          { kind: "speak", text: OPENING.call },
+          { kind: "breath", text: OPENING.breath },
+          { kind: "speak", text: OPENING.ground },
+          { kind: "speak", text: asDeclareCommand(e.unique) },
+          { kind: "speak", text: OPENING.close }
+        ]
+      };
+    }
+
+    function renderPlay(cmd) {
+      lastMode = cmd.again;
+      $("play-eye").textContent = cmd.eye;
+      $("play-h").textContent = cmd.title;
+      const card = $("play-card");
+      card.innerHTML = "";
+      const t = document.createElement("p");
+      t.className = "cmd-title";
+      t.textContent = cmd.eye;
+      card.appendChild(t);
+      cmd.lines.forEach((ln) => {
+        const p = document.createElement("p");
+        p.className = "line " + ln.kind;
+        p.textContent = ln.text;
+        card.appendChild(p);
+      });
+      show("play");
+    }
+
+    function selected(q) {
+      return [...document.querySelectorAll('[data-q="' + q + '"] .chip.on')]
+        .map((el) => el.getAttribute("data-val"))
+        .filter((v) => v !== null && v !== "");
+    }
+
+    function unlock() {
+      sessionStorage.setItem("ea-commands", "1");
+      show("home");
+    }
+
+    document.querySelectorAll(".choices").forEach((group) => {
+      const multi = group.getAttribute("data-multi") === "1";
+      group.querySelectorAll(".chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          if (!multi) {
+            group.querySelectorAll(".chip").forEach((c) => c.classList.remove("on"));
+            chip.classList.add("on");
+            return;
+          }
+          if (chip.getAttribute("data-val") === "") {
+            group.querySelectorAll(".chip").forEach((c) => c.classList.remove("on"));
+            chip.classList.add("on");
+            return;
+          }
+          group.querySelectorAll('.chip[data-val=""]').forEach((c) => c.classList.remove("on"));
+          chip.classList.toggle("on");
+        });
+      });
+    });
+
+    $("gate-go").onclick = () => {
+      const w = $("gate-word").value.trim().toLowerCase().replace(/\s+/g, "");
+      if (w === PASS) unlock();
+      else $("gate-error").textContent = "That’s not the word. Listen on live, or ask in Energy Academy.";
+    };
+    $("gate-word").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") $("gate-go").click();
+    });
+
+    document.querySelectorAll("[data-go]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const go = btn.getAttribute("data-go");
+        if (go === "goddess") renderPlay(buildGoddess());
+        else show(go);
+      });
+    });
+
+    $("q-go").onclick = () => {
+      const feeling = selected("feel").join(" and ");
+      const want = selected("want").join(", ");
+      const keep = selected("out")[0] || "";
+      if (!feeling && !want) {
+        $("q-error").textContent = "Choose how you feel, or what you want to feel.";
+        return;
+      }
+      $("q-error").textContent = "";
+      renderPlay(buildGenerated({
+        feeling, want, keepOut: keep, situation: "", again: "questions"
+      }));
+    };
+
+    $("sit-go").onclick = () => {
+      const situation = $("sit").value;
+      if (!clean(situation)) {
+        $("sit").focus();
+        return;
+      }
+      renderPlay(buildGenerated({
+        feeling: "", want: "clear, at home, and full of light",
+        situation, keepOut: $("sit-out").value, again: "type"
+      }));
+    };
+
+    $("play-again").onclick = () => {
+      if (lastMode === "goddess") renderPlay(buildGoddess());
+      else show(lastMode);
+    };
+
+    if (sessionStorage.getItem("ea-commands") === "1") show("home");
+  </script>
+</body>
+</html>
