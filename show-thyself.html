@@ -19,11 +19,20 @@
     body { font-family: Outfit, system-ui, sans-serif; background: var(--ivory); color: var(--ink); font-weight: 300; line-height: 1.7; }
     a { color: var(--gold-deep); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .bar { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: rgba(250, 246, 238, 0.94); backdrop-filter: blur(12px); }
+    .bar-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     .bar-inner { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 18px; padding: 14px 0; }
     .brand { font-family: Cinzel, serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-deep); }
     .btn { display: inline-block; background: var(--gold); color: var(--paper) !important; padding: 14px 24px; font-family: Cinzel, serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--gold-deep); text-decoration: none !important; }
-    .btn:hover { background: var(--gold-deep); }
+    .btn.ghost { background: transparent; color: var(--gold-deep) !important; }
+    .btn.ghost:hover { background: var(--line); }
+    .webinar { text-align: left; margin: 8px auto 36px; }
+    .webinar h2 { font-size: clamp(32px, 5vw, 46px); line-height: 1; margin: 6px 0 10px; }
+    .webinar .when { font-family: Cinzel, serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 12px; }
+    .webinar-form { display: grid; gap: 10px; margin-top: 18px; max-width: 440px; }
+    .webinar-form label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+    .webinar-form input { width: 100%; padding: 12px 12px; border: 1px solid var(--line); background: var(--ivory); font: inherit; font-size: 16px; color: var(--ink); }
+    .webinar-form .btn { border: 0; cursor: pointer; text-align: center; }
+    .webinar .fine { font-size: 13px; color: var(--muted); margin-top: 10px; }
     .wrap { width: min(980px, calc(100% - 40px)); margin: 0 auto; }
     .hero { padding: 56px 0 28px; text-align: center; }
     .crest { width: 140px; height: auto; margin: 0 auto 8px; display: block; mix-blend-mode: multiply; }
@@ -70,7 +79,10 @@
   <header class="bar">
     <div class="bar-inner">
       <div class="brand"><a href="index.html">Mariah De Aurum</a></div>
-      <a class="btn" href="https://www.paypal.com/ncp/payment/EBVQWAABV6F36" target="_blank" rel="noopener">Join · $444</a>
+      <div class="bar-actions">
+        <a class="btn ghost" href="#webinar">Free webinar</a>
+        <a class="btn" href="https://www.paypal.com/ncp/payment/EBVQWAABV6F36" target="_blank" rel="noopener">Join · $444</a>
+      </div>
     </div>
   </header>
 
@@ -83,8 +95,25 @@
       <p class="letter">Clear the fear of being seen. Then get on video, so the people who need your work can actually find you.</p>
       <p class="letter">Doors open November 14. We go live Tuesday, November 17, at 8:00 PM EST.</p>
       <a class="btn" href="https://www.paypal.com/ncp/payment/EBVQWAABV6F36" target="_blank" rel="noopener">Join · $444</a>
+      <p class="letter" style="margin-top:18px;"><a href="#webinar">Or come Wednesday, November 11, for a free hour on Zoom.</a></p>
       <img class="divider" src="gold-divider.png" alt="" />
     </div>
+
+    <section id="webinar" style="border-top:0; padding-top:0;">
+      <div class="card gold webinar">
+        <p class="eyebrow">Free live · Zoom</p>
+        <h2>Before the doors open</h2>
+        <p class="when">Wednesday, November 11 · 7:00 PM EST · 6:00 PM Mexico City</p>
+        <p>One hour with me. We look at the fear of being seen, and what it costs when the people who need your work cannot find you. You leave knowing whether the six weeks are yours.</p>
+        <p style="margin-top:10px;">Put your name and email here. The next page has the Zoom link. I will email it to you again on the morning of November 11.</p>
+        <form class="webinar-form" id="webinar-form" action="https://tally.so/r/kblVY1" method="get">
+          <label>First name<input name="name" type="text" autocomplete="given-name" required /></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+          <button class="btn" type="submit">Get the Zoom link</button>
+        </form>
+        <p class="fine" id="webinar-note">The group itself opens Saturday, November 14. This Wednesday is free. About an hour. A phone is enough.</p>
+      </div>
+    </section>
 
     <section id="why">
       <p class="eyebrow">Why now</p>
@@ -113,7 +142,7 @@
           <h3>The video skills</h3>
           <ul>
             <li>Set up your account and a profile strangers want to follow</li>
-            <li>Be cringe on purpose, and post anyway</li>
+            <li>Get comfortable on camera before the video is perfect, and post the reps</li>
             <li>Hooks, storytelling, and showing your life</li>
             <li>Editing and trends (skills that carry over to YouTube)</li>
             <li>Selling your products and services on video</li>
@@ -133,9 +162,9 @@
           <div><h4>Video</h4><p>Set up your account. Showing your face is advisable, not required. Learn to film without showing your home, your street, or where you live. Your first video goes only to the group.</p></div>
         </div>
         <div class="week">
-          <div class="num">Week 2<span>Support · Be cringe</span></div>
-          <div><h4>Energy</h4><p>A short guided close. Meet your divine support team: your guides, your ancestors, and the Goddess. Call your energy back from other people’s opinions. Then your command for the week.</p></div>
-          <div><h4>Video</h4><p>The exact cringe practice that made me comfortable on camera. Trending sounds, hooks, volume, and cross-posting.</p></div>
+          <div class="num">Week 2<span>Support · On camera</span></div>
+          <div><h4>Energy</h4><p>Near the start, you meet your divine support team: your guides, your ancestors, and the Goddess. The close is other people’s judgement, and calling your energy back from it. Then your command for the week.</p></div>
+          <div><h4>Video</h4><p>Get comfortable on camera before the video is perfect. A short line is enough: a trending line, or a line from a movie you already know. Reps, hooks, and cross-posting.</p></div>
         </div>
         <div class="week">
           <div class="num">Week 3<span>Ritual · Harvest</span></div>
@@ -231,6 +260,33 @@
       <a class="btn" href="https://www.paypal.com/ncp/payment/EBVQWAABV6F36" target="_blank" rel="noopener">Join · $444</a>
     </div>
   </div>
+
+  <script>
+    var WEBINAR_FORM_ID = "kblVY1";
+    var WEBINAR_LINK_PAGE = "show-thyself-webinar.html";
+    (function () {
+      var form = document.getElementById("webinar-form");
+      window.addEventListener("message", function (e) {
+        if (typeof e.data === "string" && e.data.indexOf("Tally.FormSubmitted") !== -1) {
+          window.location.href = WEBINAR_LINK_PAGE;
+        }
+      });
+      if (WEBINAR_FORM_ID && WEBINAR_FORM_ID !== "WEBINAR_FORM_ID") {
+        var frame = document.createElement("iframe");
+        frame.src = "https://tally.so/embed/" + WEBINAR_FORM_ID + "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+        frame.title = "Get the Zoom link";
+        frame.loading = "lazy";
+        frame.width = "100%";
+        frame.height = "320";
+        frame.style.border = "0";
+        frame.style.marginTop = "16px";
+        form.replaceWith(frame);
+        var s = document.createElement("script");
+        s.src = "https://tally.so/widgets/embed.js";
+        document.body.appendChild(s);
+      }
+    })();
+  </script>
 
   <footer>
     <p>Mariah De Aurum · Energy Academy · Know thyself. Show thyself.</p>
