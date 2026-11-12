@@ -27,11 +27,8 @@
     .btn.ghost:hover { background: var(--line); }
     .webinar { text-align: left; margin: 8px auto 36px; }
     .webinar h2 { font-size: clamp(32px, 5vw, 46px); line-height: 1; margin: 6px 0 10px; }
-    .webinar .when { font-family: Cinzel, serif; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 12px; }
-    .webinar-form { display: grid; gap: 10px; margin-top: 18px; max-width: 440px; }
-    .webinar-form label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
-    .webinar-form input { width: 100%; padding: 12px 12px; border: 1px solid var(--line); background: var(--ivory); font: inherit; font-size: 16px; color: var(--ink); }
-    .webinar-form .btn { border: 0; cursor: pointer; text-align: center; }
+    .webinar .video { position: relative; margin-top: 16px; padding-top: 56.25%; background: #1a140c; }
+    .webinar .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .webinar .fine { font-size: 13px; color: var(--muted); margin-top: 10px; }
     .wrap { width: min(980px, calc(100% - 40px)); margin: 0 auto; }
     .hero { padding: 56px 0 28px; text-align: center; }
@@ -80,7 +77,7 @@
     <div class="bar-inner">
       <div class="brand"><a href="index.html">Mariah De Aurum</a></div>
       <div class="bar-actions">
-        <a class="btn ghost" href="#webinar">Free webinar</a>
+        <a class="btn ghost" href="#webinar">Free hour</a>
         <a class="btn" href="https://www.paypal.com/ncp/payment/EBVQWAABV6F36" target="_blank" rel="noopener">Join · $444</a>
       </div>
     </div>
@@ -95,23 +92,19 @@
       <p class="letter">Clear the fear of being seen. Then get on video, so the people who need your work can actually find you.</p>
       <p class="letter">Doors open November 14. We go live Tuesday, November 17, at 8:00 PM EST.</p>
       <a class="btn" href="https://www.paypal.com/ncp/payment/EBVQWAABV6F36" target="_blank" rel="noopener">Join · $444</a>
-      <p class="letter" style="margin-top:18px;"><a href="#webinar">Or come Wednesday, November 11, for a free hour on Zoom.</a></p>
+      <p class="letter" style="margin-top:18px;"><a href="#webinar">Or watch the free hour.</a></p>
       <img class="divider" src="gold-divider.png" alt="" />
     </div>
 
     <section id="webinar" style="border-top:0; padding-top:0;">
       <div class="card gold webinar">
-        <p class="eyebrow">Free live · Zoom</p>
-        <h2>Before the doors open</h2>
-        <p class="when">Wednesday, November 11 · 7:00 PM EST · 6:00 PM Mexico City</p>
+        <p class="eyebrow">Free hour</p>
+        <h2>The fear of being seen</h2>
         <p>One hour with me. We look at the fear of being seen, and what it costs when the people who need your work cannot find you. You leave knowing whether the six weeks are yours.</p>
-        <p style="margin-top:10px;">Put your name and email here. The next page has the Zoom link. I will email it to you again on the morning of November 11.</p>
-        <form class="webinar-form" id="webinar-form" action="https://tally.so/r/kblVY1" method="get">
-          <label>First name<input name="name" type="text" autocomplete="given-name" required /></label>
-          <label>Email<input name="email" type="email" autocomplete="email" required /></label>
-          <button class="btn" type="submit">Get the Zoom link</button>
-        </form>
-        <p class="fine" id="webinar-note">The group itself opens Saturday, November 14. This Wednesday is free. About an hour. A phone is enough.</p>
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/OB1fk2xDKzA" title="Show Thyself · The fear of being seen" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="fine">Watch on <a href="https://youtu.be/OB1fk2xDKzA">YouTube</a>. The group opens Saturday, November 14.</p>
       </div>
     </section>
 
@@ -260,33 +253,6 @@
       <a class="btn" href="https://www.paypal.com/ncp/payment/EBVQWAABV6F36" target="_blank" rel="noopener">Join · $444</a>
     </div>
   </div>
-
-  <script>
-    var WEBINAR_FORM_ID = "kblVY1";
-    var WEBINAR_LINK_PAGE = "show-thyself-webinar.html";
-    (function () {
-      var form = document.getElementById("webinar-form");
-      window.addEventListener("message", function (e) {
-        if (typeof e.data === "string" && e.data.indexOf("Tally.FormSubmitted") !== -1) {
-          window.location.href = WEBINAR_LINK_PAGE;
-        }
-      });
-      if (WEBINAR_FORM_ID && WEBINAR_FORM_ID !== "WEBINAR_FORM_ID") {
-        var frame = document.createElement("iframe");
-        frame.src = "https://tally.so/embed/" + WEBINAR_FORM_ID + "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
-        frame.title = "Get the Zoom link";
-        frame.loading = "lazy";
-        frame.width = "100%";
-        frame.height = "320";
-        frame.style.border = "0";
-        frame.style.marginTop = "16px";
-        form.replaceWith(frame);
-        var s = document.createElement("script");
-        s.src = "https://tally.so/widgets/embed.js";
-        document.body.appendChild(s);
-      }
-    })();
-  </script>
 
   <footer>
     <p>Mariah De Aurum · Energy Academy · Know thyself. Show thyself.</p>
